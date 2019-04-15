@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyBqPJn5WsJ8mB_AGMZ64Ve4CCdvn9tcpE4",
-    authDomain: "graduateconnect-e8f1c.firebaseapp.com",
-    databaseURL: "https://graduateconnect-e8f1c.firebaseio.com",
-    projectId: "graduateconnect-e8f1c",
-    storageBucket: "graduateconnect-e8f1c.appspot.com",
-    messagingSenderId: "460058263247"
+    apiKey: "AIzaSyCpref_HMMSo2rk0xJ286p61rKo9UfGV0c",
+    authDomain: "graduateconnect-256d9.firebaseapp.com",
+    databaseURL: "https://graduateconnect-256d9.firebaseio.com",
+    projectId: "graduateconnect-256d9",
+    storageBucket: "graduateconnect-256d9.appspot.com",
+    messagingSenderId: "363703709101"
   }
 };
 
