@@ -1,15 +1,21 @@
 import { Injectable, NgZone } from '@angular/core';
 import { User } from "../services/user";
 import { auth } from 'firebase/app';
+import * as firebase from 'firebase/app';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
+import { Observable } from 'rxjs';
+import { switchMap, } from 'rxjs/operators';
+import { pipe } from '@angular/core/src/render3';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
+  user$: Observable<User>;
   userData: any; // Save logged in user data
 
   constructor(
@@ -20,6 +26,16 @@ export class AuthService {
   ) {    
     /* Saving user data in localstorage when 
     logged in and setting up null when logged out */
+    {
+      this.user$ = this.afAuth.authState.
+      pipe(switchMap(user => {
+          if (user) {
+            return this.afs.doc<User>(`users/${user.uid}`).valueChanges()
+          } else {
+            return of(null)
+          }
+        }))
+   }
     this.afAuth.authState.subscribe(user => {
       if (user) {
         this.userData = user;
@@ -110,7 +126,10 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified
+      emailVerified: user.emailVerified,
+      roles:{
+        student: true
+      }
     }
     return userRef.set(userData, {
       merge: true
@@ -124,5 +143,38 @@ export class AuthService {
       this.router.navigate(['sign-in']);
     })
   }
+  canRead(user: User): boolean {
+    const allowed = ['admin', 'student']
+    return this.checkAuthorization(user, allowed)
+  }
+  
+  canWrite(user: User): boolean {
+    const allowed = ['admin', 'student']
+    return this.checkAuthorization(user, allowed)
+  }
+  canCreate(user: User): boolean {
+    const allowed = ['admin']
+    return this.checkAuthorization(user, allowed)
+  }
 
+  canUpdate(user: User): boolean {
+    const allowed = ['admin']
+    return this.checkAuthorization(user, allowed)
+  }
+  
+  canDelete(user: User): boolean {
+    const allowed = ['admin']
+    return this.checkAuthorization(user, allowed)
+  }
+
+  // determines if user has matching role
+  private checkAuthorization(user: User, allowedRoles: string[]): boolean {
+    if (!user) return false
+    for (const role of allowedRoles) {
+      if ( user.roles[role] ) {
+        return true
+      }
+    }
+    return false
+  }
 }
