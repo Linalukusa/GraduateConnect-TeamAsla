@@ -21,9 +21,24 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+
+
 // Auth service
 import { AuthService } from "./shared/services/auth.service";
 
+// Sidebar component
+import {SidebarComponent} from './components/sidebar/sidebar.component';
+import { BsDropdownModule } from 'ngx-bootstrap';
+
+//Scrollbar
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
 
 
 @NgModule({
@@ -34,6 +49,7 @@ import { AuthService } from "./shared/services/auth.service";
     DashboardComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
+    SidebarComponent,
     
   ],
   imports: [
@@ -43,9 +59,17 @@ import { AuthService } from "./shared/services/auth.service";
     AngularFireAuthModule,
     AngularFirestoreModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    HttpClientJsonpModule,
+    BsDropdownModule.forRoot(),
+    PerfectScrollbarModule
     
   ],
-  providers: [AuthService],
+  providers: [ AuthService,
+    {
+    provide: PERFECT_SCROLLBAR_CONFIG,
+    useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG }
+  ],
   bootstrap: [AppComponent]
 })
 
