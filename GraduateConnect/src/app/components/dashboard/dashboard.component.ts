@@ -1,6 +1,8 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { AuthService } from "../../shared/services/auth.service";
 import { Router } from "@angular/router";
+import { SidebarService} from 'src/app/components/sidebar/sidebar.service';
+
 
 
 @Component({
@@ -8,14 +10,25 @@ import { Router } from "@angular/router";
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent  {
 
-  constructor(
-    public authService: AuthService,
+  constructor
+  (public authService: AuthService,
     public router: Router,
-    public ngZone: NgZone
-  ) { }
+    public ngZone: NgZone,
+    public sidebarservice: SidebarService) { }
+  toggleSidebar() {
+    this.sidebarservice.setSidebarState(!this.sidebarservice.getSidebarState());
+  }
+  toggleBackgroundImage() {
+    this.sidebarservice.hasBackgroundImage = !this.sidebarservice.hasBackgroundImage;
+  }
+  getSideBarState() {
+    return this.sidebarservice.getSidebarState();
+  }
 
-  ngOnInit() { }
-
+  hideSidebar() {
+    this.sidebarservice.setSidebarState(true);
+  }
+  
 }
