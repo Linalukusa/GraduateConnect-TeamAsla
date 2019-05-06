@@ -1,0 +1,27 @@
+<<<<<<< HEAD
+
+<div class="page-wrapper" [ngClass]="{'toggled' : getSideBarState()}">
+  <app-sidebar></app-sidebar>
+  <main class="page-content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="form-group col-md-12">
+                  <h2>  Welcome to Graduate Connect</h2>
+                  <hr>
+                  <p> </p>
+        
+                  <img src="assets/grad profile 1.png">
+                  
+                  
+                  
+              </div>
+          </div>
+          
+      </div>
+      
+      <div class="overlay" (click)="toggleSidebar()" [ngClass]="{'show' : !getSideBarState()}"></div>
+  </main>
+
+  
+</div>
+
