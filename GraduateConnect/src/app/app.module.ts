@@ -35,6 +35,7 @@ import { BsDropdownModule } from 'ngx-bootstrap';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { CultureFitComponent } from './components/culture-fit/culture-fit.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -50,6 +51,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ForgotPasswordComponent,
     VerifyEmailComponent,
     SidebarComponent,
+    CultureFitComponent,
     
   ],
   imports: [

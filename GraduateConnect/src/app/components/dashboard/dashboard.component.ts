@@ -17,6 +17,11 @@ export class DashboardComponent  {
     public router: Router,
     public ngZone: NgZone,
     public sidebarservice: SidebarService) { }
+
+  onCultureFitButton(): void{
+    this.router.navigate(['/culture-fit']);
+  }
+
   toggleSidebar() {
     this.sidebarservice.setSidebarState(!this.sidebarservice.getSidebarState());
   }
