@@ -1,0 +1,22 @@
+.step1-header {
+    width: 800px;
+    height: 500px;
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+
+.wrapper {
+  width: 300px;
+  height: 30px;
+  margin-left: -100px;
+  background-color: aqua;
+  position: relative; 
+  left: 250px;
+  font-family:  Arial, sans-serif;
+  border: solid 60px;
+  border-left: 50px;
+  border-width: 20px;
+  border-left-style: dashed;
+  padding: 23px;
+}

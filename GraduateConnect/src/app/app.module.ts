@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 // Reactive Form
 import { ReactiveFormsModule } from "@angular/forms";
+import { MatSliderModule } from '@angular/material';
 
 // App routing modules
 import { AppRoutingModule } from './shared/routing/app-routing.module';
@@ -37,6 +38,8 @@ import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { CultureFitComponent } from './components/culture-fit/culture-fit.component';
 
+import { MatSliderComponent } from './components/mat-slider/mat-slider.component';
+
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };
@@ -52,6 +55,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     VerifyEmailComponent,
     SidebarComponent,
     CultureFitComponent,
+    MatSliderComponent,
     
   ],
   imports: [
@@ -64,7 +68,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HttpClientModule,
     HttpClientJsonpModule,
     BsDropdownModule.forRoot(),
-    PerfectScrollbarModule
+    PerfectScrollbarModule,
+    MatSliderModule
     
   ],
   providers: [ AuthService,
