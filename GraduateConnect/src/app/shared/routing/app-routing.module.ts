@@ -10,8 +10,8 @@ import { VerifyEmailComponent } from '../../components/verify-email/verify-email
 
 // Import canActivate guard services
 import { AuthGuard } from "../guard/auth.guard";
-import {SecureInnerPagesGuard} from 'src/app/shared/guard/secure-inner-pages.guard.ts.guard';
-import { CultureFitComponent } from 'src/app/components/culture-fit/culture-fit.component';
+import { SecureInnerPagesGuard } from 'src/app/shared/guard/secure-inner-pages.guard.ts.guard';
+import { CultureFitComponent } from 'src/app/components/culture-fit/culture-fit.component'
 
 // Include route guard in routes array
 const routes: Routes = [
@@ -21,7 +21,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
-  { path: 'culture-fit', component: CultureFitComponent, canActivate: [SecureInnerPagesGuard]}
+  { path: 'culture-fit', component: CultureFitComponent, canActivate: [SecureInnerPagesGuard]},
+  { path: 'mat-slider', component: CultureFitComponent, canActivate: [SecureInnerPagesGuard]}
 ];
 
 @NgModule({

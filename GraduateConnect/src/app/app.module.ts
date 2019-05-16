@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatSliderModule, MatDialogModule, MatCheckboxModule } from '@angular/material';
 
 // Reactive Form
 import { ReactiveFormsModule } from "@angular/forms";
-import { MatSliderModule } from '@angular/material';
+
 
 // App routing modules
 import { AppRoutingModule } from './shared/routing/app-routing.module';
@@ -37,8 +38,13 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { CultureFitComponent } from './components/culture-fit/culture-fit.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderComponent } from './mat-slider/mat-slider.component';
+import {FormsModule} from '@angular/forms';
+import {MatNativeDateModule} from '@angular/material';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
-import { MatSliderComponent } from './components/mat-slider/mat-slider.component';
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -60,6 +66,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
@@ -69,7 +76,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HttpClientJsonpModule,
     BsDropdownModule.forRoot(),
     PerfectScrollbarModule,
-    MatSliderModule
+    MatSliderModule, MatCheckboxModule,
+    MatDialogModule,
+    FormsModule,
+    MatNativeDateModule
+
     
   ],
   providers: [ AuthService,
