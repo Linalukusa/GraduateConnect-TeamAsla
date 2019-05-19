@@ -18,7 +18,10 @@
           </div>
           
       </div>
-      
+      <!-- <div style="margin-top:5px">
+        <input type="button" class="btn btn-primary" (click)="onCultureFitButton()" value="Take Culture Fit Test" >
+      </div> -->
+      <button (click)="onCultureFitButton()" mat-raised-button color="accent"> <mat-icon>face</mat-icon> Take Test</button>
       <div class="overlay" (click)="toggleSidebar()" [ngClass]="{'show' : !getSideBarState()}"></div>
   </main>
 
