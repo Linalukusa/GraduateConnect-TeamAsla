@@ -1,9 +1,32 @@
 <mat-toolbar color="primary">
-  <span>Home</span>
+    <button mat-button [matMenuTriggerFor]="menu"><b> Home </b></button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+    <button mat-button [matMenuTriggerFor]="menu"><b> My Profile </b></button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+    <button mat-button [matMenuTriggerFor]="menu"><b> About Us </b></button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+    <button mat-button [matMenuTriggerFor]="menu"><b> Contuct Us </b></button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
 </mat-toolbar>
 
   <!-- <mat-list role="list">
       <mat-list-item role="listitem">Item 1</mat-list-item>
       <mat-list-item role="listitem">Item 2</mat-list-item>
       <mat-list-item role="listitem">Item 3</mat-list-item>
-    </mat-list> -->
+    </mat-list>
+  <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu> -->

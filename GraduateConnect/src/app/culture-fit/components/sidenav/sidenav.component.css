@@ -6,6 +6,7 @@
     height: 100%;
     min-height: 100%;
     border: 1px solid rgba(red, green, blue, alpha);
+    scroll-behavior: smooth;
 }
 
 .app-sidenav-content {
@@ -18,3 +19,4 @@
     width: 240px;
     padding: 20px;
 }
+
