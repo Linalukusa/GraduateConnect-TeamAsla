@@ -1,4 +1,4 @@
-<main>
+
 <div class="header">
   <h1> Culture Fit Assessment </h1>
   <h2> Question 1: </h2>
@@ -10,9 +10,20 @@
       [displayWith]="formatLabel"
       tickInterval="1000"
       min="1"
-      max="8">
+      max="8" 
+      [(ngModel)]="dominant1">
+     
     </mat-slider>
   </div>
+
+  <mat-form-field class="example-margin">
+    <input matInput type="number" placeholder="Value" [(ngModel)]="dominant1">
+  </mat-form-field>
+
+  <label >
+    <input type="value" placeholder="value" [(ngModel)]="dominant"> 
+  </label>
+
   <div class="question">
     <p><b> I prefer to follow regulations in my workspace </b></p>
     <mat-slider class="slider"
@@ -20,7 +31,8 @@
       [displayWith]="formatLabel"
       tickInterval="1000"
       min="1"
-      max="8">
+      max="8"
+      [(ngModel)]="precise1">
     </mat-slider>
   </div>
   <div class="question">
@@ -30,7 +42,8 @@
       [displayWith]="formatLabel"
       tickInterval="1000"
       min="1"
-      max="8">
+      max="8"
+      [(ngModel)]="earth1">
     </mat-slider>
   </div>
   <div class="question">
@@ -40,19 +53,21 @@
       [displayWith]="formatLabel"
       tickInterval="1000"
       min="1"
-      max="8">
+      max="8"
+      [(ngModel)]="animated1">
     </mat-slider>
   </div>
 </div>
-</main>
-  <!-- <div class="question">
+
+  <div class="question">
     <p><b> I prefer to influence people </b></p>
     <mat-slider class="slider"
       thumbLabel
       [displayWith]="formatLabel"
       tickInterval="1000"
       min="1"
-      max="8">
+      max="8"
+      [(ngModel)]="convincing1">
     </mat-slider>
   </div>
   <div class="question">
@@ -62,7 +77,8 @@
       [displayWith]="formatLabel"
       tickInterval="1000"
       min="1"
-      max="8">
+      max="8"
+      [(ngModel)]="accomodate1">
     </mat-slider>
   </div>
   <div class="question">
@@ -72,7 +88,8 @@
       [displayWith]="formatLabel"
       tickInterval="1000"
       min="1"
-      max="8">
+      max="8"
+      [(ngModel)]="introvert1">
     </mat-slider>
   </div>
   <div class="question">
@@ -82,10 +99,14 @@
       [displayWith]="formatLabel"
       tickInterval="1000"
       min="1"
-      max="8">
+      max="8"
+      [(ngModel)]="headstrong1">
     </mat-slider>
-  </div> -->
-
+  </div>
+  <button (click)= "count()" type="input" color="primary"> Next </button>
+  <label >
+    <input type="value" placeholder="value" [(ngModel)]="headstrong"> 
+  </label>
 
 
 
