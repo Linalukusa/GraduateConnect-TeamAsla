@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {coerceNumberProperty} from '@angular/cdk/coercion';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-main-content',
@@ -54,7 +56,8 @@ this.animated = this.animated + this.animated1;
   onHeadCount(){
     this.headstrong = this.headstrong + this.headstrong1;
   }
-
+ 
+  
   count(){
     this.sum = this.earth1 + this.headstrong1 + this.animated1 + this.convincing1 + this.accomodate1 + this.dominant1 + this.precise1 + this.introver1;
     if (this.sum = 36){
@@ -66,12 +69,25 @@ this.animated = this.animated + this.animated1;
     this.onEarthCount();
     this.onIntrovertCount();
     this.onPreciseCount();
+    // this.router.navigate(['culture-fit-root/main-contentB']);
   }
   else {
     console.log("You cant have the same answer for multiple questions");
   }
-  }
-  constructor() { }
+  
+}
+  onQuestion2(): void{
+    if(this.sum = 36)
+    {
+      this.router.navigate(['culture-fit-root/main-contentB']);
+}}
+    
+
+  constructor(public authService: AuthService,
+    public router: Router) { }
+
+
+    
 
   ngOnInit() {
   }

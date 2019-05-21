@@ -10,13 +10,17 @@ import { CultureFitRootComponent } from './culture-fit-root.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { MainContentBComponent } from './components/main-contentB/main-contentB.component';
+import { MainContentCComponent } from './components/main-content-c/main-content-c.component';
 
 @NgModule({
   declarations: [
     CultureFitRootComponent,
     MainContentComponent,
     SidenavComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    MainContentBComponent,
+    MainContentCComponent
 
   ],
   imports: [

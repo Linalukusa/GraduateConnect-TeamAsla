@@ -13,6 +13,8 @@ import { AuthGuard } from "../guard/auth.guard";
 import { SecureInnerPagesGuard } from 'src/app/shared/guard/secure-inner-pages.guard.ts.guard';
 import { CultureFitRootComponent } from 'src/app/culture-fit/culture-fit-root.component';
 import { MainContentComponent } from 'src/app/culture-fit/components/main-content/main-content.component';
+import { MainContentBComponent } from 'src/app/culture-fit/components/main-contentB/main-contentB.component';
+import { MainContentCComponent } from 'src/app/culture-fit/components/main-content-c/main-content-c.component';
 
 // Include route guard in routes array
 const routes: Routes = [
@@ -24,7 +26,9 @@ const routes: Routes = [
   { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'culture-fit-root', component: CultureFitRootComponent, canActivate: [SecureInnerPagesGuard],
     children: [
-      { path: '', component: MainContentComponent, canActivate: [SecureInnerPagesGuard],}
+      { path: '', component: MainContentComponent, canActivate: [SecureInnerPagesGuard]},
+      { path: 'main-contentB', component: MainContentBComponent, canActivate: [SecureInnerPagesGuard]},
+      { path: 'main-content-c', component: MainContentCComponent, canActivate: [SecureInnerPagesGuard]}
     ]},
   { path: '**', redirectTo: 'culture-fit-root'}
 ];

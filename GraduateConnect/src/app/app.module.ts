@@ -35,6 +35,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MainContentComponent } from './culture-fit/components/main-content/main-content.component';
 import { SidenavComponent } from './culture-fit/components/sidenav/sidenav.component';
 import { ToolbarComponent } from './culture-fit/components/toolbar/toolbar.component';
+import { MainContentBComponent } from './culture-fit/components/main-contentB/main-contentB.component';
+import { MainContentCComponent } from './culture-fit/components/main-content-c/main-content-c.component';
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -53,7 +56,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     CultureFitRootComponent,
     MainContentComponent,
     SidenavComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    MainContentBComponent,
+    MainContentCComponent
     
   ],
   imports: [
