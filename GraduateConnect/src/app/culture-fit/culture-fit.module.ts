@@ -12,6 +12,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MainContentBComponent } from './components/main-contentB/main-contentB.component';
 import { MainContentCComponent } from './components/main-content-c/main-content-c.component';
+import { HeroesComponent } from './components/heroes/heroes.component';
+import { HeroComponent } from './components/hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { MainContentCComponent } from './components/main-content-c/main-content-
     SidenavComponent,
     ToolbarComponent,
     MainContentBComponent,
-    MainContentCComponent
+    MainContentCComponent,
+    HeroesComponent,
+    HeroComponent
 
   ],
   imports: [

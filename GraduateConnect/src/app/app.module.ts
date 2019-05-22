@@ -38,6 +38,10 @@ import { ToolbarComponent } from './culture-fit/components/toolbar/toolbar.compo
 import { MainContentBComponent } from './culture-fit/components/main-contentB/main-contentB.component';
 import { MainContentCComponent } from './culture-fit/components/main-content-c/main-content-c.component';
 
+import { HeroesComponent } from './culture-fit/components/heroes/heroes.component';
+import { Hero } from './hero';
+ 
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -58,7 +62,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SidenavComponent,
     ToolbarComponent,
     MainContentBComponent,
-    MainContentCComponent
+    MainContentCComponent,
+    HeroesComponent,
+    Hero,
+    
     
   ],
   imports: [

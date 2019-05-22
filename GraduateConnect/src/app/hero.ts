@@ -1,18 +1,34 @@
-import { Component, OnInit } from '@angular/core';
-import {coerceNumberProperty} from '@angular/cdk/coercion';
-import { ValueConverter } from '@angular/compiler/src/render3/view/template';
-import { Router } from '@angular/router';
-import { AuthService } from 'src/app/shared/services/auth.service';
-import { MainContentService} from 'src/app/services/main-content.service';
-import { Hero } from 'src/app/hero';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-main-content',
-  templateUrl: './main-content.component.html',
-  styleUrls: ['./main-content.component.css']
-})
-export class MainContentComponent implements OnInit {
-  
+    selector: 'hero',
+    template: './hero.html'
+  })
+
+export class Hero {
+  //   id: number;
+  //   name: string;
+  //   dominant1: number = 1;
+  //   convincing1: number = 1;
+  //   earth1: number = 1;
+  //   precise1: number = 1;
+  //   accomodate1: number = 1;
+  //   introver1: number = 1;
+  //   animated1: number = 1;
+  //   headstrong1: number = 1;
+  //   dominant: number=0;
+  //   convincing: number = 0;
+  //   earth: number = 0;
+  //   precise: number = 0;
+  //   accomodate: number = 0;
+  //   introvert: number = 0;
+  //   animated: number = 0;
+  //   headstrong: number = 0;
+  //   sum: number = 0;
+  // // set tickInterval(value) {
+  // //   this._tickInterval = coerceNumberProperty(value);
+  // // }
+  // // private _tickInterval = 1;
   //   onDomCount(){
   //     this.dominant = this.dominant + this.dominant1;
   //   }
@@ -48,6 +64,7 @@ export class MainContentComponent implements OnInit {
   //     this.onDomCount();
   //     this.onEarthCount();
   //     this.onPreciseCount();
+  //     //this.router.navigate(['culture-fit-root/main-contentB']);
   //     console.log(this.headstrong);
   //   }
   //   else {
@@ -56,28 +73,4 @@ export class MainContentComponent implements OnInit {
   //   }
     
   // }
-  constructor(public authService: AuthService, public router: Router, public mainContentService: MainContentService) { }
-  ngOnInit() {
   }
-
-}
-  
-//   onQuestion2(): void{
-//     if(.sum === 36)
-//    {       
-//       this.router.navigate(['culture-fit-root/main-contentB']);
-// }
-// else{
-//   console.log("You cant have the same answer for multiple questions");
-    
-// }
-// }
-
-    
-// , private myHero: Hero
-  
-   
-  // onScoreTotal(){
-  //   this.myHero.count();
-  // }
-
