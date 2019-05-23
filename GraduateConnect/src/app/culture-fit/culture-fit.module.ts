@@ -7,16 +7,24 @@ import {FormsModule} from '@angular/forms';
 
 //Components
 import { CultureFitRootComponent } from './culture-fit-root.component';
-import { MainContentComponent } from './components/main-content/main-content.component';
+import { QuestionAComponent } from './components/questionA/questionA.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { QuestionBComponent } from './components/questionB/questionB.component';
+import { QuestionCComponent } from './components/questionC/questionC.component';
+import { HeroesComponent } from './components/heroes/heroes.component';
+import { HeroComponent } from './components/hero/hero.component';
 
 @NgModule({
   declarations: [
     CultureFitRootComponent,
-    MainContentComponent,
+    QuestionAComponent,
     SidenavComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    QuestionBComponent,
+    QuestionCComponent,
+    HeroesComponent,
+    HeroComponent
 
   ],
   imports: [

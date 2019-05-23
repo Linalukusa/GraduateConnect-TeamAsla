@@ -1,10 +1,10 @@
 
 <div class="header">
   <h1> Culture Fit Assessment </h1>
-  <h2> Question 1: </h2>
+  <h2> Question 3: </h2>
   <p> Please rank each statement from <strong> 1 (Strongly Disagree) </strong> to <strong> 8 (Strongly Agree) </strong> <br> Each statement must have its own unique number: </p>
   <div class="question">
-    <p><b> I prefer to be assertive </b></p>
+    <p><b> 1. At work people should be persuaded to do things  </b></p>
     <mat-slider class="slider"
       thumbLabel
       [displayWith]="formatLabel"
@@ -25,7 +25,7 @@
   </label>
 
   <div class="question">
-    <p><b> I prefer to follow regulations in my workspace </b></p>
+    <p><b> 2. At work people should follow carefully laid down procedures</b></p>
     <mat-slider class="slider"
       thumbLabel
       [displayWith]="formatLabel"
@@ -36,7 +36,7 @@
     </mat-slider>
   </div>
   <div class="question">
-    <p><b> I prefer to join in with others </b></p>
+    <p><b> 3. At work once you know what is required, you should be left to get on with it </b></p>
     <mat-slider class="slider"
       thumbLabel
       [displayWith]="formatLabel"
@@ -47,7 +47,7 @@
     </mat-slider>
   </div>
   <div class="question">
-    <p><b> I prefer to move at a fast pace </b></p>
+    <p><b> 4. At work there are too many rules and they get in the way of doing the job </b></p>
     <mat-slider class="slider"
       thumbLabel
       [displayWith]="formatLabel"
@@ -60,7 +60,7 @@
 </div>
 
   <div class="question">
-    <p><b> I prefer to influence people </b></p>
+    <p><b> 5. At work, if I am a leader, I expect others to follow what I say </b></p>
     <mat-slider class="slider"
       thumbLabel
       [displayWith]="formatLabel"
@@ -71,7 +71,7 @@
     </mat-slider>
   </div>
   <div class="question">
-    <p><b> I prefer to accommodate other's wishes </b></p>
+    <p><b> 6. At work leaders should seek consensus before proceeding </b></p>
     <mat-slider class="slider"
       thumbLabel
       [displayWith]="formatLabel"
@@ -82,7 +82,7 @@
     </mat-slider>
   </div>
   <div class="question">
-    <p><b> I prefer to work quietly on my own </b></p>
+    <p><b> 7. At work people should accommodate and serve their leader </b></p>
     <mat-slider class="slider"
       thumbLabel
       [displayWith]="formatLabel"
@@ -93,7 +93,7 @@
     </mat-slider>
   </div>
   <div class="question">
-    <p><b> I prefer to work independently </b></p>
+    <p><b> 8. At work there is too much to do to wait for instructions </b></p>
     <mat-slider class="slider"
       thumbLabel
       [displayWith]="formatLabel"
@@ -103,9 +103,10 @@
       [(ngModel)]="headstrong1">
     </mat-slider>
   </div>
-  <button (click)= "count()" type="input" color="primary"> Next </button>
+  <!-- this is to test if the methods are working -->
+ <button type="input" color="primary"> Next </button> 
   <label >
-    <input type="value" placeholder="value" [(ngModel)]="headstrong"> 
+    <input type="value" placeholder="value" [(ngModel)]="headstrong">
   </label>
 
 

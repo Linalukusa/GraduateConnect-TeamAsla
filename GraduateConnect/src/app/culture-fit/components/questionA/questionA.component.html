@@ -1,0 +1,112 @@
+
+<div class="header">
+  <h1> Culture Fit Assessment </h1>
+  <h2> Question 1: </h2>
+  <p> Please rank each statement from <strong> 1 (Strongly Disagree) </strong> to <strong> 8 (Strongly Agree) </strong> <br> Each statement must have its own unique number: </p>
+  <div class="question">
+    <p><b> I prefer to be assertive </b></p>
+    <mat-slider class="slider"
+      thumbLabel
+      [displayWith]="formatLabel"
+      tickInterval="1000"
+      min="1"
+      max="8" 
+      [(ngModel)]="dominantA">
+     
+    </mat-slider>
+  </div>
+
+  <mat-form-field class="example-margin">
+    <input matInput type="number" placeholder="Value" [(ngModel)]="dominant1">
+  </mat-form-field>
+
+  <label >
+    <input type="value" placeholder="value" [(ngModel)]="dominant"> 
+  </label>
+
+  <div class="question">
+    <p><b> I prefer to follow regulations in my workspace </b></p>
+    <mat-slider class="slider"
+      thumbLabel
+      [displayWith]="formatLabel"
+      tickInterval="1000"
+      min="1"
+      max="8"
+      [(ngModel)]="preciseA">
+    </mat-slider>
+  </div>
+  <div class="question">
+    <p><b> I prefer to join in with others </b></p>
+    <mat-slider class="slider"
+      thumbLabel
+      [displayWith]="formatLabel"
+      tickInterval="1000"
+      min="1"
+      max="8"
+      [(ngModel)]="earthA">
+    </mat-slider>
+  </div>
+  <div class="question">
+    <p><b> I prefer to move at a fast pace </b></p>
+    <mat-slider class="slider"
+      thumbLabel
+      [displayWith]="formatLabel"
+      tickInterval="1000"
+      min="1"
+      max="8"
+      [(ngModel)]="animatedA">
+    </mat-slider>
+  </div>
+</div>
+
+  <div class="question">
+    <p><b> I prefer to influence people </b></p>
+    <mat-slider class="slider"
+      thumbLabel
+      [displayWith]="formatLabel"
+      tickInterval="1000"
+      min="1"
+      max="8"
+      [(ngModel)]="convincingA">
+    </mat-slider>
+  </div>
+  <div class="question">
+    <p><b> I prefer to accommodate other's wishes </b></p>
+    <mat-slider class="slider"
+      thumbLabel
+      [displayWith]="formatLabel"
+      tickInterval="1000"
+      min="1"
+      max="8"
+      [(ngModel)]="accomodateA">
+    </mat-slider>
+  </div>
+  <div class="question">
+    <p><b> I prefer to work quietly on my own </b></p>
+    <mat-slider class="slider"
+      thumbLabel
+      [displayWith]="formatLabel"
+      tickInterval="1000"
+      min="1"
+      max="8"
+      [(ngModel)]="introverA">
+    </mat-slider>
+  </div>
+  <div class="question">
+    <p><b> I prefer to work independently </b></p>
+    <mat-slider class="slider"
+      thumbLabel
+      [displayWith]="formatLabel"
+      tickInterval="1000"
+      min="1"
+      max="8"
+      [(ngModel)] ='headstrongA'>
+    </mat-slider>
+  </div>
+  <button (click)= "onScoreTotal(); onQuestion2();" type="input" color="primary"> Next </button>
+  <label >
+    <input type="value" placeholder="value" [(ngModel)]="headstrong"> 
+  </label>
+
+
+
