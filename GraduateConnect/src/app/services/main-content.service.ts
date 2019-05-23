@@ -1,18 +1,26 @@
-    import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../shared/services/auth.service';
      
     @Injectable({
       providedIn: 'root',
     })
-    export class MainContentService {
+    export class MainContentService implements OnInit{
+      ngOnInit(): void {
+        throw new Error("Method not implemented.");
+      }
 
-      dominant1: number = 1;
-      convincing1: number = 1;
-      earth1: number = 1;
-      precise1: number = 1;
-      accomodate1: number = 1;
-      introver1: number = 1;
-      animated1: number = 1;
-      headstrong1: number = 1;
+      constructor(public authService: AuthService,
+        public router: Router){}
+
+      dominantA: number = 1;
+      convincingA: number = 1;
+      earthA: number = 1;
+      preciseA: number = 1;
+      accomodateA: number = 1;
+      introverA: number = 1;
+      animatedA: number = 1;
+      headstrongA: number = 1;
       dominant: number=0;
       convincing: number = 0;
       earth: number = 0;
@@ -21,36 +29,36 @@
       introvert: number = 0;
       animated: number = 0;
       headstrong: number = 0;
-      sum: number = 0;
+      total: number = 0;
 
       onDomCount(){
-        this.dominant = this.dominant + this.dominant1;
+        this.dominant = this.dominant + this.dominantA;
       }
       onConvinceCount(){
-        this.convincing = this.convincing + this.convincing1;
+        this.convincing = this.convincing + this.convincingA;
       }
       onEarthCount(){
-        this.earth = this.earth + this.earth1;
+        this.earth = this.earth + this.earthA;
       }
       onPreciseCount(){
-        this.precise = this.precise + this.precise1;
+        this.precise = this.precise + this.preciseA;
       }
       onAccomodateCount(){
-        this.accomodate = this.accomodate + this.accomodate1;
+        this.accomodate = this.accomodate + this.accomodateA;
       }
       onIntrovertCount(){
-        this.introvert = this.introvert + this.introver1;
+        this.introvert = this.introvert + this.introverA;
       }
       onAnimateCount(){
-        this.animated = this.animated + this.animated1;
+        this.animated = this.animated + this.animatedA;
       }
       onHeadCount(){
-        this.headstrong = this.headstrong + this.headstrong1;
+        this.headstrong = this.headstrong + this.headstrongA;
       }
 
       count(){
-        this.sum = this.earth1 + this.headstrong1 + this.animated1 + this.convincing1 + this.accomodate1 + this.dominant1 + this.precise1 + this.introver1;
-        if(this.sum === 36){
+        this.total = this.earthA + this.headstrongA + this.animatedA + this.convincingA + this.accomodateA + this.dominantA + this.preciseA + this.introverA;
+        if(this.total === 8){
           this.onDomCount();
           this.onIntrovertCount();
           this.onAccomodateCount();
@@ -63,7 +71,7 @@
       }
         else {
           console.log("You cant have the same answer for multiple questions");
-          console.log(this.sum);
+          console.log(this.total);
     }
   }
       messages: string[] = [];

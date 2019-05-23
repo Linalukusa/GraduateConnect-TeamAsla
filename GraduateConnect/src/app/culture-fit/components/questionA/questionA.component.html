@@ -11,7 +11,7 @@
       tickInterval="1000"
       min="1"
       max="8" 
-      [(ngModel)]="dominant1">
+      [(ngModel)]="dominantA">
      
     </mat-slider>
   </div>
@@ -32,7 +32,7 @@
       tickInterval="1000"
       min="1"
       max="8"
-      [(ngModel)]="precise1">
+      [(ngModel)]="preciseA">
     </mat-slider>
   </div>
   <div class="question">
@@ -43,7 +43,7 @@
       tickInterval="1000"
       min="1"
       max="8"
-      [(ngModel)]="earth1">
+      [(ngModel)]="earthA">
     </mat-slider>
   </div>
   <div class="question">
@@ -54,7 +54,7 @@
       tickInterval="1000"
       min="1"
       max="8"
-      [(ngModel)]="animated1">
+      [(ngModel)]="animatedA">
     </mat-slider>
   </div>
 </div>
@@ -67,7 +67,7 @@
       tickInterval="1000"
       min="1"
       max="8"
-      [(ngModel)]="convincing1">
+      [(ngModel)]="convincingA">
     </mat-slider>
   </div>
   <div class="question">
@@ -78,7 +78,7 @@
       tickInterval="1000"
       min="1"
       max="8"
-      [(ngModel)]="accomodate1">
+      [(ngModel)]="accomodateA">
     </mat-slider>
   </div>
   <div class="question">
@@ -89,7 +89,7 @@
       tickInterval="1000"
       min="1"
       max="8"
-      [(ngModel)]="introver1">
+      [(ngModel)]="introverA">
     </mat-slider>
   </div>
   <div class="question">
@@ -100,10 +100,10 @@
       tickInterval="1000"
       min="1"
       max="8"
-      [(ngModel)]="headstrong1">
+      [(ngModel)] ='headstrongA'>
     </mat-slider>
   </div>
-  <button (click)= "onScoreTotal()" type="input" color="primary"> Next </button>
+  <button (click)= "onScoreTotal(); onQuestion2();" type="input" color="primary"> Next </button>
   <label >
     <input type="value" placeholder="value" [(ngModel)]="headstrong"> 
   </label>

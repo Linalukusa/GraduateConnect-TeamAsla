@@ -32,11 +32,11 @@ import {FormsModule} from '@angular/forms';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MainContentComponent } from './culture-fit/components/main-content/main-content.component';
+import { QuestionAComponent } from './culture-fit/components/questionA/questionA.component';
 import { SidenavComponent } from './culture-fit/components/sidenav/sidenav.component';
 import { ToolbarComponent } from './culture-fit/components/toolbar/toolbar.component';
-import { MainContentBComponent } from './culture-fit/components/main-contentB/main-contentB.component';
-import { MainContentCComponent } from './culture-fit/components/main-content-c/main-content-c.component';
+import { QuestionBComponent } from './culture-fit/components/questionB/questionB.component';
+import { QuestionCComponent } from './culture-fit/components/questionC/questionC.component';
 
 import { HeroesComponent } from './culture-fit/components/heroes/heroes.component';
 import { Hero } from './hero';
@@ -58,13 +58,13 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     VerifyEmailComponent,
     SidebarComponent,
     CultureFitRootComponent,
-    MainContentComponent,
+    QuestionAComponent,
     SidenavComponent,
     ToolbarComponent,
-    MainContentBComponent,
-    MainContentCComponent,
+    QuestionBComponent,
+    QuestionCComponent,
     HeroesComponent,
-    Hero,
+    Hero
     
     
   ],
