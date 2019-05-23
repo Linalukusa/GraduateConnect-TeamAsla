@@ -57,27 +57,18 @@ export class MainContentComponent implements OnInit {
     
   // }
   constructor(public authService: AuthService, public router: Router, public mainContentService: MainContentService) { }
-  ngOnInit() {
+
+  onScoreTotal(){
+    this.mainContentService.count();
   }
 
-}
-  
-//   onQuestion2(): void{
-//     if(.sum === 36)
-//    {       
-//       this.router.navigate(['culture-fit-root/main-contentB']);
-// }
-// else{
-//   console.log("You cant have the same answer for multiple questions");
-    
-// }
-// }
+  onQuestion2(): void{
+    this.router.navigate(['culture-fit-root/main-contentB']);
+  }
 
-    
-// , private myHero: Hero
-  
-   
-  // onScoreTotal(){
-  //   this.myHero.count();
-  // }
+  ngOnInit() {
+  }
+}
+
+
 

@@ -5,8 +5,6 @@
     })
     export class MainContentService {
 
-      id: number;
-      name: string;
       dominant1: number = 1;
       convincing1: number = 1;
       earth1: number = 1;
@@ -25,6 +23,49 @@
       headstrong: number = 0;
       sum: number = 0;
 
+      onDomCount(){
+        this.dominant = this.dominant + this.dominant1;
+      }
+      onConvinceCount(){
+        this.convincing = this.convincing + this.convincing1;
+      }
+      onEarthCount(){
+        this.earth = this.earth + this.earth1;
+      }
+      onPreciseCount(){
+        this.precise = this.precise + this.precise1;
+      }
+      onAccomodateCount(){
+        this.accomodate = this.accomodate + this.accomodate1;
+      }
+      onIntrovertCount(){
+        this.introvert = this.introvert + this.introver1;
+      }
+      onAnimateCount(){
+        this.animated = this.animated + this.animated1;
+      }
+      onHeadCount(){
+        this.headstrong = this.headstrong + this.headstrong1;
+      }
+
+      count(){
+        this.sum = this.earth1 + this.headstrong1 + this.animated1 + this.convincing1 + this.accomodate1 + this.dominant1 + this.precise1 + this.introver1;
+        if(this.sum === 36){
+          this.onDomCount();
+          this.onIntrovertCount();
+          this.onAccomodateCount();
+          this.onAnimateCount();
+          this.onConvinceCount();
+          this.onEarthCount();
+          this.onPreciseCount();
+          this.onHeadCount();
+          console.log(this.headstrong);
+      }
+        else {
+          console.log("You cant have the same answer for multiple questions");
+          console.log(this.sum);
+    }
+  }
       messages: string[] = [];
      
       add(message: string) {
