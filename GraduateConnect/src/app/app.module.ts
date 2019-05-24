@@ -43,6 +43,9 @@ import { Hero } from './hero';
  
 import { ChartsModule } from 'ng2-charts';
 import { RadarComponent } from './radar/radar.component';
+import { AddStudentComponent } from './add-student/add-student.component';
+import { EditStudentComponent } from './edit-student/edit-student.component';
+import { StudentsListComponent } from './students-list/students-list.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -59,6 +62,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     VerifyEmailComponent,
     SidebarComponent,
     CultureFitRootComponent,
+    AddStudentComponent,
+    EditStudentComponent,
+    StudentsListComponent,
     QuestionAComponent,
     SidenavComponent,
     ToolbarComponent,

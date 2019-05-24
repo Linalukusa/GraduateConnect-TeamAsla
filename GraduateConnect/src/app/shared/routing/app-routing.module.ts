@@ -16,6 +16,9 @@ import { QuestionAComponent } from 'src/app/culture-fit/components/questionA/que
 import { QuestionBComponent } from 'src/app/culture-fit/components/questionB/questionB.component';
 import { QuestionCComponent } from 'src/app/culture-fit/components/questionC/questionC.component';
 import { RadarComponent } from 'src/app/radar/radar.component';
+import { AddStudentComponent } from 'src/app/add-student/add-student.component';
+import { StudentsListComponent } from 'src/app/students-list/students-list.component';
+import { EditStudentComponent } from 'src/app/edit-student/edit-student.component';
 // Include route guard in routes array
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full'},
@@ -31,7 +34,10 @@ const routes: Routes = [
       { path: 'questionB', component: QuestionBComponent, canActivate: [SecureInnerPagesGuard]},
       { path: 'questionC', component: QuestionCComponent, canActivate: [SecureInnerPagesGuard]}
     ]},
-  { path: '**', redirectTo: 'culture-fit-root'}
+  { path: '**', redirectTo: 'culture-fit-root'},
+  { path: 'register-student', component: AddStudentComponent },
+  { path: 'view-students', component: StudentsListComponent },
+  { path: 'edit-student/:id', component: EditStudentComponent }
 ];
 
 @NgModule({
