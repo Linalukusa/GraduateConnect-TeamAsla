@@ -41,7 +41,8 @@ import { QuestionCComponent } from './culture-fit/components/questionC/questionC
 import { HeroesComponent } from './culture-fit/components/heroes/heroes.component';
 import { Hero } from './hero';
  
-
+import { ChartsModule } from 'ng2-charts';
+import { RadarComponent } from './radar/radar.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -64,7 +65,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     QuestionBComponent,
     QuestionCComponent,
     HeroesComponent,
-    Hero
+    Hero,
+    RadarComponent
     
     
   ],
@@ -82,7 +84,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     PerfectScrollbarModule,
     FormsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ChartsModule 
     
   ],
   providers: [ AuthService,
