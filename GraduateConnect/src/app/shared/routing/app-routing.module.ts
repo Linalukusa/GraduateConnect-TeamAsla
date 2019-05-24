@@ -15,7 +15,7 @@ import { CultureFitRootComponent } from 'src/app/culture-fit/culture-fit-root.co
 import { QuestionAComponent } from 'src/app/culture-fit/components/questionA/questionA.component';
 import { QuestionBComponent } from 'src/app/culture-fit/components/questionB/questionB.component';
 import { QuestionCComponent } from 'src/app/culture-fit/components/questionC/questionC.component';
-
+import { RadarComponent } from 'src/app/radar/radar.component';
 // Include route guard in routes array
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full'},
@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
+  { path: 'radar-chart', component: RadarComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'culture-fit-root', component: CultureFitRootComponent, canActivate: [SecureInnerPagesGuard],
     children: [
       { path: '', component: QuestionAComponent, canActivate: [SecureInnerPagesGuard]},
