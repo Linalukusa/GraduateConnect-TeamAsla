@@ -1,6 +1,0 @@
-apiKey: "AIzaSyBqPJn5WsJ8mB_AGMZ64Ve4CCdvn9tcpE4",
-    authDomain: "graduateconnect-e8f1c.firebaseapp.com",
-    databaseURL: "https://graduateconnect-e8f1c.firebaseio.com",
-    projectId: "graduateconnect-e8f1c",
-    storageBucket: "graduateconnect-e8f1c.appspot.com",
-    messagingSenderId: "460058263247"

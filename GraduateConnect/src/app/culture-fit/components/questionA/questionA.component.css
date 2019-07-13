@@ -5,7 +5,7 @@
 
 .question {
     text-align: center;
-    color: aqua;
+    color: #f16624;
     padding-top: 5%;
 }
 
@@ -13,4 +13,8 @@
     text-align: start;
     padding-top: 2%;
     padding-left: 3%;
+}
+
+.matButton{
+    color: aqua;
 }

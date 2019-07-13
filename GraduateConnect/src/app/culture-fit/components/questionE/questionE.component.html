@@ -1,0 +1,105 @@
+
+<div class="header">
+        <h1> Culture Fit Assessment </h1>
+        <h2> Question 5: </h2>
+        <p> Please rank each statement from <strong> 1 (Strongly Disagree) </strong> to <strong> 8 (Strongly Agree) </strong> <br> Each statement must have its own unique number: </p>
+        <div class="question">
+          <p><b> 1. I can best de described as competitive and decisive </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8" 
+            [(ngModel)]="obj.Dominance">
+           
+          </mat-slider>
+        </div>
+        <div class="question">
+          <p><b> 2. I can best be described as poised, persuasive and optimistic</b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Convincing">
+          </mat-slider>
+        </div>
+        <div class="question">
+          <p><b> 3. I can be best described as team-focused, reliable and persistent </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Earth">
+          </mat-slider>
+        </div>
+        <div class="question">
+          <p><b> 4. I can be best described as precise, systematic and compliant </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Precise">
+          </mat-slider>
+        </div>
+      </div>
+      
+        <div class="question">
+          <p><b> 5. I can best be described as diplomatic and modest </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Accommodate">
+          </mat-slider>
+        </div>
+        <div class="question">
+          <p><b> 6. I can be describe as intuitive, introspective and exploring </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Introvert">
+          </mat-slider>
+        </div>
+        <div class="question">
+          <p><b> 7. I can best be described as eager, outgoing and mobile </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Headstrong">
+          </mat-slider>
+        </div>
+        <div class="question">
+          <p><b> 8. I can best be described as unconventional, creative and independent </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Animated">
+          </mat-slider>
+        </div>
+        <!-- this is to test if the methods are working -->
+       <button mat-button type="input" color="primary" (click)="onScoreTotal(); onSubmit();"> Submit </button> 
+        <!-- <label >
+          <input mat-button type="value" placeholder="value" [(ngModel)]="headstrong">
+        </label> -->
+      
+      
+      
+      

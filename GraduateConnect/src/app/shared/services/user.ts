@@ -1,4 +1,5 @@
-export interface Roles {
+
+ export interface Roles {
     student?: boolean;
     admin?: boolean;
 }

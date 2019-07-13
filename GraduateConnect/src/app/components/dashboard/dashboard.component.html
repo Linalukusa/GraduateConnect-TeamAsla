@@ -1,16 +1,43 @@
-<<<<<<< HEAD
-
 <div class="page-wrapper" [ngClass]="{'toggled' : getSideBarState()}">
   <app-sidebar></app-sidebar>
   <main class="page-content">
       <div class="container-fluid">
           <div class="row">
               <div class="form-group col-md-12">
-                  <h2>  Welcome to Graduate Connect</h2>
+                  <h2>  Welcome to Your Dashboard</h2>
                   <hr>
                   <p> </p>
-        
-                  <img src="assets/grad profile 1.png">
+               
+                  <div class="container">
+                    <div class="row"></div>
+                    <div class="row"></div>
+                    <div class="row"></div>
+                    <div class="row"></div>
+                       <div class="row">
+                        <div class="col-lg">
+                              <p> <b>Step 1:</b> Register on the System  </p>
+                          <p> <b>Step 2:</b> Submit General Profile Information  </p>
+                          <p> <b>Step 3:</b> Submit Academics & Skills Information  </p>
+                          <p> <b>Step 4:</b> Complete the culture-fit-assessment Test </p>
+                        </div>
+                        <div class="col-lg">
+                            
+                        </div>
+                        <div class="col-md">
+                          <img class="imgClass" src="assets\LOCK-ICON-red.jpg" width="500" height="500">
+                        </div>
+                        <div class="col-md">
+                         
+                        </div>
+                        <div class="col-md">
+                         
+                        </div>
+                        <div class="row">
+                           <p> Please complete the above remaining steps in order to activate your status which will unlock your dashboard! </p>
+                        </div>
+                      </div>
+                    </div>
+                  
                   
                   
                   
@@ -21,7 +48,7 @@
       <!-- <div style="margin-top:5px">
         <input type="button" class="btn btn-primary" (click)="onCultureFitButton()" value="Take Culture Fit Test" >
       </div> -->
-      <button (click)="onCultureFitButton()" mat-raised-button color="accent"> <mat-icon>face</mat-icon> Take Test</button>
+      <!-- <button (click)="onCultureFitButton()" mat-raised-button color="accent"> <mat-icon>face</mat-icon> Take Test</button> -->
       <div class="overlay" (click)="toggleSidebar()" [ngClass]="{'show' : !getSideBarState()}"></div>
   </main>
 

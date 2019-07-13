@@ -1,114 +1,103 @@
-
 <div class="header">
-    <h1> Culture Fit Assessment </h1>
-    <h2> Question 2: </h2>
-    <p> Please rank each statement from <strong> 1 (Strongly Disagree) </strong> to <strong> 8 (Strongly Agree) </strong> <br> Each statement must have its own unique number: </p>
-    <div class="question">
-      <p><b> 1. I like to direct other people’s activities </b></p>
-      <mat-slider class="slider"
-        thumbLabel
-        [displayWith]="formatLabel"
-        tickInterval="1000"
-        min="1"
-        max="8" 
-        [(ngModel)]="dominant1">
-       
-      </mat-slider>
-    </div>
-  
-    <mat-form-field class="example-margin">
-      <input matInput type="number" placeholder="Value" [(ngModel)]="dominant1">
-    </mat-form-field>
-  
-    <label >
-      <input type="value" placeholder="value" [(ngModel)]="dominant"> 
-    </label>
-  
-    <div class="question">
-      <p><b> 2. I like to convince people to carry out activities</b></p>
-      <mat-slider class="slider"
-        thumbLabel
-        [displayWith]="formatLabel"
-        tickInterval="1000"
-        min="1"
-        max="8"
-        [(ngModel)]="precise1">
-      </mat-slider>
-    </div>
-    <div class="question">
-      <p><b> 3. I like to do complete tasks quickly myself for the best results </b></p>
-      <mat-slider class="slider"
-        thumbLabel
-        [displayWith]="formatLabel"
-        tickInterval="1000"
-        min="1"
-        max="8"
-        [(ngModel)]="earth1">
-      </mat-slider>
-    </div>
-    <div class="question">
-      <p><b> 4. I like to create things </b></p>
-      <mat-slider class="slider"
-        thumbLabel
-        [displayWith]="formatLabel"
-        tickInterval="1000"
-        min="1"
-        max="8"
-        [(ngModel)]="animated1">
-      </mat-slider>
-    </div>
-  </div>
-  
-    <div class="question">
-      <p><b> 5. I like a close-knit team in which to work </b></p>
-      <mat-slider class="slider"
-        thumbLabel
-        [displayWith]="formatLabel"
-        tickInterval="1000"
-        min="1"
-        max="8"
-        [(ngModel)]="convincing1">
-      </mat-slider>
-    </div>
-    <div class="question">
-      <p><b> 6. I like to be formal and work to standards </b></p>
-      <mat-slider class="slider"
-        thumbLabel
-        [displayWith]="formatLabel"
-        tickInterval="1000"
-        min="1"
-        max="8"
-        [(ngModel)]="accomodate1">
-      </mat-slider>
-    </div>
-    <div class="question">
-      <p><b> 7. I like to be clearly told what to do </b></p>
-      <mat-slider class="slider"
-        thumbLabel
-        [displayWith]="formatLabel"
-        tickInterval="1000"
-        min="1"
-        max="8"
-        [(ngModel)]="introvert1">
-      </mat-slider>
-    </div>
-    <div class="question">
-      <p><b> 8. I like to be left to get on with it </b></p>
-      <mat-slider class="slider"
-        thumbLabel
-        [displayWith]="formatLabel"
-        tickInterval="1000"
-        min="1"
-        max="8"
-        [(ngModel)]="headstrong1">
-      </mat-slider>
-    </div>
-    <!-- this is to test if the methods are working -->
-   <button  type="input" (click)="onQuestion3()" color="primary"> Next </button> 
-    <label >
-      <input type="value" placeholder="value" [(ngModel)]="headstrong">
-    </label>
-  
-  
-  
-  
+        <h1> Culture Fit Assessment </h1>
+        <h2> Question 2: </h2>
+        <p> Please rank each statement from <strong> 1 (Strongly Disagree) </strong> to <strong> 8 (Strongly Agree) </strong> <br> Each statement must have its own unique number: </p>
+        <div class="question">
+          <p><b> 1. I like to direct other peoples activities  </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8" 
+            [(ngModel)]="obj.Dominance">
+           
+          </mat-slider>
+        </div>
+      
+        <div class="question">
+          <p><b> 2. I like to convince people to carry out activities</b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Convincing">
+          </mat-slider>
+        </div>
+        <div class="question">
+          <p><b> 3. I like to do complete tasks quickly myself for the best results </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Animated">
+          </mat-slider>
+        </div>
+        <div class="question">
+          <p><b> 4. I like to create things </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Headstrong">
+          </mat-slider>
+        </div>
+      </div>
+      
+      <div class="question">
+        <p><b> 5. I like a close-knit team in which to work </b></p>
+        <mat-slider class="slider"
+          thumbLabel
+          [displayWith]="formatLabel"
+          tickInterval="1000"
+          min="1"
+          max="8"
+          [(ngModel)]="obj.Earth">
+        </mat-slider>
+      </div>
+      <div class="question">
+          <p><b> 6. I like to be formal and work to standards </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Precise">
+          </mat-slider>
+        </div>
+        <div class="question">
+          <p><b> 7. I like to be clearly told what to do </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Accommodate">
+          </mat-slider>
+        </div>
+        <div class="question">
+          <p><b> 8. I like to be left to get on with it </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Introvert">
+          </mat-slider>
+        </div>
+        
+       <button mat-button  type="input" (click)="onScoreTotal();onQuestion3();" color="primary"> Next </button> 
+        
+      
+      
+      
+      

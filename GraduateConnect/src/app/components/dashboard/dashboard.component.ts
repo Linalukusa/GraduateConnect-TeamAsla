@@ -19,7 +19,7 @@ export class DashboardComponent  {
     public sidebarservice: SidebarService) { }
 
   onCultureFitButton(): void{
-    this.router.navigate(['/culture-fit-root']);
+    this.router.navigate(['culture-fit-root/questionA']);
   }
 
   toggleSidebar() {

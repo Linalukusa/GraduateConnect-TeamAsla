@@ -1,0 +1,38 @@
+
+
+<div class="wrapper" class="example-container" [ngClass]="{'toggled' : getSideBarState()}">
+  <app-sidebar></app-sidebar>
+  <main >
+                  <h2 class="text-center">  Manage My Profile</h2>
+                  <hr>
+                  <div class="sidebar-profile" *ngIf="authService.userData as user">
+                    <div class="user-pic">
+                        <img class="align-self-start mr-5 img-thumbnail rounded-circle"  alt="User picture" src="{{(user.photoURL) ? user.photoURL : 'assets/images/user.jpg'}}" >
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">
+                          <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong>
+                
+                        </span>
+                      <span class="user-role">Candidate</span>
+                      <span class="user-status">
+                        <i class="fa fa-circle"></i>
+                        <span>Online</span>
+                      </span>
+                    </div>
+                  </div>
+                  
+   
+         
+          
+  
+      <!-- <div style="margin-top:5px">
+        <input type="button" class="btn btn-primary" (click)="onCultureFitButton()" value="Take Culture Fit Test" >
+      </div> -->
+      
+      
+  </main>
+
+  
+</div>
+

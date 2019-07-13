@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {coerceNumberProperty} from '@angular/cdk/coercion';
-import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { MainContentService} from 'src/app/services/main-content.service';
-import { Hero } from 'src/app/hero';
+import { Answer } from '../../Models/Answer';
+
 
 @Component({
   selector: 'app-questionA',
@@ -12,22 +11,31 @@ import { Hero } from 'src/app/hero';
   styleUrls: ['./questionA.component.css']
 })
 export class QuestionAComponent implements OnInit {
+
+  obj: Answer;
+
+  constructor(public authService: AuthService, public router: Router, public service: MainContentService) {
+    this.obj = new Answer();
+   }
+
   
-  max: number = 0;
-
-  constructor(public authService: AuthService, public router: Router, public mainContentService: MainContentService) { }
-
-  onScoreTotal(){
-    this.mainContentService.count();
-  }
 
   onQuestion2(): void{
-    if(this.max === 36){
       this.router.navigate(['culture-fit-root/questionB']);
-    }
   }
 
   ngOnInit() {
+    
+  }
+  onScoreTotal() {
+    this.service.totalDominance.push(this.obj.Dominance);
+    this.service.totalConvincing.push(this.obj.Convincing);
+    this.service.totalEarth.push(this.obj.Earth);
+    this.service.totalPrecise.push(this.obj.Precise);
+    this.service.totalAccommodate.push(this.obj.Accommodate);
+    this.service.totalIntrovert.push(this.obj.Introvert);
+    this.service.totalAnimated.push(this.obj.Animated);
+    this.service.totalHeadstrong.push(this.obj.Headstrong);
   }
 }
 

@@ -1,113 +1,103 @@
 
 <div class="header">
-  <h1> Culture Fit Assessment </h1>
-  <h2> Question 3: </h2>
-  <p> Please rank each statement from <strong> 1 (Strongly Disagree) </strong> to <strong> 8 (Strongly Agree) </strong> <br> Each statement must have its own unique number: </p>
-  <div class="question">
-    <p><b> 1. At work people should be persuaded to do things  </b></p>
-    <mat-slider class="slider"
-      thumbLabel
-      [displayWith]="formatLabel"
-      tickInterval="1000"
-      min="1"
-      max="8" 
-      [(ngModel)]="dominant1">
-     
-    </mat-slider>
-  </div>
-
-  <mat-form-field class="example-margin">
-    <input matInput type="number" placeholder="Value" [(ngModel)]="dominant1">
-  </mat-form-field>
-
-  <label >
-    <input type="value" placeholder="value" [(ngModel)]="dominant"> 
-  </label>
-
-  <div class="question">
-    <p><b> 2. At work people should follow carefully laid down procedures</b></p>
-    <mat-slider class="slider"
-      thumbLabel
-      [displayWith]="formatLabel"
-      tickInterval="1000"
-      min="1"
-      max="8"
-      [(ngModel)]="precise1">
-    </mat-slider>
-  </div>
-  <div class="question">
-    <p><b> 3. At work once you know what is required, you should be left to get on with it </b></p>
-    <mat-slider class="slider"
-      thumbLabel
-      [displayWith]="formatLabel"
-      tickInterval="1000"
-      min="1"
-      max="8"
-      [(ngModel)]="earth1">
-    </mat-slider>
-  </div>
-  <div class="question">
-    <p><b> 4. At work there are too many rules and they get in the way of doing the job </b></p>
-    <mat-slider class="slider"
-      thumbLabel
-      [displayWith]="formatLabel"
-      tickInterval="1000"
-      min="1"
-      max="8"
-      [(ngModel)]="animated1">
-    </mat-slider>
-  </div>
-</div>
-
-  <div class="question">
-    <p><b> 5. At work, if I am a leader, I expect others to follow what I say </b></p>
-    <mat-slider class="slider"
-      thumbLabel
-      [displayWith]="formatLabel"
-      tickInterval="1000"
-      min="1"
-      max="8"
-      [(ngModel)]="convincing1">
-    </mat-slider>
-  </div>
-  <div class="question">
-    <p><b> 6. At work leaders should seek consensus before proceeding </b></p>
-    <mat-slider class="slider"
-      thumbLabel
-      [displayWith]="formatLabel"
-      tickInterval="1000"
-      min="1"
-      max="8"
-      [(ngModel)]="accomodate1">
-    </mat-slider>
-  </div>
-  <div class="question">
-    <p><b> 7. At work people should accommodate and serve their leader </b></p>
-    <mat-slider class="slider"
-      thumbLabel
-      [displayWith]="formatLabel"
-      tickInterval="1000"
-      min="1"
-      max="8"
-      [(ngModel)]="introvert1">
-    </mat-slider>
-  </div>
-  <div class="question">
-    <p><b> 8. At work there is too much to do to wait for instructions </b></p>
-    <mat-slider class="slider"
-      thumbLabel
-      [displayWith]="formatLabel"
-      tickInterval="1000"
-      min="1"
-      max="8"
-      [(ngModel)]="headstrong1">
-    </mat-slider>
-  </div>
-  <!-- this is to test if the methods are working -->
- <button type="input" color="primary"> Next </button> 
-  <label >
-    <input type="value" placeholder="value" [(ngModel)]="headstrong">
-  </label>
-
-
-
+        <h1> Culture Fit Assessment </h1>
+        <h2> Question 3: </h2>
+        <p> Please rank each statement from <strong> 1 (Strongly Disagree) </strong> to <strong> 8 (Strongly Agree) </strong> <br> Each statement must have its own unique number: </p>
+        <div class="question">
+          <p><b> 1. At work people should be persuaded to do things  </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8" 
+            [(ngModel)]="obj.Convincing">
+           
+          </mat-slider>
+        </div>
+      
+        <div class="question">
+          <p><b> 2. At work people should follow carefully laid down procedures</b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Precise">
+          </mat-slider>
+        </div>
+        <div class="question">
+          <p><b> 3. At work once you know what is required, you should be left to get on with it </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Introvert">
+          </mat-slider>
+        </div>
+        <div class="question">
+          <p><b> 4. At work there are too many rules and they get in the way of doing the job </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Animated">
+          </mat-slider>
+        </div>
+      </div>
+      
+        <div class="question">
+          <p><b> 5. At work, if I am a leader, I expect others to follow what I say </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Dominance">
+          </mat-slider>
+        </div>
+        <div class="question">
+          <p><b> 6. At work leaders should seek consensus before proceeding </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Earth">
+          </mat-slider>
+        </div>
+        <div class="question">
+          <p><b> 7. At work people should accommodate and serve their leader </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Accommodate">
+          </mat-slider>
+        </div>
+        <div class="question">
+          <p><b> 8. At work there is too much to do to wait for instructions </b></p>
+          <mat-slider class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="8"
+            [(ngModel)]="obj.Headstrong">
+          </mat-slider>
+        </div>
+       <button mat-button type="input" (click)="onScoreTotal();onQuestion4();" color="primary"> Next </button> 
+        
+      
+      
+      
+      

@@ -17,7 +17,7 @@ export class SidebarService {
       active: true,
       },
     {
-      title: 'General Information',
+      title:  'General Information',
       icon: 'fa fa-tachometer-alt',
       active: true,
       },

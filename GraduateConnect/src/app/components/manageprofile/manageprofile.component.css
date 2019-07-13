@@ -1,0 +1,21 @@
+
+.wrapper {
+    margin-right: auto; /* 1 */
+    margin-left:  auto; /* 1 */
+  
+   
+  }
+  .example-container {
+      display: flex;
+      flex-direction: column;
+  height: 100px;
+  
+  
+  padding-left: 300px;
+    }
+    
+    .example-container > * {
+      width: auto;
+    }
+    
+    

@@ -1,0 +1,452 @@
+
+            <div class="wrapper">
+                <app-sidebar></app-sidebar>
+
+
+                <div class="container">
+                    <div class="row">
+                      <div class="col-sm-2">
+                      
+                      </div>
+                      <div class="col-lg">
+                          <div class="example-container" >
+                              <div  >
+                                <div>
+                              <h2 class="text-center">Academic and Skill Inofrmation</h2>
+                              </div>
+                              <hr>
+                          
+                          <form [formGroup]="addForm"(ngSubmit)=" submitAcademicData()" novalidate>
+                      
+                              <div class="form-group">
+                                           <br>
+                                  <div class="row">
+                                    <h3 class="text-center">Education</h3>
+                                        
+                                  </div>
+                                  <hr>
+                                    <div class="row">
+                                            <div class="col-3">
+                                              Year of completion: 
+                                              <select formControlName="year" class="form-control" >
+                                                    <option value="" disabled='disabled' style="color:rgb(199, 196, 196)" >Select Year</option>
+                                                  <option>2018</option>
+                                                  <option>2017</option>
+                                                  <option>2016</option>
+                                                  <option>2015</option>
+                                                  <option>2014</option>
+                                                  <option>2013</option>
+                                                  <option>2012</option>
+                                                  <option>2011</option>
+                                                  <option>2010</option>
+                                                  <option>2009</option>
+                                              </select>
+                                            </div>
+                                            <div class="col-9">
+                                                    Tertiary Institution Completed At:
+                                                    <select class="form-control" formControlName="institution">
+                                                            <option value="" disabled='disabled' style="color:rgb(199, 196, 196)" >Select Tertiary Institution</option>
+                                                            <option>University of Cape Town (UCT)</option>
+                                                            
+                                                            <option>Univeristy of Western Cape (UWC) </option>
+                                                            
+                                                            <option>3</option>
+                                                            
+                                                            <option>4</option>
+                                                            
+                                                            <option>5</option>
+                                                            
+                                                            </select>
+                                            </div>
+                                          </div>
+                                     </div>
+                    
+                                     <div class="form-group">
+                    
+                                        
+                                        </div>
+                                        
+                                      <div class="row">
+                                            <div class="col">
+                                              Qualification:
+                                              <select formControlName="qualification" class="form-control" >
+                                                    <option value="" disabled='disabled' style="color:rgb(199, 196, 196)" >Select Qualififcation</option>
+                                                    <option>Diploma</option>
+                                                    
+                                                    <option>Bachelors</option>
+                                                    
+                                                    <option>Masters</option>
+                                                    
+                                                    <option>Honours</option>
+                                                    
+                                                    <option>Doctorate</option>
+                                                    
+                                                    </select>
+                                            
+                                          </div>  
+                                      </div>
+                                      <div class="form-group">
+                    
+                                        
+                                        </div>
+                    
+                                          <div class="row">
+                                                <div class="col">
+                                                  Specialisation:
+                                                  <select formControlName="specialisation" class="form-control" >
+                                                        <option value="" disabled='disabled' style="color:rgb(199, 196, 196)" >Select Specialisation</option>
+                                                        <option>IS</option>
+                                                        
+                                                        <option>Comp Sci </option>
+                                                        
+                                                        <option>IS & Comp Sci</option>
+                                                        
+                                                        <option>4</option>
+                                                        
+                                                        <option>5</option>
+                                                        
+                                                        </select>
+                                                
+                                              </div>    
+                                              <div class="col">
+                                                    Program:
+                                                    <select formControlName="program" class="form-control" >
+                                    
+                                                            <option value=""  style="color:rgb(199, 196, 196)" >Select Program</option>
+                                                          <option>Bcom</option>
+                                                          
+                                                          <option>Bus Sci</option>
+                                                          
+                                                          <option>BSc</option>
+                                                          
+                                                          <option>4</option>
+                                                          
+                                                          </select>
+                                                  
+                                                </div>    
+                                  
+                                  </div>
+                                  <hr>
+                                  <div class="col">
+                                      <div class="addmore" class="form-group text-right" >
+                                          <button
+                                          class="btn btn-success"
+                                         
+                                          (click)="onSubmit()"
+                                          >Add more Qualifications</button>
+                                   </div>
+                                    </div>
+                    
+                                  <div class="dropzone dropzonecontent pre html"
+                                  dropzone
+                                  (hovered)="toggleHover($event)"
+                                  (dropped)="onDrop($event)"
+                                  [class.hovering]="isHovering">
+                             
+                                  <h3>Please Upload Your Transcript</h3>
+                                  <p>Drag and Drop a File</p>
+                                  <div class="file">
+                                     <label class="file-label">
+                                     <input class="file-input" type="file" (change)="onDrop($event.target.files)">
+                                  <span class="file-cta">
+                                         <span class="file-icon">
+                                           <i class="fa fa-upload"></i>
+                                         </span>
+                                         <span class="file-label">
+                                           or choose a file…
+                                         </span>
+                                       </span>
+                                     </label>
+                                   </div>
+                             </div>
+                             
+                    
+                                  
+                    
+                                  <div class="row">
+                                        <div class="col">
+                                            
+                                        </div>
+                                        
+                                          <div class="col">
+                                            
+                                            </div>
+                                        
+                                         </div>
+                    
+                                      <!-- <uploader>
+                                      </uploader> -->
+                                        
+                                      <div class="form-group">
+                    
+                                        
+                                          </div>
+                                          
+                                         
+                                         
+                                          <hr>
+                                           <div class="form-group">
+                    
+                                                
+                                                <div class="row">
+                                                    <div class="col">
+                                                       
+                                                           <h3 class="text-center">Academic Results</h3>
+                                                    </div>
+                                                    
+                                                      </div>                          
+                                                
+                                                               </div>
+                    
+                                                               <div class="row">
+                                                                    <div class="col-5">
+                                                                            <div  class="form-group">
+                                                                                    Course Description:
+                                                                                    <input    formControlName="course"
+                                                                                    placeholder="eg Systems Development Project "
+                                                                                  
+                                                                                    class="form-control"
+                                                                                   >
+                                                                                  </div>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                            <div  class="form-group">
+                                                                                    Course Code:
+                                                                                    <input    formControlName="coursecode"
+                                                                                    placeholder="eg INF3003"
+                                                                                    name="coursecode"
+                                                                                    class="form-control"
+                                                                                    id="coursecode">
+                                                                                  </div>
+                                                                    </div>
+                                                                    <div class="col-2">
+                                                                            <div  class="form-group">
+                                                                                    NQF Credits:
+                                                                                    <input   type="number" formControlName="nqfcredit"
+                                                                                    placeholder="credits"
+                                                                                    name="coursecredits"
+                                                                                    class="form-control"
+                                                                                    id="coursecredits">
+                                                                                  </div>
+                                                                    </div>
+                                                                    <div class="col-2">
+                                                                            <div  class="form-group">
+                                                                                    Result:
+                                                                                    <input   type="number" formControlName="result"
+                                                                                    placeholder="(%)"
+                                                                                    name="course result"
+                                                                                    class="form-control"
+                                                                                    id="courseresult">
+                                                                                  </div>
+                                                                          </div>
+                                                                  </div>
+                                                                  <div class="row">
+                                                    <div class="col">
+                                                        
+                                                    </div>
+                                                    
+                                                     </div>
+                    
+                                                     
+                                            <hr>
+                                         
+                                            <div class="col">
+                                                <div class="addmore" class="form-group text-right" >
+                                                  <button
+                                                  class="btn btn-success"
+                                                 
+                                                  (click)="onSubmit()"
+                                                  >Add more Courses</button>
+                                                  </div>
+              
+                                           </div>  
+                                         
+                    
+                                            
+                                            <div class="row">
+                                                    <h3 class="text-center">Language(s)</h3>
+                                                        
+                                                  </div>
+                                            
+                                            <hr>
+                    
+                    
+                                            <div class="row">
+                                                  <div class="col">
+                                                      Preferred Language:
+                                                          <select formControlName="language" class="form-control"  data-required="true" autocomplete="off" id="lang_2_select"  >
+                                                                  <option value="" disabled='disabled' style="color:#999;">Select language</option>
+                                                                  <option value="77" >English</option>
+                                                                  <option value="22006002">Afrikaans</option>
+                                                                  <option value="22006003">IsiNdebele</option>
+                                                                  <option value="22006004">IsiXhosa</option>
+                                                                  <option value="22006005">IsiZulu</option>
+                                                                  <option value="22006006">Sepedi</option>
+                                                                  <option value="22006007">Sesotho</option>
+                                                                  <option value="22006008">Setswana</option>
+                                                                  <option value="22006009">SiSwati</option>
+                                                                  <option value="22006010">Tshivenda</option>
+                                                                  <option value="22006011">Xitsonga</option>
+                                                                  <option value="78">German</option>
+                                                                  <option value="79">French</option>
+                                                                  <option value="80">Italian</option>
+                                                                  <option value="81">Spanish</option>
+                                                                  <option value="82">Dutch</option>
+                                                                  <option value="273">Bulgarian</option>
+                                                                  <option value="274">Chinese</option>
+                                                                  <option value="275">Danish</option>
+                                                                  <option value="276">Finnish</option>
+                                                                  <option value="277">Greek</option>
+                                                                  <option value="278">Hungarian</option>
+                                                                  <option value="279">Hindi</option>
+                                                                  <option value="280">Japanese</option>
+                                                                  <option value="281">Croat</option>
+                                                                  <option value="282">Norwegian</option>
+                                                                  <option value="283">Polish</option>
+                                                                  <option value="284">Portuguese</option>
+                                                                  <option value="285">Russian</option>
+                                                                  <option value="286">Serb</option>
+                                                                  <option value="287">Thai</option>
+                                                                  <option value="288">Czech</option>
+                                                                  <option value="289">Turkish</option>
+                                                                  <option value="290">Swedish</option>
+                                                                  <option value="291">Arabic</option>
+                                                                  <option value="292">Luxembourgish</option>
+                                                                  <option value="294">Latvian</option>
+                                                                  <option value="586">Romanian</option>
+                                                                  <option value="590">Persian</option>
+                                                                  <option value="750">Hebraic</option>
+                                                                  <option value="751">Macedonian</option>
+                                                                  <option value="990">Indonesian</option>
+                                                                  <option value="1100">Lithuanian</option>
+                                                                  <option value="1110">Vietnamese</option>
+                                                                  <option value="1120">Slovak</option>
+                                                                  <option value="1130">Korean</option>
+                                                                  <option value="36007">Icelandic</option>
+                                                                  <option value="36008">Albanian</option>
+                                                                  <option value="100015">Armenian</option>
+                                                                  <option value="200000">Estonian</option>
+                                                                  <option value="200010">Amharic</option>
+                                                                  <option value="200020">Greenlandic</option>
+                                                                  <option value="200030">Catalan</option>
+                                                                  <option value="200040">Byelorussian</option>
+                                                                  <option value="200050">Bosnian</option>
+                                                                  <option value="200060">Maltese</option>
+                                                                  <option value="200070">Moldavian</option>
+                                                                  <option value="200080">Slovenian</option>
+                                                                  <option value="200090">Ukrainian</option>
+                                                                  <option value="200100">Urdu</option>
+                                                                  <option value="200110">Tamil</option>
+                                                                  <option value="200120">Azeri</option>
+                                                                  <option value="200130">Georgian</option>
+                                                                  <option value="22006001">Faroese</option>
+                                                                  <option>Other</option>
+                                                                  </select>
+                                                  </div>
+                                                  <div class="col">
+                                                      Level of Speaking:
+                                                          <select formControlName="levelofspeaking"  data-required="true" autocomplete="off" id="lang_2_level" class="form-control">
+                                                                  <option value="" disabled='disabled' style="color:rgb(199, 196, 196)">Level of knownledge</option>
+                                                                  <option value="5">Mother tongue</option>
+                                                                  <option value="4">Advanced</option>
+                                                                  <option value="3">Good</option>
+                                                                  <option value="2">Moderate</option>
+                                                                  <option value="1">Basic</option>
+                                                                  </select>
+                                                  </div>
+                                                </div>
+                      
+                                                <div class="form-group">
+                      
+                                          
+                                                  </div>
+                       
+                                                  <div class="row" >
+                                                      <div class="col" class="form-group text-right" >
+                                                         
+                                                      </div>
+                                                      <div class="col">
+                                                          
+                                                       </div>
+                                                       <div class="col">
+                                                       <div class="addmore" class="form-group text-right" >
+                                                          <button
+                                                          class="btn btn-success"
+                                                         
+                                                          (click)="onSubmit()"
+                                                          >Add more Langauges</button>
+                                                   </div>
+                                                   </div>
+                                                  </div>
+                                            
+                      
+                                                  <div class="form-group">
+                      
+                                          
+                                                      </div>
+                              
+                                                      <br>
+                                                      <div class="row">
+                                                              <h3 class="text-center">Skill(s)</h3>
+                                                                  
+                                                            </div>
+                                                      
+                                                      <hr>
+                              
+                              
+                                                     <div class="row">
+                                                          <div class="col">
+                                                              Select Skills:
+                                                                  <select formControlName="skill"class="form-control"  data-required="true" autocomplete="off" id="skillsselect" >
+                                                                          <option value="" style="color:#999;">Search for skills</option>
+                                                                         
+                                                                          <option>Other</option>
+                                                                          </select>
+                                                          </div>
+                                                          <div class="col">
+                                                              Level of Knowledge:
+                                                                  <select formControlName="levelofknowledge"  data-required="true" autocomplete="off" id="lang_2_level" class="form-control">
+                                                                          <option value="" disabled='disabled' style="color:rgb(199, 196, 196)">Level of knownledge</option>
+                                                                          
+                                                                          <option value="5">Beginner</option>
+                                                                          <option value="4">Basic</option>
+                                                                          <option value="3">Moderate</option>
+                                                                          <option value="2">Good</option>
+                                                                          <option value="1">Expert</option>
+                                                                          </select>
+                                                          </div>
+                                                        </div>
+                              
+                                                        <div class="form-group">
+                              
+                                                  
+                                                          </div>
+                               
+                                                          <div class="row">
+                                                              <div class="col">
+                                                                  Add more skills 
+                                                              </div>
+                                                              <div class="col">
+                                                                  add skill
+                                                               </div>
+                                                          </div>
+                                                          <div class="form-group text-right">
+                                                              <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">Reset</button>
+                                                              <button type="submit" class="btn btn-success" [disabled]="!addForm.valid">Add Student</button>
+                                                            </div>
+                                                    
+                                            </form>
+                                            
+                      
+                                            
+                                            </div>
+                                            
+                                          
+                      </div>
+                      <div class="col-md">
+                      </div>
+                    </div>
+                  </div>
+
+
+            </div>

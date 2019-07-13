@@ -1,7 +1,18 @@
 export interface Student {
+ 
    $key: string;
+   gender:string;
+   title: string;
+   ethnicity: string;
    firstName: string;
    lastName: string;
-   email: string
+   PreferredName: string;
+   dob: string;
+   citizenship: string;
+   currentcity:string;
    mobileNumber: Number;
+   email: string;
+   passport: any;
+   currentprovince:string;
+   
 }

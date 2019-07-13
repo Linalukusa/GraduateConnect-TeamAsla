@@ -1,7 +1,0 @@
-https://stackblitz.com/edit/angular-7-registration-login-example?file=app%2F_services%2Falert.service.ts
-https://angular.io/tutorial/toh-pt4
-https://forum.ionicframework.com/t/property-createuser-does-not-exist-on-type-angularfireauth/94404
-https://stackoverflow.com/questions/45647804/property-subscribe-does-not-exist-on-type-auth
-https://stackoverflow.com/questions/43777706/angularfire2-index-has-no-exported-member-angularfire
-https://www.youtube.com/watch?v=_VeXby9A-qE
-https://www.youtube.com/watch?v=CSi_C_hISFA

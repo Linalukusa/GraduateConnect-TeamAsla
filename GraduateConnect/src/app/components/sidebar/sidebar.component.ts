@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { SidebarService } from './sidebar.service';
+import { AuthService } from 'src/app/shared/services/auth.service';
 //import { MenusService } from './menus.service';
 
 @Component({
@@ -17,7 +18,8 @@ import { SidebarService } from './sidebar.service';
 })
 export class SidebarComponent implements OnInit {
   menus = [];
-  constructor(public sidebarservice: SidebarService) {
+  constructor(public sidebarservice: SidebarService,
+    private authService: AuthService) {
     this.menus = sidebarservice.getMenuList();
    }
 

@@ -1,0 +1,125 @@
+<nav id="sidebar" class="sidebar" [ngClass]="{'sidebar-bg' : hasBackgroundImage()}">
+  <div class="sidebar-content">
+    <perfect-scrollbar>
+      <div class="sidebar-header">
+        <a routerLink="/dashboard">GRADUATE CONNECT</a>
+      </div>
+
+      <div class="sidebar-profile" *ngIf="authService.userData as user">
+        <div class="user-pic">
+            <img class="align-self-start mr-5 img-thumbnail rounded-circle"  alt="User picture" src="{{(user.photoURL) ? user.photoURL : 'assets/images/user.jpg'}}" >
+        </div>
+        <div class="user-info">
+            <span class="user-name">
+              <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong>
+    
+            </span>
+          <span class="user-role">Candidate</span>
+          <span class="user-status">
+            <i class="fa fa-circle"></i>
+            <span>Online</span>
+          </span>
+        </div>
+      </div>
+
+            <!-- sidebar-header  -->
+            <div class="sidebar-search">
+                <div>
+                  <div class="input-group">
+                    <input type="text" class="form-control search-menu" placeholder="Search...">
+                    <div class="input-group-append">
+                      <span class="input-group-text">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- sidebar-search  -->
+              <div class="sidebar-menu">
+                <ul>
+                  <li class="header-menu">
+                    <span>General</span>
+                  </li>
+                  <li >
+                    <a  routerLink="/register-student">
+                      <i class="fa fa-tachometer-alt"></i>
+                      <span >General Information</span>
+                    </a>
+                    
+                  </li>
+                  <li >
+                    <a routerLink="/academic-info"  >
+                      <i class="fa fa-shopping-cart"></i>
+                      <span>Academic Information</span>
+                    </a>
+                    
+                  </li>
+                  <li >
+                    <a routerLink="/culture-fit-root">
+                      <i class="far fa-gem"></i>
+                      <span>Skills</span>
+                    </a>
+                    
+                  </li>
+                  <li >
+                    <a routerLink="/culture-fit-root">
+                      <i class="fa fa-chart-line"></i>
+                      <span>Culture
+                         Fit</span>
+                    </a>
+                    
+                  </li>
+                  
+                  
+                </ul>
+              </div>
+    </perfect-scrollbar>
+  </div>
+  <div class="sidebar-footer">
+  
+    <div class="dropdown" dropdown>
+      <a href="#" dropdownToggle>
+        <i class="fa fa-envelope"></i>
+        <span class="badge badge-pill badge-success notification">7</span>
+      </a>
+    </div>
+      
+    <div>
+        <li class="dropdown">
+          <a href="#" data-toggle="dropdown" >
+            <i class="fa fa-cog"></i>
+            <span class="badge-sonar"></span>
+          </a>
+          <ul class="dropdown-menu">
+          <li>  <a class="dropdown-item" routerLink='/dashboard'>My profile</a></li>
+           <li> <a class="dropdown-item" href="#">Help</a></li>
+           <li> <a class="dropdown-item" href="#">Setting</a></li>
+          </ul>
+        </li>
+      </div>
+    
+        <div>
+          <a routerLink="/logout" type="button" value="Log in" (click)="authService.SignOut()">
+            <i class="fa fa-power-off" ></i>
+          </a>
+        </div>
+  </div>
+</nav>
+<!-- page-wrapper -->
+ <!-- using online scripts -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+     crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+     crossorigin="anonymous"></script>
+ <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+ <!-- using local scripts -->
+ <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+ <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+ <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+ <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
+
+
+ <script src="js/main.js"></script>

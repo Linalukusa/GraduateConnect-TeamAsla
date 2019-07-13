@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
+
 import {FormsModule} from '@angular/forms';
 
 //Components
@@ -14,6 +14,8 @@ import { QuestionBComponent } from './components/questionB/questionB.component';
 import { QuestionCComponent } from './components/questionC/questionC.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroComponent } from './components/hero/hero.component';
+import { QuestionDComponent } from './components/questionD/questionD.component';
+import { QuestionEComponent } from './components/questionE/questionE.component';
 
 @NgModule({
   declarations: [
@@ -24,14 +26,16 @@ import { HeroComponent } from './components/hero/hero.component';
     QuestionBComponent,
     QuestionCComponent,
     HeroesComponent,
-    HeroComponent
+    HeroComponent,
+    QuestionDComponent,
+    QuestionEComponent
 
   ],
   imports: [
     CommonModule,
     MaterialModule,
-    FlexLayoutModule,
-    FormsModule,
+   
+    FormsModule
   ]
 })
 export class CultureFitModule { }

@@ -1,0 +1,237 @@
+
+ 
+  <div class="wrapper">
+      <app-sidebar></app-sidebar>
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-2">
+       
+      </div>
+      <div class="col-lg">
+         
+<div class="example-container" >
+    <div  >
+      <div>
+    <h2 class="text-center">General Information</h2>
+    </div>
+    <hr>
+<!-- Student form -->
+<form [formGroup]="studentForm" (ngSubmit)="submitStudentData()" novalidate>
+  <div class="row" class="text-center">
+    <div >
+      <div class="row">
+          <div class="col">
+              <div  class="form-group" >
+           Gender:
+              <select formControlName="gender"
+              class="form-control"
+              id="genderFormControlSelect" aria-placeholder="Select Gender">
+              <option value="" disabled='disabled' style="color:rgb(199, 196, 196)" >Select Gender</option>
+                <option>Male</option>              
+                <option>Female</option>      
+                <option>Other</option>
+                  </select> 
+                  </div> 
+          </div>
+          <div class="col">
+              <div class="form-group">
+                 Title:
+                   <select formControlName="title" 
+                  class="form-control"
+                  id="titleFormControlSelect">
+                  <option value="" disabled='disabled' style="color:rgb(199, 196, 196)" >Select Title</option>
+                <option>Mr</option>              
+                <option>Ms</option>      
+                <option>Mrs</option>
+                <option>Dr</option>
+                <option>Prof</option>
+                <option>Hon</option>
+                <option>Rev</option>
+                <option>Other</option>
+                
+                  </select>
+                  </div>
+          </div>
+          <div class="col">
+              <div  class="form-group">
+               Ethnicity:
+              <select formControlName="ethnicity"
+              class="form-control"
+              id="ethnicityFormControlSelect">
+              <option value="" disabled='disabled' style="color:rgb(199, 196, 196)" >Select Ethnicity</option>
+                <option>Asian</option>              
+                <option>Black</option>      
+                <option>Coloured</option>
+                <option>Indian</option>
+                <option>White</option>
+                <option>Rev</option>
+                <option>Other</option>
+               
+                  </select>
+                  </div>
+          </div>
+        </div>  
+      <div class="row">
+          <div class="col">
+        <div >
+          First name
+          <input type="text" formControlName="firstName" class="form-control" required>
+          <!-- Showing errors using getter method -->
+          <p *ngIf="firstName.touched && firstName.invalid" class="error"><sup>*</sup>Please enter atleast first name</p>
+          <p *ngIf="firstName.errors?.minlength" class="error"><sup>*</sup>Name shouldn't be less than 2 words</p>
+        </div>
+      </div>
+<div class="col">
+        <div class="col-md-12 mb-3">
+         Last name
+          <input type="text" formControlName="lastName" class="form-control">
+        </div>
+      </div>
+      </div>
+
+      <div class="col">
+        
+        <div class="row">
+            <div class="col">
+                <div  class="form-group">
+                Preferred Name:
+                <input    formControlName="PreferredName"
+                placeholder="Preferred name"
+                name="PreferredName"
+                class="form-control"
+                id="PreferredName">
+                </div>
+                <!-- Showing errors using getter method -->
+          <p *ngIf="firstName.touched && firstName.invalid" class="error"><sup>*</sup>Please enter atleast first name</p>
+          <p *ngIf="firstName.errors?.minlength" class="error"><sup>*</sup>Name shouldn't be less than 2 words</p>
+            </div>
+            <div class="col">
+              <div   class="form-group">
+              Date Of Birth:
+              <div class="md-form">
+                  <input type="date" formControlName="dob"  class="form-control" mdbInput>
+                  
+                </div>
+            </div>
+            </div>
+          </div>
+        <div class="row">
+            <div class="col">
+                <div   class="form-group">
+              Citezinship:
+                <select 
+                class="form-control" formControlName="citizenship"
+                id="SelectCitizenship" placeholder="Select Citizenship">
+                <option value="" disabled='disabled' style="color:rgb(199, 196, 196)" >Indicate Citizenship Details</option>
+                  <option>SA citizen</option>              
+                  <option>Not SA citizen with a work permit</option>    
+                  <option>Not SA citizen and no work permit</option>   
+                    </select>
+                    </div>
+             </div>
+            <div class="col">
+                <div  class="form-group">
+                    ID/Passport Number:
+                    <input    formControlName="passport"
+                    placeholder="SA legeal ID number"                
+                    class="form-control"
+                    id="salegalid">
+                  </div>
+            </div>
+          
+          </div>
+  
+            <div class="row">
+           <div class="col">
+        <div class="col-md-12 mb-3">
+          <label>Mobile number</label>
+          <input type="text" formControlName="mobileNumber" class="form-control" required>
+          <!-- Showing errors using getter method -->
+          <p *ngIf="mobileNumber.touched && mobileNumber.invalid" class="error"><sup>*</sup>Please provide contact
+            number</p>
+          <p *ngIf="mobileNumber.errors?.pattern" class="error"><sup>*</sup>Use numbers only
+            number</p>
+        </div>
+      </div>
+        <div class="col">
+        <div class="col-md-12 mb-3">
+            <label>Email</label>
+            <input type="email" formControlName="email" class="form-control" required>
+            <!-- Showing errors using getter method -->
+            <p *ngIf="email.touched && email.invalid" class="error"><sup>*</sup>Please provide email</p>
+            <p *ngIf="email.errors?.pattern" class="error"><sup>*</sup>Please enter correct email</p>
+          </div>
+          </div>
+      </div>      
+
+      </div>
+      <div class="row">
+          <div class="col">
+              <div  class="form-group">
+                  Current City:
+                  <input    formControlName="currentcity"
+                  placeholder="Current City"
+                  class="form-control"
+                  id="currentcity">
+                </div>
+               
+          </div>
+          <div class="col">
+              <div  class="form-group">
+                  Current Province:
+                  <input    formControlName="currentprovince"
+                  placeholder="Current Province"
+                  class="form-control"
+                  id="currentprovince">
+                </div>
+          </div>
+        </div>
+        <div class="dropzone dropzonecontent pre html"
+     dropzone
+     (hovered)="toggleHover($event)"
+     (dropped)="onDrop($event)"
+     [class.hovering]="isHovering">
+
+     <h3>Please Upload a copy of your ID</h3>
+     <p>Drag and Drop a File</p>
+     <div class="file">
+        <label class="file-label">
+        <input class="file-input" type="file" (change)="onDrop($event.target.files)">
+     <span class="file-cta">
+            <span class="file-icon">
+              <i class="fa fa-upload"></i>
+            </span>
+            <span class="file-label">
+              or choose a file…
+            </span>
+          </span>
+        </label>
+      </div>
+</div>
+
+
+
+<div *ngFor="let file of files">
+  <upload-task [file]="file"></upload-task>
+</div>
+   
+    
+
+      <div class="form-group text-right">
+        <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">Reset</button>
+        <button type="submit" class="btn btn-success" [disabled]="!studentForm.valid">Add Student</button>
+      </div>
+
+    </div>
+  </div>
+</form><!-- Student form ends-->
+</div>
+</div>
+</div>
+        <div class="col-md">
+         
+          </div>
+    </div>
+  </div>
+  </div>
