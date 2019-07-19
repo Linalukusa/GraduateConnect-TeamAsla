@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { MainContentService} from 'src/app/services/main-content.service';
-import { Answer } from '../../Models/Answer';
+import { Answer } from '../Models/Answer';
 
 
 @Component({
