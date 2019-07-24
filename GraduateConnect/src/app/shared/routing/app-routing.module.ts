@@ -55,7 +55,13 @@ const routes: Routes = [
       { path: 'questionE', component: QuestionEComponent, canActivate: [SecureInnerPagesGuard]},
       { path: 'radar', component: RadarComponent, canActivate: [SecureInnerPagesGuard]}
     ]},
-  
+  {
+    path: 'admin',
+    component: AdminComponent,
+    data: {
+      allowedRoles: ['admin']
+    }
+  }
 ];
 
 

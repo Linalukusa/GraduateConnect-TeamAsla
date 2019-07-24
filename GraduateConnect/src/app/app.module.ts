@@ -70,7 +70,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { RadarComponent } from './radar/radar.component';
 import { ChartsModule } from 'ng2-charts';
-
+import { JwtModule } from "@auth0/angular-jwt";
 
 
 
@@ -127,6 +127,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HttpClientModule,
     MaterialModule,
     FlexLayoutModule,
+    JwtModule.forRoot({}),
     FormsModule,
     MatButtonModule,
     MatCheckboxModule,
