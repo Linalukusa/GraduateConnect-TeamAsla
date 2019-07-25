@@ -69,7 +69,7 @@ export class AuthService {
     }
 
     // check if the user roles is in the list of allowed roles, return true if allowed and false if not allowed
-    return allowedRoles.includes(decodeToken['role']);
+    return allowedRoles.includes(decodeToken['roles']);
   }
   // Sign in with email/password
   SignIn(email, password) {
@@ -152,7 +152,9 @@ export class AuthService {
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
       roles:{
-        student: true
+        student: true,
+        admin: false,
+        Admin: user.Admin
       }
     }
     return userRef.set(userData, {
