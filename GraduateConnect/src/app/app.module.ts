@@ -53,8 +53,6 @@ import { ToolbarComponent } from './culture-fit/components/toolbar/toolbar.compo
 import { QuestionBComponent } from './culture-fit/components/questionB/questionB.component';
 import { QuestionCComponent } from './culture-fit/components/questionC/questionC.component';
 import { QuestionDComponent } from './culture-fit/components/questionD/questionD.component';
-import { HeroesComponent } from './culture-fit/components/heroes/heroes.component';
-import { Hero } from './hero';
 import { QuestionEComponent } from './culture-fit/components/questionE/questionE.component';
 
 import { AdminComponent } from './components/admin/admin.component';
@@ -102,8 +100,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ToolbarComponent,
     QuestionBComponent,
     QuestionCComponent,
-    HeroesComponent,
-    Hero,
     QuestionDComponent,
     QuestionEComponent,
     AdminComponent,

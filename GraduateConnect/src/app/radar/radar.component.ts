@@ -16,7 +16,7 @@ export class RadarComponent implements OnInit {
  
   public demoradarChartData:any = [
     {data: [this.service.totalArray.shift(), 0, 0, 0, this.service.totalArray.pop(), 0, 0, 0], label: 'Graduate Graph'},
-    {data: [10, 20, 30, 40, 50, 60, 70, 80], label: 'Tech-Company Graph'}
+    {data: [10, 20, 30, 40, 50, 60, 70, 80,90,100], label: 'Tech-Company Graph'}
   ];
   public radarChartType:string = 'radar';
  
