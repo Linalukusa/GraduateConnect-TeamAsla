@@ -73,6 +73,7 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { RadarComponent } from './radar/radar.component';
 import { ChartsModule } from 'ng2-charts';
 import { JwtModule } from "@auth0/angular-jwt";
+import { CultureFitInfoComponent } from './culture-fit/culture-fit-info/culture-fit-info.component';
 
 
 
@@ -113,7 +114,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ManageprofileComponent,
     DropzoneDirective,
     UploadTaskComponent,
-    RadarComponent
+    RadarComponent,
+    CultureFitInfoComponent
     
   
     
@@ -155,7 +157,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     provide: PERFECT_SCROLLBAR_CONFIG,
     useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[QuestionAComponent]
 })
 
 export class AppModule { }
