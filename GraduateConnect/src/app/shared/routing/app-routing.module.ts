@@ -29,46 +29,39 @@ import { AcademicInfoComponent } from 'src/app/components/academic-info/academic
 import { ManageprofileComponent } from 'src/app/components/manageprofile/manageprofile.component';
 import { RadarComponent } from 'src/app/radar/radar.component';
 import { getCanActivateChild } from '@angular/router/src/utils/preactivation';
+import { CultureFitInfoComponent } from 'src/app/culture-fit/culture-fit-info/culture-fit-info.component';
 
 // Include route guard in routes array
 const routes: Routes = [
-  { path: '', canActivateChild: [AuthGuard],
-      children:[
-        { path: '', component: SignInComponent, data: { allowedRoles: []}},
-        { path: 'register-user', component: SignUpComponent, data: { allowedRoles: []}},
-        { path: 'dashboard', component: DashboardComponent, data: { roles: ['student']}}
-      ]
-}
-//   { path: '', redirectTo: '/sign-in', pathMatch: 'full', canActivateChild: [AuthGuard], children: [ { path: '', component: SignInComponent, data: {}},
-//   { path: 'admin', component: AdminComponent, data: { allowedRoles:['admin']}}
-// ]},
-  // { path: '', redirectTo: '/sign-in', pathMatch: 'full'},
-  // { path: 'sign-in', component: SignInComponent, canActivateChild: [AuthGuard, SecureInnerPagesGuard], children: [
-  //   { path: 'dashboard', component: DashboardComponent, data: {allowedRoles: ['admin']} }
-  //  ] },
-  // { path: 'register-user', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
-  // { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  // { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
-  // { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
-  // { path: 'general-information ', component: GeneralInformationComponent},
-  // { path: 'academic-info', component: AcademicInfoComponent},
-  // { path: 'admin', component: AdminComponent, data: { allowedRoles: ['admin'] } },
-  // { path: '', redirectTo: '/register-student', pathMatch: 'full' },
-  // { path: 'register-student', component: AddStudentComponent },
-  // { path: 'view-students', component: StudentsListComponent },
-  // { path: 'edit-student/:id', component: EditStudentComponent },
-  // { path: 'logout', component: LogoutComponent},
-  // { path: 'manageprofile', component: ManageprofileComponent},
-  // { path: 'culture-fit-root', component: CultureFitRootComponent, canActivate: [SecureInnerPagesGuard],
-  //   children: [
-  //     { path: '', redirectTo: 'questionA', pathMatch: 'full'},
-  //     { path: 'questionA', component: QuestionAComponent, canActivate: [SecureInnerPagesGuard]},
-  //     { path: 'questionB', component: QuestionBComponent, canActivate: [SecureInnerPagesGuard]},
-  //     { path: 'questionC', component: QuestionCComponent, canActivate: [SecureInnerPagesGuard]},
-  //     { path: 'questionD', component: QuestionDComponent, canActivate: [SecureInnerPagesGuard]},
-  //     { path: 'questionE', component: QuestionEComponent, canActivate: [SecureInnerPagesGuard]},
-  //     { path: 'radar', component: RadarComponent, canActivate: [SecureInnerPagesGuard]}
-  //   ]},
+  
+  { path: '', redirectTo: '/sign-in', pathMatch: 'full'},
+  { path: 'sign-in', component: SignInComponent, canActivateChild: [AuthGuard, SecureInnerPagesGuard], children: [
+    { path: 'dashboard', component: DashboardComponent, data: {allowedRoles: ['admin']} }
+   ] },
+  { path: 'register-user', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
+  { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
+  { path: 'general-information ', component: GeneralInformationComponent},
+  { path: 'academic-info', component: AcademicInfoComponent},
+  { path: 'admin', component: AdminComponent, data: { allowedRoles: ['admin'] } },
+  { path: '', redirectTo: '/register-student', pathMatch: 'full' },
+  { path: 'register-student', component: AddStudentComponent },
+  { path: 'view-students', component: StudentsListComponent },
+  { path: 'edit-student/:id', component: EditStudentComponent },
+  { path: 'logout', component: LogoutComponent},
+  { path: 'manageprofile', component: ManageprofileComponent},
+  { path: 'culture-fit-info', component: CultureFitInfoComponent},
+  { path: 'culture-fit-root', component: CultureFitRootComponent, canActivate: [SecureInnerPagesGuard],
+    children: [
+      { path: '', redirectTo: 'questionA', pathMatch: 'full'},
+      { path: 'questionA', component: QuestionAComponent, canActivate: [SecureInnerPagesGuard]},
+      { path: 'questionB', component: QuestionBComponent, canActivate: [SecureInnerPagesGuard]},
+      { path: 'questionC', component: QuestionCComponent, canActivate: [SecureInnerPagesGuard]},
+      { path: 'questionD', component: QuestionDComponent, canActivate: [SecureInnerPagesGuard]},
+      { path: 'questionE', component: QuestionEComponent, canActivate: [SecureInnerPagesGuard]},
+      { path: 'radar', component: RadarComponent, canActivate: [SecureInnerPagesGuard]}
+    ]},
   
 ]
   

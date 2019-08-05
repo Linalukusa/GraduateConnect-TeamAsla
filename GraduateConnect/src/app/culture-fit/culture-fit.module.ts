@@ -14,6 +14,7 @@ import { QuestionBComponent } from './components/questionB/questionB.component';
 import { QuestionCComponent } from './components/questionC/questionC.component';
 import { QuestionDComponent } from './components/questionD/questionD.component';
 import { QuestionEComponent } from './components/questionE/questionE.component';
+import { CultureFitInfoComponent } from './culture-fit-info/culture-fit-info.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { QuestionEComponent } from './components/questionE/questionE.component';
     QuestionBComponent,
     QuestionCComponent,
     QuestionDComponent,
-    QuestionEComponent
+    QuestionEComponent,
+    CultureFitInfoComponent
 
   ],
   imports: [
