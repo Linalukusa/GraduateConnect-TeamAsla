@@ -15,7 +15,7 @@ import { LogoutComponent } from './components/LogoutComponent';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
 // Firebase services + enviorment module
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
@@ -126,6 +126,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AngularFirestoreModule,
     AngularFireStorageModule,
     ReactiveFormsModule,
+    MatProgressSpinnerModule,
     HttpClientModule,
     MaterialModule,
     FlexLayoutModule,
@@ -154,7 +155,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG }
   ],
   bootstrap: [AppComponent],
-  entryComponents:[QuestionAComponent]
+  entryComponents:[QuestionAComponent, QuestionBComponent]
 })
 
 export class AppModule { }
