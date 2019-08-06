@@ -15,8 +15,12 @@ export class CultureFitInfoComponent implements OnInit {
 
   ngOnInit() {
   }
-  openDialog()
+  openQuestionA()
   {
-    this.dialog.open(QuestionAComponent)
+    this.dialog.open(QuestionAComponent, {
+      height: '1000px',
+      width: '70%',
+    })
   }
+  
 }

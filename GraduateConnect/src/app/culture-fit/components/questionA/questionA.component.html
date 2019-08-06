@@ -36,6 +36,7 @@
             [(ngModel)]="obj.Earth">
           </mat-slider>
         </div>
+        
         <div class="question">
           <p><b> 4. I prefer to move at a fast pace </b></p>
           <mat-slider class="slider"
@@ -80,7 +81,7 @@
             [(ngModel)]="obj.Introvert">
           </mat-slider>
         </div>
-        <div class="question">
+        <div class="question" id="lastQ">
           <p><b> 8. I prefer to work independently </b></p>
           <mat-slider class="slider"
             thumbLabel
@@ -92,7 +93,7 @@
           </mat-slider>
         </div>
       </div>
-        <button mat-button class="mat" (click)="onScoreTotal(); onQuestion2()">Next</button>
+        <button mat-button class="mat" (click)="onScoreTotal(); openQuestionB()">Next</button>
       
       
       
