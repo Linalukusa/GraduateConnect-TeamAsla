@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { MainContentService } from 'src/app/services/main-content.service';
 import { Answer } from '../../Models/Answer';
+import {QuestionCComponent} from '../../components/questionC/questionC.component';
 // import 'count()'import { count } from 'rxjs/operators';
 //  from '../main-content/main-content.component';
 
@@ -21,12 +22,14 @@ export class QuestionBComponent implements OnInit {
   constructor(public authService: AuthService,
     public router: Router, public service: MainContentService) { this.obj = new Answer() }
 
+
+    onQuestion3() {
+      this.router.navigate(['culture-fit-root/questionC']);
+  }
   ngOnInit() {
   }
   
-  onQuestion3() {
-      this.router.navigate(['culture-fit-root/questionC']);
-  }
+
 
   onScoreTotal() {
     this.service.totalDominance.push(this.obj.Dominance);

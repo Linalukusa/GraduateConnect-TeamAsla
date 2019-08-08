@@ -31,5 +31,6 @@ export class QuestionEComponent implements OnInit {
     this.service.totalAnimated.push(this.obj.Animated);
     this.service.totalHeadstrong.push(this.obj.Headstrong);
     this.service.onCount();
+    this.router.navigate(['culture-fit-root/radar']);
   }
  }
