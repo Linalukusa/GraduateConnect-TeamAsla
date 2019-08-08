@@ -4,6 +4,13 @@
         <p> Please rank each statement from <strong> 1 (Strongly Disagree) </strong> to <strong> 8 (Strongly Agree) </strong> <br> Each statement must have its own unique number: </p>
         <div class="question">
           <p><b> 1. I like to direct other peoples activities  </b></p>
+
+          <section class="example-section">
+            <mat-form-field class="example-margin">
+              <input matInput type="number" placeholder="Value" [(ngModel)]="obj.Dominance">
+            </mat-form-field>
+            
+          </section>
           <mat-slider class="slider"
             thumbLabel
             [displayWith]="formatLabel"
@@ -17,6 +24,13 @@
       
         <div class="question">
           <p><b> 2. I like to convince people to carry out activities</b></p>
+
+          <section class="example-section">
+            <mat-form-field class="example-margin">
+              <input matInput type="number" placeholder="Value" [(ngModel)]="obj.Convincing">
+            </mat-form-field>
+            
+          </section>
           <mat-slider class="slider"
             thumbLabel
             [displayWith]="formatLabel"
@@ -28,6 +42,13 @@
         </div>
         <div class="question">
           <p><b> 3. I like to do complete tasks quickly myself for the best results </b></p>
+
+          <section class="example-section">
+            <mat-form-field class="example-margin">
+              <input matInput type="number" placeholder="Value" [(ngModel)]="obj.Animated">
+            </mat-form-field>
+            
+          </section>
           <mat-slider class="slider"
             thumbLabel
             [displayWith]="formatLabel"
@@ -39,6 +60,13 @@
         </div>
         <div class="question">
           <p><b> 4. I like to create things </b></p>
+
+          <section class="example-section">
+            <mat-form-field class="example-margin">
+              <input matInput type="number" placeholder="Value" [(ngModel)]="obj.Headstrong">
+            </mat-form-field>
+            
+          </section>
           <mat-slider class="slider"
             thumbLabel
             [displayWith]="formatLabel"
@@ -52,6 +80,13 @@
       
       <div class="question">
         <p><b> 5. I like a close-knit team in which to work </b></p>
+
+        <section class="example-section">
+          <mat-form-field class="example-margin">
+            <input matInput type="number" placeholder="Value" [(ngModel)]="obj.Earth">
+          </mat-form-field>
+          
+        </section>
         <mat-slider class="slider"
           thumbLabel
           [displayWith]="formatLabel"
@@ -63,6 +98,13 @@
       </div>
       <div class="question">
           <p><b> 6. I like to be formal and work to standards </b></p>
+
+          <section class="example-section">
+            <mat-form-field class="example-margin">
+              <input matInput type="number" placeholder="Value" [(ngModel)]="obj.Precise">
+            </mat-form-field>
+            
+          </section>
           <mat-slider class="slider"
             thumbLabel
             [displayWith]="formatLabel"
@@ -74,6 +116,13 @@
         </div>
         <div class="question">
           <p><b> 7. I like to be clearly told what to do </b></p>
+
+          <section class="example-section">
+            <mat-form-field class="example-margin">
+              <input matInput type="number" placeholder="Value" [(ngModel)]="obj.Accommodate">
+            </mat-form-field>
+            
+          </section>
           <mat-slider class="slider"
             thumbLabel
             [displayWith]="formatLabel"
@@ -85,6 +134,13 @@
         </div>
         <div class="question">
           <p><b> 8. I like to be left to get on with it </b></p>
+
+          <section class="example-section">
+            <mat-form-field class="example-margin">
+              <input matInput type="number" placeholder="Value" [(ngModel)]="obj.Introvert">
+            </mat-form-field>
+            
+          </section>
           <mat-slider class="slider"
             thumbLabel
             [displayWith]="formatLabel"

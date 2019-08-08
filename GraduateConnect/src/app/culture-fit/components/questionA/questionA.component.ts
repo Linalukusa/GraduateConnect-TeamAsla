@@ -14,6 +14,8 @@ import { QuestionBComponent } from '../questionB/questionB.component';
   styleUrls: ['./questionA.component.css']
 })
 export class QuestionAComponent implements OnInit {
+  
+
 
   obj: Answer;
 

@@ -5,6 +5,13 @@
         <p> Please rank each statement from <strong> 1 (Strongly Disagree) </strong> to <strong> 8 (Strongly Agree) </strong> <br> Each statement must have its own unique number: </p>
         <div class="question">
           <p><b> 1. At work people would best describe me as go-getting </b></p>
+          
+          <section class="example-section">
+            <mat-form-field class="example-margin">
+              <input matInput type="number" placeholder="Value" [(ngModel)]="obj.Headstrong">
+            </mat-form-field>
+            
+          </section>
           <mat-slider class="slider"
             thumbLabel
             [displayWith]="formatLabel"
@@ -17,9 +24,16 @@
       
         <div class="question">
           <p><b> 2. At work people would best describe me as optimistic</b></p>
+
+          <section class="example-section">
+            <mat-form-field class="example-margin">
+              <input matInput type="number" placeholder="Value" [(ngModel)]="obj.Convincing">
+            </mat-form-field>
+            
+          </section>
           <mat-slider class="slider"
             thumbLabel
-            [displayWith]="formatLabel"
+            [displayWith]="formatLabel" 
             tickInterval="1000"
             min="1"
             max="8"
@@ -28,6 +42,13 @@
         </div>
         <div class="question">
           <p><b> 3. At work people best describe me as thoughtful </b></p>
+
+          <section class="example-section">
+            <mat-form-field class="example-margin">
+              <input matInput type="number" placeholder="Value" [(ngModel)]="obj.Earth">
+            </mat-form-field>
+            
+          </section>
           <mat-slider class="slider"
             thumbLabel
             [displayWith]="formatLabel"
@@ -39,6 +60,13 @@
         </div>
         <div class="question">
           <p><b> 4. At work people would best describe me as energetic </b></p>
+
+          <section class="example-section">
+            <mat-form-field class="example-margin">
+              <input matInput type="number" placeholder="Value" [(ngModel)]="obj.Animated">
+            </mat-form-field>
+            
+          </section>
           <mat-slider class="slider"
             thumbLabel
             [displayWith]="formatLabel"
@@ -52,6 +80,13 @@
       
         <div class="question">
           <p><b> 5. At work people would best describe me as obliging </b></p>
+
+          <section class="example-section">
+            <mat-form-field class="example-margin">
+              <input matInput type="number" placeholder="Value" [(ngModel)]="obj.Accommodate">
+            </mat-form-field>
+            
+          </section>
           <mat-slider class="slider"
             thumbLabel
             [displayWith]="formatLabel"
@@ -63,34 +98,55 @@
         </div>
         <div class="question">
           <p><b> 6. At work people would best describe me as independent </b></p>
+
+          <section class="example-section">
+            <mat-form-field class="example-margin">
+              <input matInput type="number" placeholder="Value" [(ngModel)]="obj.Introvert">
+            </mat-form-field>
+            
+          </section>
           <mat-slider class="slider"
             thumbLabel
             [displayWith]="formatLabel"
             tickInterval="1000"
             min="1"
-            max="8"
+            max="10"
             [(ngModel)]="obj.Introvert">
           </mat-slider>
         </div>
         <div class="question">
           <p><b> 7. At work people would best describe me as assertive </b></p>
+
+          <section class="example-section">
+            <mat-form-field class="example-margin">
+              <input matInput type="number" placeholder="Value" [(ngModel)]="obj.Dominance">
+            </mat-form-field>
+            
+          </section>
           <mat-slider class="slider"
             thumbLabel
             [displayWith]="formatLabel"
             tickInterval="1000"
             min="1"
-            max="8"
+            max="10"
             [(ngModel)]="obj.Dominance">
           </mat-slider>
         </div>
         <div class="question">
           <p><b> 8. At work people would best describe me as accurate </b></p>
+
+          <section class="example-section">
+            <mat-form-field class="example-margin">
+              <input matInput type="number" placeholder="Value" [(ngModel)]="obj.Precise">
+            </mat-form-field>
+            
+          </section>
           <mat-slider class="slider"
             thumbLabel
             [displayWith]="formatLabel"
             tickInterval="1000"
             min="1"
-            max="8"
+            max="10"
             [(ngModel)]="obj.Precise">
           </mat-slider>
         </div>

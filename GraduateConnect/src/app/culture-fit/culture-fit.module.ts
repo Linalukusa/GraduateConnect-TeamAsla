@@ -14,6 +14,7 @@ import { QuestionBComponent } from './components/questionB/questionB.component';
 //import { QuestionCComponent } from './components/questionC/questionC.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroComponent } from './components/hero/hero.component';
+import { QuestionCComponent } from './components/questionC/questionC.component';
 import { QuestionDComponent } from './components/questionD/questionD.component';
 import { QuestionEComponent } from './components/questionE/questionE.component';
 import { CultureFitInfoComponent } from './culture-fit-info/culture-fit-info.component';
@@ -28,6 +29,7 @@ import { CultureFitInfoComponent } from './culture-fit-info/culture-fit-info.com
     //QuestionCComponent,
     HeroesComponent,
     HeroComponent,
+    QuestionCComponent,
     QuestionDComponent,
     QuestionEComponent,
     CultureFitInfoComponent
