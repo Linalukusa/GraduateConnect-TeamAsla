@@ -45,7 +45,7 @@ import { GeneralInformationComponent } from './components/general-information/ge
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { StudentsListComponent } from './students-list/students-list.component';
-import { EditStudentComponent } from './edit-student/edit-student.component';
+
 import { CultureFitRootComponent } from './culture-fit/culture-fit-root.component';
 import { QuestionAComponent } from './culture-fit/components/questionA/questionA.component';
 import { SidenavComponent } from './culture-fit/components/sidenav/sidenav.component';
@@ -69,9 +69,13 @@ import { UploaderComponent } from './components/uploader/uploader.component';
 import { DropzoneDirective } from './dropzone.directive';
 import { UploadTaskComponent } from './components/upload-task/upload-task.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatDialog , MatDialogModule} from '@angular/material';
 import { RadarComponent } from './radar/radar.component';
 import { ChartsModule } from 'ng2-charts';
+import { EditStudentComponent } from './edit-student/edit-student.component';
+// import { ConfirmEqualValidatorDirective } from './shared/confirm-equal-validator.directive';
+import { LangDialogComponent } from './lang-dialog/lang-dialog.component';
+import { QualDialogComponent } from './qual-dialog/qual-dialog.component';
 
 
 
@@ -101,10 +105,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SidenavComponent,
     ToolbarComponent,
     QuestionBComponent,
-    QuestionCComponent,
     HeroesComponent,
     Hero,
     QuestionDComponent,
+    QuestionCComponent,
+    QuestionCComponent,
     QuestionEComponent,
     AdminComponent,
     AdminSidenavComponent,
@@ -113,7 +118,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ManageprofileComponent,
     DropzoneDirective,
     UploadTaskComponent,
-    RadarComponent
+    RadarComponent,
+    // ConfirmEqualValidatorDirective
+    RadarComponent,
+    LangDialogComponent,
+    QualDialogComponent
     
   
     
@@ -138,15 +147,20 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     BsDropdownModule.forRoot(),
     PerfectScrollbarModule,
     ChartsModule,
+    MatDialogModule,
     BrowserAnimationsModule,    // Required animations module for Toastr
     ToastrModule.forRoot({      // Register NgxToast NPM module
       timeOut: 3000,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,      
     }),
-    NgxPaginationModule  // NGX pagination module
-    
+    NgxPaginationModule,  // NGX pagination module
+   
   ],
+
+  entryComponents: [
+    LangDialogComponent,
+QualDialogComponent  ],
     
 
   providers: [ AuthService,

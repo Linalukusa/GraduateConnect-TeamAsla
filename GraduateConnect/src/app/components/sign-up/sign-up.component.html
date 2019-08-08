@@ -1,182 +1,538 @@
-<div class="displayTable">
-  <div class="displayTableCell">
-  <div class="authBlock">
-      <h3>Sign Up</h3>
-      <div class="formGroup">
-      <input type="Name"  class="formControl" placeholder="Name" #userName required>
-      </div>
-      <div class="formGroup">
-      <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
-      </div>
-      <div class="formGroup">
-      <input type="password" class="formControl" placeholder="Password" #userPwd required>
-      </div>
-      <div class="formGroup">
-      <input type="password" class="formControl" placeholder="Confirm Password" #userPwd required>
-      </div>
-      <div class="formGroup">
-      <input type="button" class="btn btnPrimary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
-      </div>
-      <div class="formGroup">
-      <span class="or"><span class="orInner">Or</span></span>
-      </div>
-  <!-- Continue with Google -->
-  <div class="formGroup">
-  <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-  <i class="fab fa-google-plus-g"></i>
-  Continue with Google
-  </button>
-  </div>
-  <!-- Continue with Facebook -->
-  <div class="formGroup">
-  <button type="button" class="btn facebookBtn" (click)="authService.FacebookAuth()">
-  <i class="fab fa-facebook"></i>
-  Continue with Facebook
-  </button>
-   <div class="redirectToLogin">
-  <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
-  </div></div>
-  </div>
- 
-  </div>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Graduate Connect</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+    
+    
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
   
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+   
+    
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+      
+      <div class="container-fluid">
+        <div class="d-flex align-items-center">
+          <div class="site-logo mr-auto w-25"><a href="index.html">Graduate Connect</a></div>
+
+          <div class="mx-auto text-center">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
+                <li><a href="#home-section" class="nav-link">Home</a></li>
+                <li><a href="#programs-section" class="nav-link">About Us</a></li>
+                <li><a href="#teachers-section" class="nav-link">Companies</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="ml-auto w-25">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
+                <li class="cta"><a href="#contact-section" class="nav-link"><span>Contact Us</span></a></li>
+              </ul>
+            </nav>
+            <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
+          </div>
+        </div>
+      </div>
+      
+    </header>
+
+    <div class="intro-section" id="home-section">
+      
+      <div class="slide-1" style="background-image: url('assets/gradBackground.jpg');" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-12">
+              <div class="row align-items-center">
+                <div class="col-lg-6 mb-4">
+                  <h1  data-aos="fade-up" data-aos-delay="100"> Where Talent Meets Opportunity</h1>
+                  <p class="mb-4"  data-aos="fade-up" data-aos-delay="200">Fast track your future with Graduate Connect! The graduate recruitment tool that helps connect you with industry leading companies. Graduate Connect finds employers and positions best suited for your personality type and range of skills, kick starting a fulfilling career in the IT industry.</p>
+                  <p data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary py-3 px-5 btn-pill" routerLink="/sign-in">Log in</a> </p>
+
+                </div>
+
+                <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="500">
+                  <form action="" method="post" class="form-box">
+                    <h3 class="h4 text-black mb-4">Sign Up</h3>
+                    <div class="formGroup">
+                      <input type="Name"  class="formControl" placeholder="Name" #userName required>
+                      </div>
+                      <div class="formGroup">
+                      <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
+                      </div>
+                      <div class="formGroup">
+                      <input type="password" class="formControl" placeholder="Password" #userPwd required>
+                      </div>
+                      <div class="formGroup">
+                      <input type="password" class="formControl" placeholder="Confirm Password" #userPwd required>
+                      </div>
+                      <div class="formGroup">
+                      <input type="button" class="btn btn-primary btn-pill" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)" >
+                      </div>
+                      <div class="formGroup">
+                      <span class="or"><span class="orInner">Or</span></span>
+                      </div>
+                      <!-- Continue with Google -->
+                      <div class="formGroup">
+                        <button type="button" class="btn btn-primary btn-pill" (click)="authService.GoogleAuth()">
+                        <i class="fab fa-google-plus-g"></i>
+                        Continue with Google
+                        </button>
+                        </div>
+                      <!-- Continue with Facebook -->
+                      <div class="formGroup">
+                        <button type="button" class="btn btn-primary btn-pill" (click)="authService.FacebookAuth()">
+                        <i class="fab fa-facebook"></i>
+                        Continue with Facebook
+                        </button>
+                        </div>
+                        <div class="redirectToLogin">
+                          <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
+                          </div>
+            
+                  </form>
+
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    
+
+
+    <div class="site-section" id="programs-section">
+      <div class="container">
+        <div class="row mb-5 justify-content-center">
+          <div class="col-lg-7 text-center"  data-aos="fade-up" data-aos-delay="">
+            <h2 class="section-title"> About Us</h2>
+            <p>Graduate Connect is more than just a job portal, by analysing your academic skills and character traits we are able to bridge the gap between the academic and corporate IT worlds. We don't simply finding you positions which match your ICTS skills, but connect you with companies with cultures best suited for your personality type. Allowing you to grow in an environment best suited for you.</p>
+          </div>
+        </div>
+        <div class="row mb-5 align-items-center">
+          <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/images/undraw_youtube_tutorial.svg" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="text-black mb-4">What makes us different?</h2>
+            <p class="mb-4">We understand how daunting it can be entering the ICTS job market. A company's culture is so often a mystery until you actually start working there. Graduate Connect aims to remove the guess work from job searching by connecting graduates with potential ICTS employers. We understand the important role the environment and company culture plays on performance and employee satisfaction and through our culture fit assessment we are able to connect graduates with companies which they would want to work for.</p>
+
+            <!-- <div class="d-flex align-items-center custom-icon-wrap mb-3">
+              <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
+              <div><h3 class="m-0">3,215 Positions</h3></div>
+            </div>
+
+            <div class="d-flex align-items-center custom-icon-wrap">
+              <span class="custom-icon-inner mr-3"><span class="icon icon-university"></span></span>
+              <div><h3 class="m-0">1,900 Yearly Graduate</h3></div>
+            </div> -->
+
+          </div>
+        </div>
+
+        <div class="row mb-5 align-items-center">
+          <div class="col-lg-7 mb-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/images/undraw_teacher.svg" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-4 mr-auto order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="text-black mb-4">Culture Fit</h2>
+            <p class="mb-4">Graduate Connect makes use of a culture fit assessment to match graduates personality types with company cultures best suited for them. Based off Marston's Personality Theory, this culture fit assesment identifies where graduates fall across 8 different company cultures. Theres results are then used to match said graduates with companies having a similar culture.</p>
+
+            <!-- <div class="d-flex align-items-center custom-icon-wrap mb-3">
+              <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
+              <div><h3 class="m-0">3,215 Positions</h3></div>
+            </div>
+
+            <div class="d-flex align-items-center custom-icon-wrap">
+              <span class="custom-icon-inner mr-3"><span class="icon icon-university"></span></span>
+              <div><h3 class="m-0">3,215 Positions</h3></div>
+            </div> -->
+
+          </div>
+        </div>
+
+        <!-- <div class="row mb-5 align-items-center">
+          <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/images/undraw_teacher.svg" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="text-black mb-4">Cultural Fit</h2>
+            <p class="mb-4">...............................</p>
+
+             <div class="d-flex align-items-center custom-icon-wrap mb-3">
+              <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
+              <div><h3 class="m-0">3,215 Positions</h3></div>
+            </div>
+
+            <div class="d-flex align-items-center custom-icon-wrap">
+              <span class="custom-icon-inner mr-3"><span class="icon icon-university"></span></span>
+              <div><h3 class="m-0"> 3,215 Positions</h3></div>
+            </div> -->
+
+          <!-- </div>
+        </div> -->
+
+      </div>
+    </div> 
+
+   
+
+    <div class="site-section bg-image overlay" style="background-image: url('images/hero_1.jpg');">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-8 text-center testimony">
+            <img src="assets/images/person_4.jpg" alt="Image" class="img-fluid w-25 mb-4 rounded-circle">
+            <h3 class="mb-4">Jonathan Smit </h3>
+            <blockquote>
+              <p>&ldquo;  After graduating I was so uncertain about my future, but through Graduate Connect I was able to find a company and position best suited for me. &rdquo;</p>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section pb-0">
+
+      <div class="future-blobs">
+        <div class="blob_2">
+          <img src="assets/images/blob_2.svg" alt="Image">
+        </div>
+        <div class="blob_1">
+          <img src="assets/images/blob_1.svg" alt="Image">
+        </div>
+      </div>
+      <div class="container">
+        <div class="row mb-5 justify-content-center" data-aos="fade-up" data-aos-delay="">
+          <div class="col-lg-7 text-center">
+            <h2 class="section-title">Why Choose Us</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto align-self-start"  data-aos="fade-up" data-aos-delay="100">
+
+            <div class="p-4 rounded bg-white why-choose-us-box">
+
+              <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
+                <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-graduation-cap"></span></span></div>
+                <div><h3 class="m-0">Specialised for ICTS graduates</h3></div>
+              </div>
+
+              <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
+                <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-university"></span></span></div>
+                <div><h3 class="m-0">Unique culture fit technology</h3></div>
+              </div>
+
+              <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
+                <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-graduation-cap"></span></span></div>
+                <div><h3 class="m-0">Partnered with industry leading companies</h3></div>
+              </div>
+
+              <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
+                <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-university"></span></span></div>
+                <div><h3 class="m-0">Employees with greater job satisfaction</h3></div>
+              </div>
+
+              <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
+                <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-graduation-cap"></span></span></div>
+                <div><h3 class="m-0">Higher company performance</h3></div>
+              </div>
+
+              <div class="d-flex align-items-center custom-icon-wrap custom-icon-light">
+                <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-university"></span></span></div>
+                <div><h3 class="m-0">Opportunity for growth</h3></div>
+              </div>
+
+            </div>
+
+
+          </div>
+          <div class="col-lg-7 align-self-end"  data-aos="fade-left" data-aos-delay="200">
+            <img src="assets/images/person_transparent.png" alt="Image" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="site-section" id="teachers-section">
+      <div class="container">
+
+        <div class="row mb-5 justify-content-center">
+          <div class="col-lg-7 mb-5 text-center"  data-aos="fade-up" data-aos-delay="">
+            <h2 class="section-title">Registered Companies</h2>
+            <p class="mb-5"> These industry leading companies as well as many more have already registered with Graduate Connect</p>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="teacher text-center">
+              <img src="assets/images/bbd.png" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+              <div class="py-2">
+                <h3 class="text-black">BBD Software Development</h3>
+                <!-- <p> ..................................</p> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="teacher text-center">
+              <img src="assets/images/redPanda.png" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+              <div class="py-2">
+                <h3 class="text-black"> RedPanda Software </h3>
+                <!-- <p>....................................</p> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="teacher text-center">
+              <img src="assets/images/dvt.png" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+              <div class="py-2">
+                <h3 class="text-black">DVT </h3>
+                <!-- <p>...................................................</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section bg-light" id="contact-section">
+      <div class="container">
+
+        <div class="row justify-content-center">
+          <div class="col-md-7">
+
+
+            
+            <h2 class="section-title mb-3">Message Us</h2>
+            <p class="mb-5">  For any questions or issues please complete the form below.</p>
+          
+            <form method="post" data-aos="fade">
+              <div class="form-group row">
+                <div class="col-md-6 mb-3 mb-lg-0">
+                  <input type="text" class="form-control" placeholder="First name">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Last name">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="Subject">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="email" class="form-control" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <textarea class="form-control" id="" cols="30" rows="10" placeholder="Write your message here."></textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-6">
+                  
+                  <input type="submit" class="btn btn-primary py-3 px-5 btn-block btn-pill" value="Send Message">
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+     
+   
   <!-- Footer -->
   <footer class="page-footer font-small mdb-color pt-4">
 
-      <!-- Footer Links -->
-      <div class="container text-center text-md-left">
-    
-        <!-- Footer links -->
-        <div class="row text-center text-md-left mt-3 pb-3">
-    
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Graduate Connect </h6>
-            <p> 
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
   
-                 Graduate Connect’s mission is a talent discovery and recommendations platform that connect ICTs Job seekers to Employers. It helps boost talent acquisition by recommending best-fit candidates instantly. Candidates are ranked based on their academic score, skill and how best they fit a company's cultural fit.
-                <br> Login today and get the job perfectly tailored for you!
-                    
+      <!-- Footer links -->
+      <div class="row text-center text-md-left mt-3 pb-3">
   
-            </p>
-          </div>
-          <!-- Grid column -->
-    
-          <hr class="w-100 clearfix d-md-none">
-    
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
-            <p>
-              <a href="#!">About</a>
-            </p>
-            <p>
-              <a href="#!">Cultural Fit</a>
-            </p>
-            <p>
-              <a href="#!">Terms & Conditions</a>
-            </p>
-            <p>
-              <a href="#!">Privacy Policy</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-    
-          <hr class="w-100 clearfix d-md-none">
-    
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
-            <p>
-              <a href="#!">Your Account</a>
-            </p>
-            <p>
-              <a href="#!">Become an Affiliate</a>
-            </p>
-            <p>
-              <a href="#!">Shipping Rates</a>
-            </p>
-            <p>
-              <a href="#!">Help</a>
-            </p>
-          </div>
-    
-          <!-- Grid column -->
-          <hr class="w-100 clearfix d-md-none">
-    
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-            <p>
-              <i class="fas fa-home mr-3"></i> Cape Town, SOUTH AFRICA </p>
-            <p>
-              <i class="fas fa-envelope mr-3"></i> info@graduateconnect.com</p>
-            <p>
-              <i class="fas fa-phone mr-3"></i> + 27 234 567 88</p>
-            <p>
-              <i class="fas fa-print mr-3"></i> + 27 234 567 89</p>
-          </div>
-          <!-- Grid column -->
-    
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">Graduate Connect </h6>
+          <p> 
+
+               Graduate Connect’s mission is a talent discovery and recommendations platform that connect ICTs Graduates to Employers. It helps boost talent acquisition by recommending best-fit candidates instantly. Candidates are ranked based on their academic score, skill and how best they fit a company's cultural fit.
+              <br> Login today and get the job perfectly tailored for you!
+                  
+
+          </p>
         </div>
-        <!-- Footer links -->
-    
-        <hr>
-    
-        <!-- Grid row -->
-        <div class="row d-flex align-items-center">
-    
-          <!-- Grid column -->
-          <div class="col-md-7 col-lg-8">
-    
-            <!--Copyright-->
-            <p class="text-center text-md-left">© 2019 Copyright:
-              <a href="">
-                <strong> ASLA</strong>
-              </a>
-            </p>
-    
-          </div>
-          <!-- Grid column -->
-    
-          <!-- Grid column -->
-          <div class="col-md-5 col-lg-4 ml-lg-0">
-    
-            <!-- Social buttons -->
-            <div class="text-center text-md-right">
-              <ul class="list-unstyled list-inline">
-                <li class="list-inline-item">
-                  <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                    <i class="fab fa-google-plus-g"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-    
-          </div>
-          <!-- Grid column -->
-    
+        <!-- Grid column -->
+  
+        <hr class="w-100 clearfix d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+          <p>
+            <a href="#!">About</a>
+          </p>
+          <p>
+            <a href="#!">Cultural Fit</a>
+          </p>
+          <p>
+            <a href="#!">Terms & Conditions</a>
+          </p>
+          <p>
+            <a href="#!">Privacy Policy</a>
+          </p>
         </div>
-        <!-- Grid row -->
-    
+        <!-- Grid column -->
+  
+        <hr class="w-100 clearfix d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
+          <p>
+            <a href="#!">Your Account</a>
+          </p>
+          <p>
+            <a href="#!">Become an Affiliate</a>
+          </p>
+          <p>
+            <a href="#!">Shipping Rates</a>
+          </p>
+          <p>
+            <a href="#!">Help</a>
+          </p>
+        </div>
+  
+        <!-- Grid column -->
+        <hr class="w-100 clearfix d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+          <p>
+            <i class="fas fa-home mr-3"></i> Cape Town, SOUTH AFRICA </p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i> info@graduateconnect.com</p>
+          <p>
+            <i class="fas fa-phone mr-3"></i> + 27 234 567 88</p>
+          <p>
+            <i class="fas fa-print mr-3"></i> + 27 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+  
       </div>
-      <!-- Footer Links -->
+      <!-- Footer links -->
+  
+      <hr>
+  
+      <!-- Grid row -->
+      <div class="row d-flex align-items-center">
+  
+        <!-- Grid column -->
+        <div class="col-md-7 col-lg-8">
+  
+          <!--Copyright-->
+          <p class="text-center text-md-left">© 2019 Copyright:
+            <a href="">
+              <strong> ASLA</strong>
+            </a>
+          </p>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-5 col-lg-4 ml-lg-0">
+  
+          <!-- Social buttons -->
+          <div class="text-center text-md-right">
+            <ul class="list-unstyled list-inline">
+              <li class="list-inline-item">
+                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i class="fab fa-google-plus-g"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+  
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row -->
+  
+    </div>
+    <!-- Footer Links -->
+  
+  </footer>
+  <!-- Footer -->
+
+  
     
-    </footer>
-    <!-- Footer -->
+  </div> <!-- .site-wrap -->
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+
+  
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>

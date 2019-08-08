@@ -9,3 +9,4 @@ import 'hammerjs';
 export class AppComponent {
   title = 'angularfirebase-authentication';
 }
+

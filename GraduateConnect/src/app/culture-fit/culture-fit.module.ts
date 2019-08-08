@@ -11,7 +11,7 @@ import { QuestionAComponent } from './components/questionA/questionA.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { QuestionBComponent } from './components/questionB/questionB.component';
-import { QuestionCComponent } from './components/questionC/questionC.component';
+//import { QuestionCComponent } from './components/questionC/questionC.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { QuestionDComponent } from './components/questionD/questionD.component';
@@ -24,7 +24,7 @@ import { QuestionEComponent } from './components/questionE/questionE.component';
     SidenavComponent,
     ToolbarComponent,
     QuestionBComponent,
-    QuestionCComponent,
+    //QuestionCComponent,
     HeroesComponent,
     HeroComponent,
     QuestionDComponent,

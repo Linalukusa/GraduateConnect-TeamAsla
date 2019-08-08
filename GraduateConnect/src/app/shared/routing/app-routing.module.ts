@@ -20,7 +20,7 @@ import { LogoutComponent } from 'src/app/components/LogoutComponent';
 import { CultureFitRootComponent } from 'src/app/culture-fit/culture-fit-root.component';
 import { QuestionAComponent } from 'src/app/culture-fit/components/questionA/questionA.component';
 import { QuestionBComponent } from 'src/app/culture-fit/components/questionB/questionB.component';
-import { QuestionCComponent } from 'src/app/culture-fit/components/questionC/questionC.component';
+//import { QuestionCComponent } from 'src/app/culture-fit/components/questionC/questionC.component';
 import { QuestionDComponent } from 'src/app/culture-fit/components/questionD/questionD.component';
 import { QuestionEComponent } from 'src/app/culture-fit/components/questionE/questionE.component';
 import { AdminComponent } from 'src/app/components/admin/admin.component';
@@ -50,7 +50,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'questionA', pathMatch: 'full'},
       { path: 'questionA', component: QuestionAComponent, canActivate: [SecureInnerPagesGuard]},
       { path: 'questionB', component: QuestionBComponent, canActivate: [SecureInnerPagesGuard]},
-      { path: 'questionC', component: QuestionCComponent, canActivate: [SecureInnerPagesGuard]},
+      //{ path: 'questionC', component: QuestionCComponent, canActivate: [SecureInnerPagesGuard]},
       { path: 'questionD', component: QuestionDComponent, canActivate: [SecureInnerPagesGuard]},
       { path: 'questionE', component: QuestionEComponent, canActivate: [SecureInnerPagesGuard]},
       { path: 'radar', component: RadarComponent, canActivate: [SecureInnerPagesGuard]}
