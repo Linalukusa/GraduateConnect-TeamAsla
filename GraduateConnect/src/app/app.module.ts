@@ -15,7 +15,7 @@ import { LogoutComponent } from './components/LogoutComponent';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
 // Firebase services + enviorment module
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
@@ -76,7 +76,8 @@ import { EditStudentComponent } from './edit-student/edit-student.component';
 // import { ConfirmEqualValidatorDirective } from './shared/confirm-equal-validator.directive';
 import { LangDialogComponent } from './lang-dialog/lang-dialog.component';
 import { QualDialogComponent } from './qual-dialog/qual-dialog.component';
-
+import { JwtModule } from "@auth0/angular-jwt";
+import { CultureFitInfoComponent } from './culture-fit/culture-fit-info/culture-fit-info.component';
 
 
 
@@ -122,7 +123,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     // ConfirmEqualValidatorDirective
     RadarComponent,
     LangDialogComponent,
-    QualDialogComponent
+    QualDialogComponent,
+    CultureFitInfoComponent
     
   
     
@@ -137,9 +139,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AngularFirestoreModule,
     AngularFireStorageModule,
     ReactiveFormsModule,
+    MatProgressSpinnerModule,
     HttpClientModule,
     MaterialModule,
     FlexLayoutModule,
+    JwtModule.forRoot({}),
     FormsModule,
     MatButtonModule,
     MatCheckboxModule,
@@ -168,7 +172,8 @@ QualDialogComponent  ],
     provide: PERFECT_SCROLLBAR_CONFIG,
     useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[QuestionAComponent, QuestionBComponent]
 })
 
 export class AppModule { }

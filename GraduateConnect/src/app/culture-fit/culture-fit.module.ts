@@ -16,6 +16,7 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { QuestionDComponent } from './components/questionD/questionD.component';
 import { QuestionEComponent } from './components/questionE/questionE.component';
+import { CultureFitInfoComponent } from './culture-fit-info/culture-fit-info.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { QuestionEComponent } from './components/questionE/questionE.component';
     HeroesComponent,
     HeroComponent,
     QuestionDComponent,
-    QuestionEComponent
+    QuestionEComponent,
+    CultureFitInfoComponent
 
   ],
   imports: [

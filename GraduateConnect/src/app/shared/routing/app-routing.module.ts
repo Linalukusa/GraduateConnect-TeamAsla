@@ -25,26 +25,33 @@ import { QuestionDComponent } from 'src/app/culture-fit/components/questionD/que
 import { QuestionEComponent } from 'src/app/culture-fit/components/questionE/questionE.component';
 import { AdminComponent } from 'src/app/components/admin/admin.component';
 import { EditStudentComponent } from 'src/app/edit-student/edit-student.component';
-import {  AcademicInfoComponent } from 'src/app/components/academic-info/academic-info.component';
+import { AcademicInfoComponent } from 'src/app/components/academic-info/academic-info.component';
 import { ManageprofileComponent } from 'src/app/components/manageprofile/manageprofile.component';
 import { RadarComponent } from 'src/app/radar/radar.component';
+import { getCanActivateChild } from '@angular/router/src/utils/preactivation';
+import { CultureFitInfoComponent } from 'src/app/culture-fit/culture-fit-info/culture-fit-info.component';
 
 // Include route guard in routes array
 const routes: Routes = [
+  
   { path: '', redirectTo: '/sign-in', pathMatch: 'full'},
-  { path: 'sign-in', component: SignInComponent, canActivate: [SecureInnerPagesGuard]},
+  { path: 'sign-in', component: SignInComponent, canActivateChild: [AuthGuard, SecureInnerPagesGuard], children: [
+    { path: 'dashboard', component: DashboardComponent, data: {allowedRoles: ['admin']} }
+   ] },
   { path: 'register-user', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'general-information ', component: GeneralInformationComponent},
   { path: 'academic-info', component: AcademicInfoComponent},
+  { path: 'admin', component: AdminComponent, data: { allowedRoles: ['admin'] } },
   { path: '', redirectTo: '/register-student', pathMatch: 'full' },
   { path: 'register-student', component: AddStudentComponent },
   { path: 'view-students', component: StudentsListComponent },
   { path: 'edit-student/:id', component: EditStudentComponent },
   { path: 'logout', component: LogoutComponent},
   { path: 'manageprofile', component: ManageprofileComponent},
+  { path: 'culture-fit-info', component: CultureFitInfoComponent},
   { path: 'culture-fit-root', component: CultureFitRootComponent, canActivate: [SecureInnerPagesGuard],
     children: [
       { path: '', redirectTo: 'questionA', pathMatch: 'full'},
@@ -56,7 +63,8 @@ const routes: Routes = [
       { path: 'radar', component: RadarComponent, canActivate: [SecureInnerPagesGuard]}
     ]},
   
-];
+]
+  
 
 
 @NgModule({

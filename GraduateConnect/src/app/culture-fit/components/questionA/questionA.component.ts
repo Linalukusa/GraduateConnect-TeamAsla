@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { MainContentService} from 'src/app/services/main-content.service';
 import { Answer } from '../../Models/Answer';
-//import { Answer } from '../Models/Answer';
+import { MatDialog } from '@angular/material';
+import { QuestionBComponent } from '../questionB/questionB.component';
 
 
 
@@ -16,15 +17,19 @@ export class QuestionAComponent implements OnInit {
 
   obj: Answer;
 
-  constructor(public authService: AuthService, public router: Router, public service: MainContentService) {
+  constructor(public authService: AuthService, public router: Router, public service: MainContentService, public dialog: MatDialog) {
     this.obj = new Answer();
    }
 
   
 
-  onQuestion2(): void{
-      this.router.navigate(['culture-fit-root/questionB']);
-  }
+   openQuestionB()
+   {
+     this.dialog.open(QuestionBComponent, {
+       height: '750px',
+       width: '70%',
+     })
+   }
 
   ngOnInit() {
     
