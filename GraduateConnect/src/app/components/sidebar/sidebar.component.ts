@@ -26,7 +26,7 @@ export class SidebarComponent implements OnInit {
     this.menus = sidebarservice.getMenuList();
    }
 
-  ngOnInit() {
+  ngOnInit() {  
     //this.user = this.crud.getUser();
   }
 
