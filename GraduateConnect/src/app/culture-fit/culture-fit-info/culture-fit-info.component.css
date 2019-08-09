@@ -4,6 +4,12 @@
 @import '~@fortawesome/fontawesome-free/scss/solid';
 */
 @import '~perfect-scrollbar/css/perfect-scrollbar.css';
+.btn {
+  position: absolute;
+}
+.para {
+  padding-left: 20%;
+}
 .page-wrapper {
     height: 100vh;
   }

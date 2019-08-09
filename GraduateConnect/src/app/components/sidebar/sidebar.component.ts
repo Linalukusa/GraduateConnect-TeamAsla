@@ -18,6 +18,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class SidebarComponent implements OnInit {
   menus = [];
+  password: string = 'connect';
   constructor(public sidebarservice: SidebarService,
     private authService: AuthService) {
     this.menus = sidebarservice.getMenuList();
