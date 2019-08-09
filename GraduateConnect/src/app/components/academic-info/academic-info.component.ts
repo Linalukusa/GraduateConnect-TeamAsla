@@ -3,6 +3,9 @@ import { CrudService } from 'src/app/shared/crud.service';    // CRUD services A
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'; // Reactive form services
 import { ToastrService } from 'ngx-toastr'; // Alert message using NGX toastr
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { MatDialog } from '@angular/material';
+import { LangDialogComponent } from 'src/app/lang-dialog/lang-dialog.component';
+import { QualDialogComponent } from 'src/app/qual-dialog/qual-dialog.component';
 
 @Component({
   selector: 'app-academic-info',
@@ -11,10 +14,13 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class AcademicInfoComponent implements OnInit {
   public addForm: FormGroup;  // Define FormGroup to student's form
+  mylang: string;
+    myqual : string;
  
   constructor(
     public crudApi: CrudService,  // CRUD API services
     public fb: FormBuilder,       // Form Builder service for Reactive forms
+    public dialog: MatDialog,
     public toastr: ToastrService,  // Toastr service for alert message
     private authService: AuthService
   ) { }
@@ -113,6 +119,41 @@ export class AcademicInfoComponent implements OnInit {
        this.files.push(files.item(i));
      }
    }
+
+   
+
+   openDialog(): void {
+    let dialogRef = this.dialog.open(LangDialogComponent, {
+      width: '750px',
+     data: { mylang: this.mylang}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      //this.language = result;
+      this.mylang = result;
+      console.log(result);
+     
+    });
+  }
+
+  openQualDialog(): void {
+    let dialogRef = this.dialog.open(QualDialogComponent, {
+      width: '750px',
+     data: { myqual: this.myqual}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      
+      this.myqual = result;
+      console.log(result);
+     
+    });
+  }
+
 }
+
+
 
 

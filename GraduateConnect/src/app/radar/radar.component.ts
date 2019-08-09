@@ -36,12 +36,17 @@ export class RadarComponent implements OnInit {
   // events
   public chartClicked(e:any):void {
     console.log(e);
+      //  console.log(this.service.totalArray.pop());
   }
  
   public chartHovered(e:any):void {
     console.log(e);
+    
   }
-  
+  public adClick() {
+    window.open('https://www.bbd.co.za/bbd-careers/details.html?nPostingId=14778&nPostingTargetId=65153&id=P4OFK026203F3VBQB798N79QY&LG=UK', '_blank');
+  }
+  constructor(public authService: AuthService, public router: Router, public service: MainContentService) { }
 
 }
 

@@ -8,6 +8,7 @@ import { Answer } from '../../Models/Answer';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { QuestionDComponent } from '../questionD/questionD.component';
 
+
 @Component({
   selector: 'app-questionC',
   templateUrl: './questionC.component.html',

@@ -28,6 +28,10 @@ export class QuestionBComponent implements OnInit {
     public dialog: MatDialog,
     public dialogRef: MatDialogRef<QuestionBComponent>) { this.obj = new Answer() }
 
+
+    onQuestion3() {
+      this.router.navigate(['culture-fit-root/questionC']);
+  }
   ngOnInit() {
   }
   closeDialog(): void
@@ -41,6 +45,7 @@ export class QuestionBComponent implements OnInit {
       width: '70%',
      })
    }
+
 
   onScoreTotal() {
     this.service.totalDominance.push(this.obj.Dominance);

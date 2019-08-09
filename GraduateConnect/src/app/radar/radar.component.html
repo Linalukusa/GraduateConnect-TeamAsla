@@ -1,11 +1,105 @@
-<h3 style="text-align:center">Radar Chart</h3>
-<div style="display: block">
-  <canvas baseChart
-          [datasets]="demoradarChartData"
-          [labels]="demoradarChartLabels"
-          [chartType]="radarChartType"
-          (chartHover)="chartHovered($event)"
-          (chartClick)="chartClicked($event)">
-        </canvas>
-</div>
-
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  </head>
+  
+  <body>
+     
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6" width=75% right=0px> -->
+         <div class="well profile">
+              <div class="col-sm-12" *ngIf="authService.userData as user">
+                <!-- <div class="col-sm-1">
+  
+                </div> -->
+                  <div class="col-sm-4 text-left">
+                     
+                      
+                      <h2> <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h2>
+                                 
+                 
+                      <p><strong>City: </strong> Cape Town </p>
+                      <p><strong>Institution: </strong> University of Cape Town </p>
+                      <p><strong>Degree: </strong>Bbus Sci Information Systems </p>
+                      <p><strong>Year: </strong> 4 </p>
+                      <p><strong>Skills: </strong>
+                          <span class="tags">html5</span> 
+                          <span class="tags">css3</span>
+                          <span class="tags">jquery</span>
+                          <span class="tags">bootstrap3</span>
+                      </p>
+                  </div>
+                  <div class="col-sm-8 text-right ">
+                    <figure>
+                        <img src="assets/images/bbdAdvert2.PNG" alt="" class=" img-responsive  pointer" (click)="adClick()">
+                      
+                    </figure>
+                </div>
+            </div> 
+            <div class="col-xs-12 divider text-center">
+              <div class="col-xs-12 col-sm-4 emphasis">
+                  <h2><strong> Precise </strong></h2>                    
+                  <p><small>Culture</small></p>
+                  <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button>
+              </div>
+              <div class="col-xs-12 col-sm-4 emphasis">
+                  <h2><strong>75%</strong></h2>                    
+                  <p><small>Average*</small></p>
+                  <button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Transcript </button>
+              </div>
+              <div class="col-xs-12 col-sm-4 emphasis">
+                  <h2><strong>13/43</strong></h2>                    
+                  <p><small>Rank</small></p>
+                  <div class="btn-group dropup btn-block">
+                    <button type="button" class="btn btn-primary"><span class="fa fa-gear"></span> Filter by </button>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                      <span class="caret"></span>
+                      <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu text-left" role="menu">
+                      <li><a href="#"><span class="fa fa-envelope pull-right"></span> Institution</a></li>
+                      <li><a href="#"><span class="fa fa-list pull-right"></span> Degree </a></li>
+                      <li class="divider"></li>
+                      <li><a href="#"><span class="fa fa-warning pull-right"></span>City</a></li>
+                      <li class="divider"></li>
+                      <!-- <li><a href="#" class="btn disabled" role="button"> Unfollow </a></li> -->
+                    </ul>
+                  </div>
+                  
+              </div>
+              
+          </div>
+     <!-- </div>                  -->
+    
+  <!-- <h3 style="text-align:center">Radar Chart</h3> -->
+  
+      </div>
+      </div>
+      </div>
+      <div class="row mb-5 align-items-center">
+          <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
+            <div style="display: block">
+              <canvas baseChart
+                      [datasets]="demoradarChartData"
+                      [labels]="demoradarChartLabels"
+                      [chartType]="radarChartType"
+                      (chartHover)="chartHovered($event)"
+                      (chartClick)="chartClicked($event)">
+                    </canvas>
+            </div>
+          </div>
+          <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="text-black mb-4">Precise Culture</h2>
+            <p class="mb-4">This culture can be defined as the most technologically competent, precise, correct, rule-led, methodical and disciplined of all culture types. <br> <br> Conservative approach looking for perfection in everything. If there is a standard to be met, this culture does it and more. Everything is ordered and complies with the rules in a cold and businesslike fashion. Logic is the key with little time for creativity. Able to handle the smallest detail, these cultures may not be the most influential, but are certainly the most correct in their approach. Utilised for their superiority, resilience and technical sophistication.
+      
+              <!-- Conservative approach looking for perfection in everything. If there is a standard to be met, this culture does it and more. Everything is ordered and complies with the rules in a cold and businesslike fashion. Logic is the key with little time for creativity. Able to handle the smallest detail, these cultures may not be the most influential, but are certainly the most correct in their approach. Utilised for their superiority, resilience and technical sophistication. -->
+            </p>
+       
+      
+          </div>
+        </div>  
+      </body>
+      
+  

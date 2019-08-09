@@ -7,6 +7,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { QuestionBComponent } from '../questionB/questionB.component';
 
 
+
 @Component({
   selector: 'app-questionA',
   templateUrl: './questionA.component.html',
