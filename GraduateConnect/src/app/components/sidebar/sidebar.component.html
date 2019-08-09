@@ -53,7 +53,7 @@
                   </li>
                   <li >
                     
-                    <a  routerLink="/register-student">
+                    <a *ngIf="user.roles.admin" routerLink="/register-student">
                       <i class="fa fa-tachometer-alt"></i>
                       <span >General Information</span>
                     </a>

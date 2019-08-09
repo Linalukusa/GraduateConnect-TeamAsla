@@ -116,6 +116,21 @@ export class CrudService {
     })
   }
 
+  getTotalArray(id:string) {
+    const obj = this.db.list('academic=-list/');
+
+    let totalArray;
+    obj.valueChanges().subscribe((val) => {
+      totalArray = val['results'];
+    })
+
+    {
+      
+    }
+
+    return totalArray;
+  }
+
   // Delete Student Object
   DeleteStudent(id: string) { 
     this.studentRef = this.db.object('students-list/'+id);

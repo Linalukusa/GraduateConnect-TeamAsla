@@ -18,6 +18,7 @@ export class CultureFitInfoComponent implements OnInit {
   openQuestionA()
   {
     this.dialog.open(QuestionAComponent, {
+      disableClose: true,
       height: '1000px',
       width: '70%',
     })
