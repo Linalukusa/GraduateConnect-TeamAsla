@@ -76,6 +76,7 @@ import { LangDialogComponent } from './lang-dialog/lang-dialog.component';
 import { QualDialogComponent } from './qual-dialog/qual-dialog.component';
 import { JwtModule } from "@auth0/angular-jwt";
 import { CultureFitInfoComponent } from './culture-fit/culture-fit-info/culture-fit-info.component';
+import { Hero } from './hero';
 
 
 
@@ -104,7 +105,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SidenavComponent,
     ToolbarComponent,
     QuestionBComponent,
-    HeroesComponent,
+   
     Hero,
     QuestionDComponent,
     QuestionCComponent,
@@ -171,7 +172,7 @@ QualDialogComponent  ],
     useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG }
   ],
   bootstrap: [AppComponent],
-  entryComponents:[QuestionAComponent, QuestionBComponent]
+  // entryComponents:[QuestionAComponent, QuestionBComponent]
 })
 
 export class AppModule { }

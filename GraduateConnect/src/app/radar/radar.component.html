@@ -10,12 +10,16 @@
     <div class="row">
       <!-- <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6" width=75% right=0px> -->
          <div class="well profile">
-              <div class="col-sm-12">
+              <div class="col-sm-12" *ngIf="authService.userData as user">
                 <!-- <div class="col-sm-1">
   
                 </div> -->
                   <div class="col-sm-4 text-left">
-                      <h2>Aidan Katzef</h2>
+                     
+                      
+                      <h2> <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h2>
+                                 
+                 
                       <p><strong>City: </strong> Cape Town </p>
                       <p><strong>Institution: </strong> University of Cape Town </p>
                       <p><strong>Degree: </strong>Bbus Sci Information Systems </p>
