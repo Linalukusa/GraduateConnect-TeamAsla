@@ -12,7 +12,8 @@
        
       </div>
 
-      <div class="sidebar-profile" *ngIf="authService.userData as user">
+      <div class="sidebar-profile" >
+      <!-- *ngIf="authService.userData as user"> -->
         <div class="user-pic">
             <img class="align-self-start mr-5 img-thumbnail rounded-circle"  alt="User picture" src="{{(user.photoURL) ? user.photoURL : 'assets/images/user.jpg'}}" >
         </div>
@@ -53,8 +54,8 @@
                     <span>General</span>
                   </li>
                   <li >
-                    
-                    <a *ngIf="user.roles.admin" routerLink="/register-student">
+                    <!-- *ngIf="user.roles.admin"  -->
+                    <a routerLink="/register-student">
                       <i class="fa fa-tachometer-alt"></i>
                       <span >General Information</span>
                     </a>
