@@ -4,14 +4,16 @@
       <div class="sidebar-header">
           <a  routerLink="/dashboard">
             <i class="fa fa-tachometer-alt"></i>
-            <span >  Return To Dashboard
-
-            </span>
+            <figure>
+                <img src="assets/images/logo2.PNG" alt="" class="img-responsive fitting">
+              
+            </figure>
           </a>
        
       </div>
 
-      <div class="sidebar-profile" *ngIf="authService.userData as user">
+      <div class="sidebar-profile" >
+      <!-- *ngIf="authService.userData as user"> -->
         <div class="user-pic">
             <img class="align-self-start mr-5 img-thumbnail rounded-circle"  alt="User picture" src="{{(user.photoURL) ? user.photoURL : 'assets/images/user.jpg'}}" >
         </div>
@@ -20,7 +22,11 @@
               <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong>
     
             </span>
-          <span class="user-role">Candidate</span>
+            
+            
+                <span class="user-role">Candidate</span>
+            
+        
           <span class="user-status">
             <i class="fa fa-circle"></i>
             <span>Online</span>
@@ -48,11 +54,12 @@
                     <span>General</span>
                   </li>
                   <li >
-                    <a  routerLink="/register-student">
+                    <!-- *ngIf="user.roles.admin"  -->
+                    <a routerLink="/register-student">
                       <i class="fa fa-tachometer-alt"></i>
                       <span >General Information</span>
                     </a>
-                    
+                  
                   </li>
                   <li >
                     <a routerLink="/academic-info"  >
@@ -63,7 +70,7 @@
                   </li>
                  
                   <li >
-                    <a routerLink="/culture-fit-root">
+                    <a routerLink="/culture-fit-info">
                       <i class="fa fa-chart-line"></i>
                       <span>Culture
                          Fit</span>

@@ -64,6 +64,7 @@
             [(ngModel)]="obj.Earth">
           </mat-slider>
         </div>
+        
         <div class="question">
           <p><b> 4. I prefer to move at a fast pace </b></p>
           
@@ -137,7 +138,7 @@
             [(ngModel)]="obj.Introvert">
           </mat-slider>
         </div>
-        <div class="question">
+        <div class="question" id="lastQ">
           <p><b> 8. I prefer to work independently </b></p>
 
           <section class="example-section">
@@ -156,9 +157,9 @@
           </mat-slider>
         </div>
       </div>
+      <div mat-dialog-actions>
+        <button mat-button color="accent" (click)="onScoreTotal()">Next</button>
       </div>
-        <button mat-button class="mat" (click)="onScoreTotal(); onQuestion2()">Next</button>
-      
       
       
       

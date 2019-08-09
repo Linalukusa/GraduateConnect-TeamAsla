@@ -47,6 +47,9 @@
     z-index: 999;
     transition: left 0.3s ease;
   }
+  .fitting {
+    width: 250px;
+  }
   .sidebar a {
     text-decoration: none;
     transition: color 0.3s ease;
@@ -72,6 +75,8 @@
     cursor: pointer;
     font-size: 20px;
     transition: color 0.3s ease;
+    width: 256px;
+    top: 0px;
   }
   .sidebar .sidebar-content .sidebar-profile {
     padding: 20px;

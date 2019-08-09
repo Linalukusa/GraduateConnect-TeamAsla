@@ -89,7 +89,7 @@ export class EditStudentComponent implements OnInit {
       citizenship:['',Validators.required,],
       currentcity: ['',[Validators.required,Validators.minLength(2)]],
       mobileNumber: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
-      passport:['', ],
+      passport:['', [Validators.required, Validators.pattern('^[0-9]+$')]],
  
       currentprovince: ['', ],
     })

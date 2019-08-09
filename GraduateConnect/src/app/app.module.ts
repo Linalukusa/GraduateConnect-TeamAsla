@@ -15,7 +15,7 @@ import { LogoutComponent } from './components/LogoutComponent';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
 // Firebase services + enviorment module
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
@@ -45,7 +45,7 @@ import { GeneralInformationComponent } from './components/general-information/ge
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { StudentsListComponent } from './students-list/students-list.component';
-import { EditStudentComponent } from './edit-student/edit-student.component';
+
 import { CultureFitRootComponent } from './culture-fit/culture-fit-root.component';
 import { QuestionAComponent } from './culture-fit/components/questionA/questionA.component';
 import { SidenavComponent } from './culture-fit/components/sidenav/sidenav.component';
@@ -67,10 +67,16 @@ import { UploaderComponent } from './components/uploader/uploader.component';
 import { DropzoneDirective } from './dropzone.directive';
 import { UploadTaskComponent } from './components/upload-task/upload-task.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatDialog , MatDialogModule} from '@angular/material';
 import { RadarComponent } from './radar/radar.component';
 import { ChartsModule } from 'ng2-charts';
-
+import { EditStudentComponent } from './edit-student/edit-student.component';
+// import { ConfirmEqualValidatorDirective } from './shared/confirm-equal-validator.directive';
+import { LangDialogComponent } from './lang-dialog/lang-dialog.component';
+import { QualDialogComponent } from './qual-dialog/qual-dialog.component';
+import { JwtModule } from "@auth0/angular-jwt";
+import { CultureFitInfoComponent } from './culture-fit/culture-fit-info/culture-fit-info.component';
+import { Hero } from './hero';
 
 
 
@@ -99,8 +105,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SidenavComponent,
     ToolbarComponent,
     QuestionBComponent,
-    QuestionCComponent,
+   
+    Hero,
     QuestionDComponent,
+    QuestionCComponent,
+    QuestionCComponent,
     QuestionEComponent,
     AdminComponent,
     AdminSidenavComponent,
@@ -109,7 +118,12 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ManageprofileComponent,
     DropzoneDirective,
     UploadTaskComponent,
-    RadarComponent
+    RadarComponent,
+    // ConfirmEqualValidatorDirective
+    RadarComponent,
+    LangDialogComponent,
+    QualDialogComponent,
+    CultureFitInfoComponent
     
   
     
@@ -124,9 +138,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AngularFirestoreModule,
     AngularFireStorageModule,
     ReactiveFormsModule,
+    MatProgressSpinnerModule,
     HttpClientModule,
     MaterialModule,
     FlexLayoutModule,
+    JwtModule.forRoot({}),
     FormsModule,
     MatButtonModule,
     MatCheckboxModule,
@@ -134,15 +150,20 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     BsDropdownModule.forRoot(),
     PerfectScrollbarModule,
     ChartsModule,
+    MatDialogModule,
     BrowserAnimationsModule,    // Required animations module for Toastr
     ToastrModule.forRoot({      // Register NgxToast NPM module
       timeOut: 3000,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,      
     }),
-    NgxPaginationModule  // NGX pagination module
-    
+    NgxPaginationModule,  // NGX pagination module
+   
   ],
+
+  entryComponents: [
+    LangDialogComponent,
+QualDialogComponent  ],
     
 
   providers: [ AuthService,
@@ -150,7 +171,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     provide: PERFECT_SCROLLBAR_CONFIG,
     useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  // entryComponents:[QuestionAComponent, QuestionBComponent]
 })
 
 export class AppModule { }

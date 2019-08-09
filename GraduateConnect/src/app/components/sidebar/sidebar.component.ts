@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { SidebarService } from './sidebar.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { User } from 'src/app/shared/services/user';
 //import { MenusService } from './menus.service';
 
 @Component({
@@ -18,12 +19,15 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class SidebarComponent implements OnInit {
   menus = [];
+  user: any;
+  password: string = 'connect';
   constructor(public sidebarservice: SidebarService,
     private authService: AuthService) {
     this.menus = sidebarservice.getMenuList();
    }
 
-  ngOnInit() {
+  ngOnInit() {  
+    //this.user = this.crud.getUser();
   }
 
   getSideBarState() {

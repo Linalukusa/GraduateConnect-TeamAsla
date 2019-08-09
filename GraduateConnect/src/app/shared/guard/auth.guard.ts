@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router, CanActivateChild } from '@angular/router';
 import { AuthService } from "../../shared/services/auth.service";
 import { Observable } from 'rxjs';
 
@@ -7,20 +7,31 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 
-export class AuthGuard implements CanActivate {
+export class AuthGuard implements CanActivate, CanActivateChild {
   
-  constructor(
-    public authService: AuthService,
-    public router: Router
-  ){ }
-
+  constructor(private authService: AuthService, private router: Router) {}
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if(this.authService.isLoggedIn !== true) {
-      this.router.navigate(['sign-in'])
-    }
-    return true;
+      const allowedRoles = next.data.allowedRoles;
+      const isAuthorized = this.authService.isAuthorized(allowedRoles);
+      if (!isAuthorized) {
+      // if not authorized, show access denied message
+      this.router.navigate(['/accessdenied']);
+      }
+      return isAuthorized;
   }
-
+  canActivateChild(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean{
+      const allowedRoles = next.data.allowedRoles;
+      
+    const isAuthorized = this.authService.isAuthorized(allowedRoles);
+    if (!isAuthorized) {
+      // if not authorized, show access denied message
+      this.router.navigate(['/accessdenied']);
+    }
+    return isAuthorized;
+    }
+  
 }
