@@ -79,10 +79,10 @@
                     </div>
               
                     <!-- Calling SignIn Api from AuthService -->
-                    <div class="formGroup" >
-                      <span *ngIf= user.uid.student></span>
+                    
+                      
                       <input type="button" class="btn btn-primary btn-pill" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
-                    </div>
+                    
               
                     <div class="formGroup">
                       <span class="or"><span class="orInner">Or</span></span>

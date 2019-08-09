@@ -8,7 +8,7 @@ import { QuestionAComponent } from '../components/questionA/questionA.component'
   styleUrls: ['./culture-fit-info.component.css']
 })
 export class CultureFitInfoComponent implements OnInit {
-
+  showSpinner: boolean = false;
   constructor(
     public dialog: MatDialog
   ) { }
