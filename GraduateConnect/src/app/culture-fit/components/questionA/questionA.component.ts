@@ -5,7 +5,7 @@ import { MainContentService} from 'src/app/services/main-content.service';
 import { Answer } from '../../Models/Answer';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { QuestionBComponent } from '../questionB/questionB.component';
-
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -14,16 +14,28 @@ import { QuestionBComponent } from '../questionB/questionB.component';
   styleUrls: ['./questionA.component.css']
 })
 export class QuestionAComponent implements OnInit {
-  
-
 
   obj: Answer;
-  sum: number = 0;
+  questions = [
+    '1  ~  I Prefer To Be Assertive', //Dominance
+    '2  ~  I Prefer To Follow Regulations In My Workspace', //Precise
+    '3  ~  I Prefer To Join In With Others', //DownToEarth
+    '4  ~  I Prefer To Move At A Fast Pace', //Animated
+    '5  ~  I Prefer To Influence People', //Convincing
+    '6  ~  I Prefer To Accommodate Others Wishes', //Accommodate
+    '7  ~  I Prefer To Work Quietly On My Own', //Introvert
+    '8  ~  I Prefer To Work Independently' //Headstrong
+  ];
 
   constructor(public authService: AuthService, public router: Router, public service: MainContentService, public dialog: MatDialog,
     public dialogRef: MatDialogRef<QuestionAComponent>) {
     this.obj = new Answer();
    }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.questions, event.previousIndex, event.currentIndex);
+    console.log(this.questions);
+  }
    closeDialog(): void
    {
     this.dialogRef.close();
@@ -48,17 +60,9 @@ export class QuestionAComponent implements OnInit {
     this.service.totalIntrovert.push(this.obj.Introvert);
     this.service.totalAnimated.push(this.obj.Animated);
     this.service.totalHeadstrong.push(this.obj.Headstrong);
-    this.sum = this.service.totalDominance.pop() + this.service.totalConvincing.pop() +
-    this.service.totalEarth.pop() + this.service.totalPrecise.pop() + this.service.totalAccommodate.pop() +
-    this.service.totalIntrovert.pop() + this.service.totalAnimated.pop() + this.service.totalHeadstrong.pop()
-    if(!(this.sum === 36))
-    {
-      alert("Each Question Must Have A Unique Value!!!");
-    }
-    else{
-      this.closeDialog();
-      this.openQuestionB();
-    }
+    this.closeDialog();
+    this.openQuestionB();
+    
   }
 }
 

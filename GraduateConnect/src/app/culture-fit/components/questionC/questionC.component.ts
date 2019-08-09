@@ -7,6 +7,7 @@ import { MainContentService } from 'src/app/services/main-content.service';
 import { Answer } from '../../Models/Answer';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { QuestionDComponent } from '../questionD/questionD.component';
+import { moveItemInArray, CdkDragDrop } from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -17,7 +18,16 @@ import { QuestionDComponent } from '../questionD/questionD.component';
 export class QuestionCComponent implements OnInit {
 
   obj: Answer;
-  sum: number = 0;
+  questions = [
+    '1  ~  At work, if I am a leader, I expect others to follow what I say', //Dominance
+    '2  ~  At work people should follow carefully laid down procedures', //Precise
+    '3  ~  At work leaders should seek consensus before proceeding', //DownToEarth
+    '4  ~  At work there are too many rules and they get in the way of doing the job', //Animated
+    '5  ~  At work people should be persuaded to do things', //Convincing
+    '6  ~  At work people should accommodate and serve their leader', //Accommodate
+    '7  ~  At work once you know what is required, you should be left to get on with it', //Introvert
+    '8  ~  At work there is too much to do to wait for instructions' //Headstrong
+  ];
 
   constructor(
     public authService: AuthService,
@@ -25,6 +35,11 @@ export class QuestionCComponent implements OnInit {
     public service: MainContentService,
     public dialog: MatDialog,
     public dialogRef: MatDialogRef<QuestionCComponent>) { this.obj = new Answer()}
+    
+    drop(event: CdkDragDrop<string[]>) {
+      moveItemInArray(this.questions, event.previousIndex, event.currentIndex);
+      console.log(this.questions);
+    }
 
   ngOnInit() {
   }
@@ -49,16 +64,7 @@ export class QuestionCComponent implements OnInit {
     this.service.totalIntrovert.push(this.obj.Introvert);
     this.service.totalAnimated.push(this.obj.Animated);
     this.service.totalHeadstrong.push(this.obj.Headstrong);
-    this.sum = this.service.totalDominance.pop() + this.service.totalConvincing.pop() +
-    this.service.totalEarth.pop() + this.service.totalPrecise.pop() + this.service.totalAccommodate.pop() +
-    this.service.totalIntrovert.pop() + this.service.totalAnimated.pop() + this.service.totalHeadstrong.pop()
-    if(!(this.sum === 36))
-    {
-      alert("Each Question Must Have A Unique Value!!!");
-    }
-    else{
-      this.closeDialog();
-      this.openQuestionD();
-    }
+    this.closeDialog();
+    this.openQuestionD();
   }
 }

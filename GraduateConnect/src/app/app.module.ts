@@ -67,7 +67,7 @@ import { UploaderComponent } from './components/uploader/uploader.component';
 import { DropzoneDirective } from './dropzone.directive';
 import { UploadTaskComponent } from './components/upload-task/upload-task.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import {MatButtonModule, MatCheckboxModule, MatDialog , MatDialogModule} from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatDialog , MatDialogModule} from '@angular/material';
 import { RadarComponent } from './radar/radar.component';
 import { ChartsModule } from 'ng2-charts';
 import { EditStudentComponent } from './edit-student/edit-student.component';
@@ -77,7 +77,8 @@ import { QualDialogComponent } from './qual-dialog/qual-dialog.component';
 import { JwtModule } from "@auth0/angular-jwt";
 import { CultureFitInfoComponent } from './culture-fit/culture-fit-info/culture-fit-info.component';
 import { Hero } from './hero';
-
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -140,6 +141,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ReactiveFormsModule,
     MatProgressSpinnerModule,
     HttpClientModule,
+    DragDropModule,
     MaterialModule,
     FlexLayoutModule,
     JwtModule.forRoot({}),
@@ -163,7 +165,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
   entryComponents: [
     LangDialogComponent,
-QualDialogComponent  ],
+QualDialogComponent, QuestionAComponent ],
     
 
   providers: [ AuthService,
@@ -176,3 +178,4 @@ QualDialogComponent  ],
 })
 
 export class AppModule { }
+platformBrowserDynamic().bootstrapModule(AppModule);

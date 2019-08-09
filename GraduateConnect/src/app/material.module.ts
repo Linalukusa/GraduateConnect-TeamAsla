@@ -34,6 +34,11 @@ import {
   MatToolbarModule,
   MatTooltipModule
 } from '@angular/material';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { A11yModule } from '@angular/cdk/a11y';
+import { CdkStepperModule } from '@angular/cdk/stepper';
+import { CdkTableModule } from '@angular/cdk/table';
+import { CdkTreeModule } from '@angular/cdk/tree';
 
 @NgModule({
   
@@ -45,6 +50,11 @@ import {
     MatCardModule,
     MatCheckboxModule,
     MatChipsModule,
+    A11yModule,
+    CdkStepperModule,
+    CdkTableModule,
+    CdkTreeModule,
+    DragDropModule,
     MatDatepickerModule,
     MatDialogModule,
     MatDividerModule,
@@ -84,6 +94,10 @@ import {
     MatDividerModule,
     MatExpansionModule,
     MatGridListModule,
+    A11yModule,
+    CdkStepperModule,
+    CdkTableModule,
+    CdkTreeModule,
     MatIconModule,
     MatInputModule,
     MatListModule,
