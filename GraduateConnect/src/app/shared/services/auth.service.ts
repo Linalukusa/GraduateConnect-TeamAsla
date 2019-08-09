@@ -14,8 +14,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
-})
-
+}) 
 export class AuthService {
   user$: Observable<User>;
   userData: any; // Save logged in user datavice) {}
