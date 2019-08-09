@@ -25,6 +25,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean{
       const allowedRoles = next.data.allowedRoles;
+      
     const isAuthorized = this.authService.isAuthorized(allowedRoles);
     if (!isAuthorized) {
       // if not authorized, show access denied message
