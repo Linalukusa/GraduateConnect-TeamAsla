@@ -13,10 +13,10 @@
       </div>
 
       <div class="sidebar-profile" >
-      <!-- *ngIf="authService.userData as user"> -->
-        <div class="user-pic">
+      
+        <div class="user-pic" *ngIf="authService.userData as user">
             <img class="align-self-start mr-5 img-thumbnail rounded-circle"  alt="User picture" src="{{(user.photoURL) ? user.photoURL : 'assets/images/user.jpg'}}" >
-        </div>
+  
         <div class="user-info">
             <span class="user-name">
               <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong>
@@ -32,6 +32,7 @@
             <span>Online</span>
           </span>
         </div>
+      </div>
       </div>
 
             <!-- sidebar-header  -->
