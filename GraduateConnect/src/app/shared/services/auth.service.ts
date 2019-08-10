@@ -152,7 +152,6 @@ export class AuthService {
       roles:{
         student: true,
         admin: false,
-        Admin: user.Admin
       }
     }
     return userRef.set(userData, {

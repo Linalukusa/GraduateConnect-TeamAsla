@@ -57,15 +57,16 @@ export class QuestionCComponent implements OnInit {
     this.dialogRef.close();
   }
   openQuestionD()
-   {
+  {
      this.dialog.open(QuestionDComponent, {
       disableClose: true,
       height: '1000px',
       width: '50%',
      })
-   }
+  }
 
   onScoreTotal() {
+    this.questions.reverse();
     this.dominance = this.questions.indexOf('1  ~  At work, if I am a leader, I expect others to follow what I say');
     this.service.totalDominance.push(this.dominance + 1)
     this.precise = this.questions.indexOf('2  ~  At work people should follow carefully laid down procedures');

@@ -14,7 +14,12 @@
     </div>
   </div>
   <div mat-dialog-actions class="btn">
-    <button mat-button color="accent" (click)="onScoreTotal()"> Submit </button>
+    <div *ngIf="!hide">
+      <button mat-button color="accent" (click)="onScoreTotal()"> Submit </button>
+    </div>
+    <div *ngIf="hide">  
+      <button mat-button color="accent" (click)="onSubmit()"> Show Results </button>
+    </div>
   </div>
 </div>
 <!--

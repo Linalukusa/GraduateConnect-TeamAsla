@@ -70,6 +70,7 @@ export class QuestionBComponent implements OnInit {
 
 
   onScoreTotal() {
+    this.questions.reverse();
     this.dominance = this.questions.indexOf('1  ~  I like to direct other peoples activities');
     this.service.totalDominance.push(this.dominance + 1)
     this.precise = this.questions.indexOf('2  ~  I like to be formal and work to standards');

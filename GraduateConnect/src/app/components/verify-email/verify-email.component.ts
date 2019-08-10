@@ -14,5 +14,9 @@ export class VerifyEmailComponent implements OnInit {
 
   ngOnInit() {
   }
+  notify()
+  {
+    alert("Email Sent!!!");
+  }
 
 }

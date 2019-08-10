@@ -100,8 +100,9 @@
             <span class="badge-sonar"></span>
           </a>
           <ul class="dropdown-menu">
-          <li>  <a class="dropdown-item" routerLink='/manageprofile'>My profile</a></li>
-           <li> <a class="dropdown-item" routerLink='/forgot-password'>Change Password</a></li>
+          <!-- <li>  <a class="dropdown-item"  colour="accent">My profile</a> -->
+            <li><button mat-button color="accent" class="dropdown-item" routerLink='/manageprofile'>My profile</button></li>
+           <li> <button mat-button color="accent" class="dropdown-item" routerLink='/forgot-password'>Change Password</button></li>
            
           </ul>
         </li>
@@ -109,7 +110,7 @@
     
         <div>
           <a routerLink="/logout" type="button" value="Log in" (click)="authService.SignOut()">
-            <i class="fa fa-power-off" ></i>
+            <i class="fa fa-power-off" > Sign Out</i>
           </a>
         </div>
   </div>

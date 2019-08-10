@@ -36,26 +36,26 @@ export class QuestionEComponent implements OnInit {
   ];
 
   constructor(public authService: AuthService,
-    public router: Router, public service: MainContentService,
-    public dialogRef: MatDialogRef<QuestionEComponent>) { this.obj = new Answer()}
+              public router: Router, public service: MainContentService,
+              public dialogRef: MatDialogRef<QuestionEComponent>) {
+              this.obj = new Answer()}
 
-    drop(event: CdkDragDrop<string[]>) {
-      moveItemInArray(this.questions, event.previousIndex, event.currentIndex);
-      console.log(this.questions);
-    }
-
+  drop(event: CdkDragDrop<string[]>) {
+  moveItemInArray(this.questions, event.previousIndex, event.currentIndex);
+  }
   ngOnInit() {
   }
-  closeDialog(): void
+  closeDialog()
   {
     this.dialogRef.close();
   }
-  onSubmit(){
-    
-    this.router.navigate(['radar']);
-    
+  onSubmit()
+  { 
+    this.router.navigate(['radar']);  
   }
   onScoreTotal(){
+    this.questions.reverse();
+    this.closeDialog();
     this.dominance = this.questions.indexOf('1  ~  I can best de described as competitive and decisive');
     this.service.totalDominance.push(this.dominance + 1)
     this.precise = this.questions.indexOf('2  ~  I can be best described as precise, systematic and compliant');
@@ -73,7 +73,8 @@ export class QuestionEComponent implements OnInit {
     this.headstrong = this.questions.indexOf('8  ~  I can best be described as eager, outgoing and mobile');
     this.service.totalHeadstrong.push(this.headstrong + 1);
     console.log(this.service.totalAccommodate.pop());
-    this.closeDialog();
+    alert("Your Results Have Been Captured!!!");
     this.onSubmit();
+    this.hide = true;
   }
  }

@@ -38,12 +38,14 @@ export class QuestionAComponent implements OnInit {
 
   constructor(public authService: AuthService, public router: Router, public service: MainContentService, public dialog: MatDialog,
     public dialogRef: MatDialogRef<QuestionAComponent>) {
-    this.obj = new Answer();
-   }
+    this.obj = new Answer()}
 
-  drop(event: CdkDragDrop<string[]>) {
+    drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.questions, event.previousIndex, event.currentIndex);
     console.log(this.questions);
+    }
+    
+  ngOnInit() {  
   }
    closeDialog(): void
    {
@@ -57,11 +59,8 @@ export class QuestionAComponent implements OnInit {
       width: '50%',
      })
    }
-
-  ngOnInit() {
-    
-  }
   onScoreTotal() {
+    this.questions.reverse();
     this.dominance = this.questions.indexOf('1  ~  I Prefer To Be Assertive');
     this.service.totalDominance.push(this.dominance + 1)
     this.precise = this.questions.indexOf('2  ~  I Prefer To Follow Regulations In My Workspace');

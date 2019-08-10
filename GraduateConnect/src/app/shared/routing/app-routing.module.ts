@@ -30,12 +30,13 @@ import { ManageprofileComponent } from 'src/app/components/manageprofile/managep
 import { RadarComponent } from 'src/app/radar/radar.component';
 import { getCanActivateChild } from '@angular/router/src/utils/preactivation';
 import { CultureFitInfoComponent } from 'src/app/culture-fit/culture-fit-info/culture-fit-info.component';
+import { QuestionCComponent } from 'src/app/culture-fit/components/questionC/questionC.component';
 
 // Include route guard in routes array
 const routes: Routes = [
   
   { path: '', redirectTo: '/sign-in', pathMatch: 'full'},
-  { path: 'sign-in', component: SignInComponent, canActivateChild: [AuthGuard, SecureInnerPagesGuard] },
+  { path: 'sign-in', component: SignInComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'register-user', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
@@ -45,7 +46,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: '', redirectTo: '/register-student', pathMatch: 'full' },
   { path: 'register-student', component: AddStudentComponent },
-  { path: 'radar', component: RadarComponent, canActivate: [SecureInnerPagesGuard]},
+  { path: 'radar', component: RadarComponent},
   { path: 'view-students', component: StudentsListComponent },
   { path: 'edit-student/:id', component: EditStudentComponent },
   { path: 'logout', component: LogoutComponent},
@@ -56,7 +57,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'questionA', pathMatch: 'full'},
       { path: 'questionA', component: QuestionAComponent, canActivate: [SecureInnerPagesGuard]},
       { path: 'questionB', component: QuestionBComponent, canActivate: [SecureInnerPagesGuard]},
-      //{ path: 'questionC', component: QuestionCComponent, canActivate: [SecureInnerPagesGuard]},
+      { path: 'questionC', component: QuestionCComponent, canActivate: [SecureInnerPagesGuard]},
       { path: 'questionD', component: QuestionDComponent, canActivate: [SecureInnerPagesGuard]},
       { path: 'questionE', component: QuestionEComponent, canActivate: [SecureInnerPagesGuard]},
       
