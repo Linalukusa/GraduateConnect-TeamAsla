@@ -106,11 +106,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SidenavComponent,
     ToolbarComponent,
     QuestionBComponent,
-   
+    QuestionCComponent,
     Hero,
     QuestionDComponent,
-    QuestionCComponent,
-    QuestionCComponent,
+    
     QuestionEComponent,
     AdminComponent,
     AdminSidenavComponent,
@@ -120,7 +119,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     DropzoneDirective,
     UploadTaskComponent,
     RadarComponent,
-    // ConfirmEqualValidatorDirective
+    //ConfirmEqualValidatorDirective,
     RadarComponent,
     LangDialogComponent,
     QualDialogComponent,
@@ -165,7 +164,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
   entryComponents: [
     LangDialogComponent,
-QualDialogComponent, QuestionAComponent ],
+QualDialogComponent, QuestionAComponent, QuestionCComponent ],
     
 
   providers: [ AuthService,

@@ -5,6 +5,7 @@ import { MainContentService } from 'src/app/services/main-content.service';
 import { Answer } from '../../Models/Answer';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { QuestionEComponent } from '../questionE/questionE.component';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -15,7 +16,25 @@ import { QuestionEComponent } from '../questionE/questionE.component';
 export class QuestionDComponent implements OnInit {
 
   obj: Answer;
-  sum: number = 0;
+  dominance: number;
+  precise: number;
+  earth: number;
+  animated: number;
+  convincing: number;
+  accommodate: number;
+  introvert: number;
+  headstrong: number;
+
+  questions = [
+    '1  ~  At work people would best describe me as assertive', //Dominance
+    '2  ~  At work people would best describe me as accurate', //Precise
+    '3  ~  At work people best describe me as thoughtful', //DownToEarth
+    '4  ~  At work people would best describe me as energetic', //Animated
+    '5  ~  At work people would best describe me as optimistic', //Convincing
+    '6  ~  At work people would best describe me as obliging', //Accommodate
+    '7  ~  At work people would best describe me as independent', //Introvert
+    '8  ~  At work people would best describe me as go-getting' //Headstrong
+  ];
 
   constructor(
     public authService: AuthService,
@@ -23,6 +42,11 @@ export class QuestionDComponent implements OnInit {
     public service: MainContentService,
     public dialog: MatDialog,
     public dialogRef: MatDialogRef<QuestionDComponent>) { this.obj = new Answer()}
+
+    drop(event: CdkDragDrop<string[]>) {
+      moveItemInArray(this.questions, event.previousIndex, event.currentIndex);
+      console.log(this.questions);
+    }
 
   ngOnInit() {
   }
@@ -33,31 +57,32 @@ export class QuestionDComponent implements OnInit {
   openQuestionE()
    {
      this.dialog.open(QuestionEComponent, {
+      disableClose: true,
       height: '1000px',
-      width: '70%',
+      width: '50%',
      })
    }
 
   onScoreTotal() {
-    this.service.totalDominance.push(this.obj.Dominance);
-    this.service.totalConvincing.push(this.obj.Convincing);
-    this.service.totalEarth.push(this.obj.Earth);
-    this.service.totalPrecise.push(this.obj.Precise);
-    this.service.totalAccommodate.push(this.obj.Accommodate);
-    this.service.totalIntrovert.push(this.obj.Introvert);
-    this.service.totalAnimated.push(this.obj.Animated);
-    this.service.totalHeadstrong.push(this.obj.Headstrong);
-    this.sum = this.service.totalDominance.pop() + this.service.totalConvincing.pop() +
-    this.service.totalEarth.pop() + this.service.totalPrecise.pop() + this.service.totalAccommodate.pop() +
-    this.service.totalIntrovert.pop() + this.service.totalAnimated.pop() + this.service.totalHeadstrong.pop()
-    if(!(this.sum === 36))
-    {
-      alert("Each Question Must Have A Unique Value!!!");
-    }
-    else{
-      this.closeDialog();
-      this.openQuestionE();
-    }
+    this.dominance = this.questions.indexOf('1  ~  At work, if I am a leader, I expect others to follow what I say');
+    this.service.totalDominance.push(this.dominance + 1)
+    this.precise = this.questions.indexOf('2  ~  At work people should follow carefully laid down procedures');
+    this.service.totalPrecise.push(this.precise + 1);
+    this.earth = this.questions.indexOf('3  ~  At work leaders should seek consensus before proceeding');
+    this.service.totalEarth.push(this.earth + 1);
+    this.animated = this.questions.indexOf('4  ~  At work there are too many rules and they get in the way of doing the job');
+    this.service.totalAnimated.push(this.animated + 1)
+    this.convincing = this.questions.indexOf('5  ~  At work people should be persuaded to do things');
+    this.service.totalConvincing.push(this.convincing + 1);
+    this.accommodate = this.questions.indexOf('6  ~  At work people should accommodate and serve their leader');
+    this.service.totalAccommodate.push(this.accommodate + 1);
+    this.introvert = this.questions.indexOf('7  ~  At work once you know what is required, you should be left to get on with it');
+    this.service.totalIntrovert.push(this.introvert + 1);
+    this.headstrong = this.questions.indexOf('8  ~  At work there is too much to do to wait for instructions');
+    this.service.totalHeadstrong.push(this.headstrong + 1);
+    console.log(this.service.totalAccommodate.pop());
+    this.closeDialog();
+    this.openQuestionE();
   }
 
 }

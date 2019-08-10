@@ -16,6 +16,15 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 export class QuestionAComponent implements OnInit {
 
   obj: Answer;
+  dominance: number;
+  precise: number;
+  earth: number;
+  animated: number;
+  convincing: number;
+  accommodate: number;
+  introvert: number;
+  headstrong: number;
+
   questions = [
     '1  ~  I Prefer To Be Assertive', //Dominance
     '2  ~  I Prefer To Follow Regulations In My Workspace', //Precise
@@ -43,8 +52,9 @@ export class QuestionAComponent implements OnInit {
    openQuestionB()
    {
      this.dialog.open(QuestionBComponent, {
+      disableClose: true,
       height: '1000px',
-      width: '70%',
+      width: '50%',
      })
    }
 
@@ -52,17 +62,25 @@ export class QuestionAComponent implements OnInit {
     
   }
   onScoreTotal() {
-    this.service.totalDominance.push(this.obj.Dominance);
-    this.service.totalConvincing.push(this.obj.Convincing);
-    this.service.totalEarth.push(this.obj.Earth);
-    this.service.totalPrecise.push(this.obj.Precise);
-    this.service.totalAccommodate.push(this.obj.Accommodate);
-    this.service.totalIntrovert.push(this.obj.Introvert);
-    this.service.totalAnimated.push(this.obj.Animated);
-    this.service.totalHeadstrong.push(this.obj.Headstrong);
+    this.dominance = this.questions.indexOf('1  ~  I Prefer To Be Assertive');
+    this.service.totalDominance.push(this.dominance + 1)
+    this.precise = this.questions.indexOf('2  ~  I Prefer To Follow Regulations In My Workspace');
+    this.service.totalPrecise.push(this.precise + 1);
+    this.earth = this.questions.indexOf('3  ~  I Prefer To Join In With Others');
+    this.service.totalEarth.push(this.earth + 1);
+    this.animated = this.questions.indexOf('4  ~  I Prefer To Move At A Fast Pace');
+    this.service.totalAnimated.push(this.animated + 1)
+    this.convincing = this.questions.indexOf('5  ~  I Prefer To Influence People');
+    this.service.totalConvincing.push(this.convincing + 1);
+    this.accommodate = this.questions.indexOf('6  ~  I Prefer To Accommodate Others Wishes');
+    this.service.totalAccommodate.push(this.accommodate + 1);
+    this.introvert = this.questions.indexOf('7  ~  I Prefer To Work Quietly On My Own');
+    this.service.totalIntrovert.push(this.introvert + 1);
+    this.headstrong = this.questions.indexOf('8  ~  I Prefer To Work Independently');
+    this.service.totalHeadstrong.push(this.headstrong + 1);
+    console.log(this.service.totalAccommodate.pop());
     this.closeDialog();
     this.openQuestionB();
-    
   }
 }
 
