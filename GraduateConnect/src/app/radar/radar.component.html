@@ -5,15 +5,17 @@
   </head>
   
   <body>
-     
+      <app-sidebar></app-sidebar>
   <div class="container">
     <div class="row">
       <!-- <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6" width=75% right=0px> -->
-         <div class="well profile">
+         <div class="well ">
               <div class="col-sm-12" *ngIf="authService.userData as user">
                 <!-- <div class="col-sm-1">
   
                 </div> -->
+
+    
                   <div class="col-sm-4 text-left">
                      
                       
@@ -38,7 +40,7 @@
                     </figure>
                 </div>
             </div> 
-            <div class="col-xs-12 divider text-center">
+            <div class="col-xs-12 divider text-center well">
               <div class="col-xs-12 col-sm-4 emphasis">
                   <h2><strong> Precise </strong></h2>                    
                   <p><small>Culture</small></p>
@@ -78,7 +80,7 @@
       </div>
       </div>
       </div>
-      <div class="row mb-5 align-items-center">
+      <div class="row mb-5 align-items-center well">
           <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
             <div style="display: block">
               <canvas baseChart

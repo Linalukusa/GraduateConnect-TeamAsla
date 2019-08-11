@@ -49,6 +49,9 @@ figcaption.ratings a:hover
 {
     margin-bottom:0;
     }
+.well{
+    padding-left: 260px;
+}
 span.tags 
 {
     background: #1abc9c;

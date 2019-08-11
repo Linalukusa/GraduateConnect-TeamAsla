@@ -22,13 +22,13 @@ export class RadarComponent implements OnInit {
   constructor(public authService: AuthService, public router: Router, public service: MainContentService, public crud: CrudService) { }
 
   ngOnInit() {
-    // this.loading = true;
+    this.loading = true;
     // this.totalArray = this.crud.getTotalArray('id');
-    // this.demoradarChartData = [
-    //   {data: this.totalArray , label: 'Graduate Graph'},
-    //   {data: [10, 20, 30, 40, 50, 60, 70, 80], label: 'Tech-Company Graph'}
-    // ];
-    // this.loading = false;
+    this.demoradarChartData = [
+      // {data: this.totalArray , label: 'Graduate Graph'},
+      {data: [10, 20, 30, 40, 50, 60, 70, 80], label: 'Tech-Company Graph'}
+    ];
+    this.loading = false;
   }
   
   // events
