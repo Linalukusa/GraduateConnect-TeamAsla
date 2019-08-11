@@ -28,7 +28,7 @@ export class DashboardComponent  {
 
   onCultureFitButton(): void{
   this.closeDialogs();
-  }
+  } 
   closeDialogs()
   {
     this.dialogRef.close();
