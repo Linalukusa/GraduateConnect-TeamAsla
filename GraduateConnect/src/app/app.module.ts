@@ -162,8 +162,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   ],
 
   entryComponents: [
-    LangDialogComponent,
-QualDialogComponent  ],
+    LangDialogComponent, 
+QualDialogComponent,
+DashboardComponent  ],
     
 
   providers: [ AuthService,

@@ -3,6 +3,8 @@ import { CrudService } from '../shared/crud.service';    // CRUD services API
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'; // Reactive form services
 import { ToastrService } from 'ngx-toastr'; // Alert message using NGX toastr
 import { AuthService } from '../shared/services/auth.service';
+import { DashboardComponent } from '../components/dashboard/dashboard.component';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 
 @Component({
@@ -14,18 +16,30 @@ import { AuthService } from '../shared/services/auth.service';
 export class AddStudentComponent implements OnInit {
   public studentForm: FormGroup;  // Define FormGroup to student's form
  
+  
+ 
   constructor(
     public crudApi: CrudService,  // CRUD API services
     public fb: FormBuilder,       // Form Builder service for Reactive forms
     public toastr: ToastrService,  // Toastr service for alert message
-    private authService: AuthService
+    private authService: AuthService,
+    public dialog: MatDialog
+    // public dialogRef: MatDialogRef<DashboardComponent>
   ) { }
 
  
   ngOnInit() {
     this.crudApi.GetStudentsList();  // Call GetStudentsList() before main form is being called
     this.studenForm();              // Call student form when component is ready
+     this.dialog.open(DashboardComponent, {
+       disableClose: true,
+       height: '515px',
+      width: '75%',
+     })
+   
+  
   }
+
 
   // Reactive student form
   studenForm() {

@@ -4,6 +4,8 @@ import { CrudService } from '../shared/crud.service';
 import { ActivatedRoute, Router } from "@angular/router"; // ActivatedRoue is used to get the current associated components information.
 import { Location } from '@angular/common';  // Location service is used to go back to previous component
 import { ToastrService } from 'ngx-toastr';
+import { DashboardComponent } from '../components/dashboard/dashboard.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-edit-student',
@@ -13,6 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 
 export class EditStudentComponent implements OnInit {
   editForm: FormGroup;  // Define FormGroup to student's edit form
+  public dialog: MatDialog;
   
   constructor(
     private crudApi: CrudService,       // Inject CRUD API in constructor
@@ -27,7 +30,16 @@ export class EditStudentComponent implements OnInit {
     this.updateStudentData();   // Call updateStudentData() as soon as the component is ready 
     const id = this.actRoute.snapshot.paramMap.get('id');  // Getting current component's id or information using ActivatedRoute service
     this.crudApi.GetStudent(id).valueChanges().subscribe(data => {
-      this.editForm.setValue(data)  // Using SetValue() method, It's a ReactiveForm's API to store intial value of reactive form 
+      
+    this.dialog.open(DashboardComponent, {
+          disableClose: true,
+          height: '1000px',
+          width: '70%',
+        })
+
+         this.editForm.setValue(data)  // Using SetValue() method, It's a ReactiveForm's API to store intial value of reactive form 
+   
+   
     })
   }
 

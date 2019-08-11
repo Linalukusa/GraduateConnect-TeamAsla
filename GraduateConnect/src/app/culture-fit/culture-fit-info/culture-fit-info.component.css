@@ -10,6 +10,12 @@
 .para {
   padding-left: 20%;
 }
+.quiz{
+  padding-left: 270px;
+}
+.info{
+  padding-right: 5px;
+}
 .page-wrapper {
     height: 100vh;
   }
