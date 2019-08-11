@@ -1,63 +1,88 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
-import { MainContentService } from 'src/app/services/main-content.service';
+import { MainContentService} from 'src/app/services/main-content.service';
 import { Answer } from '../../Models/Answer';
-import { MatDialog, MatDialogRef } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { QuestionBComponent } from '../questionB/questionB.component';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import { QuestionEComponent } from '../questionE/questionE.component';
 
 
 @Component({
-  selector: 'app-question-d',
+  selector: 'app-questionD',
   templateUrl: './questionD.component.html',
   styleUrls: ['./questionD.component.css']
 })
 export class QuestionDComponent implements OnInit {
 
   obj: Answer;
-  sum: number = 0;
+  dominance: number;
+  precise: number;
+  earth: number;
+  animated: number;
+  convincing: number;
+  accommodate: number;
+  introvert: number;
+  headstrong: number;
 
-  constructor(
-    public authService: AuthService,
-    public router: Router,
-    public service: MainContentService,
-    public dialog: MatDialog,
-    public dialogRef: MatDialogRef<QuestionDComponent>) { this.obj = new Answer()}
+  questions = [
+    '1  ~  I Prefer To Be Assertive', //Dominance
+    '2  ~  I Prefer To Follow Regulations In My Workspace', //Precise
+    '3  ~  I Prefer To Join In With Others', //DownToEarth
+    '4  ~  I Prefer To Move At A Fast Pace', //Animated
+    '5  ~  I Prefer To Influence People', //Convincing
+    '6  ~  I Prefer To Accommodate Others Wishes', //Accommodate
+    '7  ~  I Prefer To Work Quietly On My Own', //Introvert
+    '8  ~  I Prefer To Work Independently' //Headstrong
+  ];
 
-  ngOnInit() {
+  constructor(public authService: AuthService, public router: Router, public service: MainContentService, public dialog: MatDialog,
+    public dialogRef: MatDialogRef<QuestionDComponent>) {
+    this.obj = new Answer()}
+
+    drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.questions, event.previousIndex, event.currentIndex);
+    console.log(this.questions);
+    }
+    
+  ngOnInit() {  
   }
-  closeDialog(): void
-  {
+   closeDialog(): void
+   {
     this.dialogRef.close();
-  }
-  openQuestionE()
+   }
+   openQuestionB()
    {
      this.dialog.open(QuestionEComponent, {
+      disableClose: true,
       height: '1000px',
-      width: '70%',
+      width: '50%',
      })
    }
-
   onScoreTotal() {
-    this.service.totalDominance.push(this.obj.Dominance);
-    this.service.totalConvincing.push(this.obj.Convincing);
-    this.service.totalEarth.push(this.obj.Earth);
-    this.service.totalPrecise.push(this.obj.Precise);
-    this.service.totalAccommodate.push(this.obj.Accommodate);
-    this.service.totalIntrovert.push(this.obj.Introvert);
-    this.service.totalAnimated.push(this.obj.Animated);
-    this.service.totalHeadstrong.push(this.obj.Headstrong);
-    this.sum = this.service.totalDominance.pop() + this.service.totalConvincing.pop() +
-    this.service.totalEarth.pop() + this.service.totalPrecise.pop() + this.service.totalAccommodate.pop() +
-    this.service.totalIntrovert.pop() + this.service.totalAnimated.pop() + this.service.totalHeadstrong.pop()
-    if(!(this.sum === 36))
-    {
-      alert("Each Question Must Have A Unique Value!!!");
-    }
-    else{
-      this.closeDialog();
-      this.openQuestionE();
-    }
+    this.questions.reverse();
+    this.dominance = this.questions.indexOf('1  ~  I Prefer To Be Assertive');
+    this.service.totalDominance.push(this.dominance + 1)
+    this.precise = this.questions.indexOf('2  ~  I Prefer To Follow Regulations In My Workspace');
+    this.service.totalPrecise.push(this.precise + 1);
+    this.earth = this.questions.indexOf('3  ~  I Prefer To Join In With Others');
+    this.service.totalEarth.push(this.earth + 1);
+    this.animated = this.questions.indexOf('4  ~  I Prefer To Move At A Fast Pace');
+    this.service.totalAnimated.push(this.animated + 1)
+    this.convincing = this.questions.indexOf('5  ~  I Prefer To Influence People');
+    this.service.totalConvincing.push(this.convincing + 1);
+    this.accommodate = this.questions.indexOf('6  ~  I Prefer To Accommodate Others Wishes');
+    this.service.totalAccommodate.push(this.accommodate + 1);
+    this.introvert = this.questions.indexOf('7  ~  I Prefer To Work Quietly On My Own');
+    this.service.totalIntrovert.push(this.introvert + 1);
+    this.headstrong = this.questions.indexOf('8  ~  I Prefer To Work Independently');
+    this.service.totalHeadstrong.push(this.headstrong + 1);
+    console.log(this.service.totalAccommodate.pop());
+    this.closeDialog();
+    this.openQuestionB();
   }
-
 }
+
+
+

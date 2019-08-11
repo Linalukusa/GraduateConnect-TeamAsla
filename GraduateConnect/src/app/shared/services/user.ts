@@ -2,7 +2,6 @@
  export interface Roles {
     student?: boolean;
     admin?: boolean;
-    Admin: 'Admin';
 }
 export interface User {
     uid: string;

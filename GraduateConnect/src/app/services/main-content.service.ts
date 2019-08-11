@@ -27,7 +27,7 @@ import { AuthService } from '../shared/services/auth.service';
           total += i;
           this.totalArray.push(total);
         });
-        return console.log(this.totalArray.pop());
+        return this.totalArray;
       }
 
       onCount(){

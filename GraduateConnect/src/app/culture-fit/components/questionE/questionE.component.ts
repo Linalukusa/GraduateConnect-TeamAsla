@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { MainContentService } from 'src/app/services/main-content.service';
 import { Answer } from '../../Models/Answer';
 import { MatDialogRef } from '@angular/material';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-question-e',
@@ -14,45 +15,66 @@ export class QuestionEComponent implements OnInit {
 
   obj: Answer;
   hide: boolean = false;
-  sum: number = 0;
+  dominance: number;
+  precise: number;
+  earth: number;
+  animated: number;
+  convincing: number;
+  accommodate: number;
+  introvert: number;
+  headstrong: number;
+
+  questions = [
+    '1  ~  I can best de described as competitive and decisive', //Dominance
+    '2  ~  I can be best described as precise, systematic and compliant', //Precise
+    '3  ~  I can be best described as team-focused, reliable and persistent', //DownToEarth
+    '4  ~  I can best be described as unconventional, creative and independent', //Animated
+    '5  ~  I can best be described as poised, persuasive and optimistic', //Convincing
+    '6  ~  I can best be described as diplomatic and modest', //Accommodate
+    '7  ~  I can be describe as intuitive, introspective and exploring', //Introvert
+    '8  ~  I can best be described as eager, outgoing and mobile' //Headstrong
+  ];
 
   constructor(public authService: AuthService,
-    public router: Router, public service: MainContentService,
-    public dialogRef: MatDialogRef<QuestionEComponent>) { this.obj = new Answer()}
+              public router: Router, public service: MainContentService,
+              public dialogRef: MatDialogRef<QuestionEComponent>) {
+              this.obj = new Answer()}
 
+  drop(event: CdkDragDrop<string[]>) {
+  moveItemInArray(this.questions, event.previousIndex, event.currentIndex);
+  }
   ngOnInit() {
   }
-  closeDialog(): void
+  closeDialog()
   {
     this.dialogRef.close();
   }
-  onSubmit(){
-    
-    this.router.navigate(['culture-fit-root/radar']);
-    
+  onSubmit()
+  { 
+    this.router.navigate(['radar']);  
   }
   onScoreTotal(){
-    
-    this.service.totalDominance.push(this.obj.Dominance);
-    this.service.totalConvincing.push(this.obj.Convincing);
-    this.service.totalEarth.push(this.obj.Earth);
-    this.service.totalPrecise.push(this.obj.Precise);
-    this.service.totalAccommodate.push(this.obj.Accommodate);
-    this.service.totalIntrovert.push(this.obj.Introvert);
-    this.service.totalAnimated.push(this.obj.Animated);
-    this.service.totalHeadstrong.push(this.obj.Headstrong);
-    this.sum = this.service.totalDominance.pop() + this.service.totalConvincing.pop() +
-    this.service.totalEarth.pop() + this.service.totalPrecise.pop() + this.service.totalAccommodate.pop() +
-    this.service.totalIntrovert.pop() + this.service.totalAnimated.pop() + this.service.totalHeadstrong.pop()
-    if(!(this.sum === 36))
-    {
-      alert("Each Question Must Have A Unique Value!!!");
-    }
-    else{
-      this.service.onCount();
-      alert("Your Scores Have Been Submitted!!! Click Show Results to View Your Matching Chart");
-      this.hide = true;
-    }
-    
+    this.questions.reverse();
+    this.closeDialog();
+    this.dominance = this.questions.indexOf('1  ~  I can best de described as competitive and decisive');
+    this.service.totalDominance.push(this.dominance + 1)
+    this.precise = this.questions.indexOf('2  ~  I can be best described as precise, systematic and compliant');
+    this.service.totalPrecise.push(this.precise + 1);
+    this.earth = this.questions.indexOf('3  ~  I can be best described as team-focused, reliable and persistent');
+    this.service.totalEarth.push(this.earth + 1);
+    this.animated = this.questions.indexOf('4  ~  I can best be described as unconventional, creative and independent');
+    this.service.totalAnimated.push(this.animated + 1)
+    this.convincing = this.questions.indexOf('5  ~  I can best be described as poised, persuasive and optimistic');
+    this.service.totalConvincing.push(this.convincing + 1);
+    this.accommodate = this.questions.indexOf('6  ~  I can best be described as diplomatic and modest');
+    this.service.totalAccommodate.push(this.accommodate + 1);
+    this.introvert = this.questions.indexOf('7  ~  I can be describe as intuitive, introspective and exploring');
+    this.service.totalIntrovert.push(this.introvert + 1);
+    this.headstrong = this.questions.indexOf('8  ~  I can best be described as eager, outgoing and mobile');
+    this.service.totalHeadstrong.push(this.headstrong + 1);
+    console.log(this.service.totalAccommodate.pop());
+    alert("Your Results Have Been Captured!!!");
+    this.onSubmit();
+    this.hide = true;
   }
  }

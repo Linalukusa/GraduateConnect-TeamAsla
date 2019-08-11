@@ -14,25 +14,23 @@ export class RadarComponent implements OnInit {
 
   totalArray = [];
   loading = false;
+  obj: Answer;
+  demoradarChartData = [];
+  radarChartType:string = 'radar';
+  demoradarChartLabels = ['Dominant', 'Convincing', 'Down to Earth', 'Introverted', 'Headstrong', 'Animated', 'Precise', 'Accommodating'];
 
   constructor(public authService: AuthService, public router: Router, public service: MainContentService, public crud: CrudService) { }
 
   ngOnInit() {
-    this.loading = true;
-    this.totalArray = this.crud.getTotalArray('id');
-    this.demoradarChartData = [
-      {data: this.totalArray , label: 'Graduate Graph'},
-      {data: [10, 20, 30, 40, 50, 60, 70, 80], label: 'Tech-Company Graph'}
-    ];
-    this.loading = false;
+    // this.loading = true;
+    // this.totalArray = this.crud.getTotalArray('id');
+    // this.demoradarChartData = [
+    //   {data: this.totalArray , label: 'Graduate Graph'},
+    //   {data: [10, 20, 30, 40, 50, 60, 70, 80], label: 'Tech-Company Graph'}
+    // ];
+    // this.loading = false;
   }
-
-  obj: Answer;
-   demoradarChartLabels = ['Dominant', 'Convincing', 'Down to Earth', 'Introverted', 'Headstrong', 'Animated', 'Precise', 'Accommodating'];
- 
-   demoradarChartData = [];
-   radarChartType:string = 'radar';
- 
+  
   // events
   public chartClicked(e:any):void {
     console.log(e);
