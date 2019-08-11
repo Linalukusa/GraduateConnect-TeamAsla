@@ -12,7 +12,8 @@ import { CrudService } from '../shared/crud.service';
 })
 export class RadarComponent implements OnInit {
 
-  totalArray = [];
+  totalArray = this.service.totalArray;
+  topCulture = 0;
   loading = false;
   obj: Answer;
   demoradarChartData = [];
@@ -23,12 +24,37 @@ export class RadarComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
-    // this.totalArray = this.crud.getTotalArray('id');
+    //  this.totalArray = this.crud.getTotalArray('id');
     this.demoradarChartData = [
-      // {data: this.totalArray , label: 'Graduate Graph'},
+       {data: this.totalArray , label: 'Graduate Graph'},
       {data: [10, 20, 30, 40, 50, 60, 70, 80], label: 'Tech-Company Graph'}
     ];
     this.loading = false;
+    if (this.topCulture != 0) {
+      document.getElementById('dominant').style.display = "none"; 
+    }
+     if (this.topCulture != 1) {
+      document.getElementById('convincing').style.display = "none"; 
+    }
+    if (this.topCulture != 2) {
+      document.getElementById('earth').style.display = "none"; 
+    }
+     if (this.topCulture != 3) {
+      document.getElementById('precise').style.display = "none"; 
+    }
+     if (this.topCulture != 4) {
+      document.getElementById('accomodate').style.display = "none"; 
+    }
+     if (this.topCulture != 5) {
+      document.getElementById('introvert').style.display = "none"; 
+    }
+     if (this.topCulture != 6) {
+      document.getElementById('animated').style.display = "none"; 
+    }
+     if (this.topCulture != 7) {
+      document.getElementById('headstrong').style.display = "none"; 
+    }
+  console.log(this.totalArray);
   }
   
   // events

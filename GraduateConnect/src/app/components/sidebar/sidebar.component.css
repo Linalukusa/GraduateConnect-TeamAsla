@@ -72,6 +72,9 @@
     flex-grow: 1;
     text-decoration: none;
   }
+  .logout{
+    color: #1d1d1d
+  }
   .sidebar .sidebar-content .sidebar-header #close-sidebar {
     cursor: pointer;
     font-size: 20px;
