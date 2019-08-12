@@ -5,6 +5,8 @@ import { MainContentService } from 'src/app/services/main-content.service';
 import { Answer } from '../../Models/Answer';
 import { MatDialogRef } from '@angular/material';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { CrudService } from 'src/app/shared/crud.service';
 
 @Component({
   selector: 'app-question-e',
@@ -12,7 +14,7 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
   styleUrls: ['./questionE.component.css']
 })
 export class QuestionEComponent implements OnInit {
-
+  public cultureForm: FormGroup;
   obj: Answer;
   hide: boolean = false;
   dominance: number;
@@ -37,13 +39,19 @@ export class QuestionEComponent implements OnInit {
 
   constructor(public authService: AuthService,
               public router: Router, public service: MainContentService,
-              public dialogRef: MatDialogRef<QuestionEComponent>) {
+              public dialogRef: MatDialogRef<QuestionEComponent>,
+              public crudApi: CrudService,  // CRUD API services
+              public fb: FormBuilder,       // Form Builder service for Reactive forms
+               // Toastr service for alert message
+              ) {
               this.obj = new Answer()}
 
   drop(event: CdkDragDrop<string[]>) {
   moveItemInArray(this.questions, event.previousIndex, event.currentIndex);
   }
   ngOnInit() {
+    this.crudApi.GetCulturesList();
+    this.culturForm();
   }
   closeDialog()
   {
@@ -53,6 +61,49 @@ export class QuestionEComponent implements OnInit {
   { 
     this.router.navigate(['radar']);  
   }
+  culturForm() {
+    this.cultureForm = this.fb.group({
+      Dominant:['',],
+      Precise:['',],
+      Earth:['',],
+      Animated:['',],
+      Convincing:['',],
+      Accommodate:['',],
+      Introvert:['',],
+      Headstrong:['',],
+
+ 
+    })  
+  }
+  get Dominant() {
+    return this.service.totalDominance.reduce((a, b) => a + b, 0);
+  }
+  get Precise() {
+    return this.cultureForm.get("Precise");
+  }
+  get Earth() {
+    return this.cultureForm.get("Earth");
+  }
+  get Animated() {
+    return this.cultureForm.get("Animated");
+  }
+  get Convincing() {
+    return this.cultureForm.get("Convincing");
+  }
+  get Accomodate() {
+    return this.cultureForm.get("Accomodatet");
+  }
+  get Introvert() {
+    return this.cultureForm.get("Introvert");
+  }
+  get Headstrong() {
+    return this.cultureForm.get("Headstrong");
+  }
+
+  ResetForm() {
+    this.cultureForm.reset();
+  }
+
   onScoreTotal(){
     this.questions.reverse();
     this.closeDialog();
@@ -73,8 +124,26 @@ export class QuestionEComponent implements OnInit {
     this.headstrong = this.questions.indexOf('8  ~  I can best be described as eager, outgoing and mobile');
     this.service.totalHeadstrong.push(this.headstrong + 1);
     console.log(this.service.totalAccommodate.pop());
+    this.submitCultureData();
     alert("Your Results Have Been Captured!!!");
     this.onSubmit();
     this.hide = true;
   }
+  submitCultureData() {
+    this.crudApi.AddCulture(this.cultureForm.value); // Submit student data using CRUD API
+    this.ResetForm();
+   };
+   isHovering: boolean;
+
+   files: File[] = [];
+ 
+   toggleHover(event: boolean) {
+     this.isHovering = event;
+   }
+ 
+   onDrop(files: FileList) {
+     for (let i = 0; i < files.length; i++) {
+       this.files.push(files.item(i));
+     }
+   }
  }
