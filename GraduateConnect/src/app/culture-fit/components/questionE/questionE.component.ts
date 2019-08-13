@@ -27,14 +27,14 @@ export class QuestionEComponent implements OnInit {
   headstrong: number;
 
   questions = [
-    '1  ~  I can best de described as competitive and decisive', //Dominance
-    '2  ~  I can be best described as precise, systematic and compliant', //Precise
-    '3  ~  I can be best described as team-focused, reliable and persistent', //DownToEarth
-    '4  ~  I can best be described as unconventional, creative and independent', //Animated
-    '5  ~  I can best be described as poised, persuasive and optimistic', //Convincing
-    '6  ~  I can best be described as diplomatic and modest', //Accommodate
-    '7  ~  I can be describe as intuitive, introspective and exploring', //Introvert
-    '8  ~  I can best be described as eager, outgoing and mobile' //Headstrong
+    'I can best de described as competitive and decisive', //Dominance
+    'I can be best described as precise, systematic and compliant', //Precise
+    'I can be best described as team-focused, reliable and persistent', //DownToEarth
+    'I can best be described as unconventional, creative and independent', //Animated
+    'I can best be described as poised, persuasive and optimistic', //Convincing
+    'I can best be described as diplomatic and modest', //Accommodate
+    'I can be describe as intuitive, introspective and exploring', //Introvert
+    'I can best be described as eager, outgoing and mobile' //Headstrong
   ];
 
   constructor(public authService: AuthService,
@@ -107,21 +107,21 @@ export class QuestionEComponent implements OnInit {
   onScoreTotal(){
     this.questions.reverse();
     this.closeDialog();
-    this.dominance = this.questions.indexOf('1  ~  I can best de described as competitive and decisive');
+    this.dominance = this.questions.indexOf('I can best de described as competitive and decisive');
     this.service.totalDominance.push(this.dominance + 1)
-    this.precise = this.questions.indexOf('2  ~  I can be best described as precise, systematic and compliant');
+    this.precise = this.questions.indexOf('I can be best described as precise, systematic and compliant');
     this.service.totalPrecise.push(this.precise + 1);
-    this.earth = this.questions.indexOf('3  ~  I can be best described as team-focused, reliable and persistent');
+    this.earth = this.questions.indexOf('I can be best described as team-focused, reliable and persistent');
     this.service.totalEarth.push(this.earth + 1);
-    this.animated = this.questions.indexOf('4  ~  I can best be described as unconventional, creative and independent');
+    this.animated = this.questions.indexOf('I can best be described as unconventional, creative and independent');
     this.service.totalAnimated.push(this.animated + 1)
-    this.convincing = this.questions.indexOf('5  ~  I can best be described as poised, persuasive and optimistic');
+    this.convincing = this.questions.indexOf('I can best be described as poised, persuasive and optimistic');
     this.service.totalConvincing.push(this.convincing + 1);
-    this.accommodate = this.questions.indexOf('6  ~  I can best be described as diplomatic and modest');
+    this.accommodate = this.questions.indexOf('I can best be described as diplomatic and modest');
     this.service.totalAccommodate.push(this.accommodate + 1);
-    this.introvert = this.questions.indexOf('7  ~  I can be describe as intuitive, introspective and exploring');
+    this.introvert = this.questions.indexOf('I can be describe as intuitive, introspective and exploring');
     this.service.totalIntrovert.push(this.introvert + 1);
-    this.headstrong = this.questions.indexOf('8  ~  I can best be described as eager, outgoing and mobile');
+    this.headstrong = this.questions.indexOf('I can best be described as eager, outgoing and mobile');
     this.service.totalHeadstrong.push(this.headstrong + 1);
     console.log(this.service.totalDominance.reduce((a, b) => a + b, 0));
     console.log(this.service.totalPrecise.reduce((a, b) => a + b, 0));

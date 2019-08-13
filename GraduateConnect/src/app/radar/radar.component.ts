@@ -13,10 +13,14 @@ import { CrudService } from '../shared/crud.service';
 export class RadarComponent implements OnInit {
 
   totalArray = this.service.totalArray;
-  topCulture = 0;
+  topCulture:number;
   loading = false;
   obj: Answer;
   demoradarChartData = [];
+  cultures = [];
+  max = this.demoradarChartData[0];
+  index:number;
+  i:number;
   radarChartType:string = 'radar';
   demoradarChartLabels = ['Dominant', 'Precise', 'Down to Earth','Animated', 'Convincing', 'Accommodating', 'Introverted', 'Headstrong'   ];
 
@@ -29,7 +33,25 @@ export class RadarComponent implements OnInit {
        {data: [this.service.totalDominance.reduce((a, b) => a + b, 0), this.service.totalPrecise.reduce((a, b) => a + b, 0), this.service.totalEarth.reduce((a, b) => a + b, 0), this.service.totalAnimated.reduce((a, b) => a + b, 0), this.service.totalConvincing.reduce((a, b) => a + b, 0), this.service.totalAccommodate.reduce((a, b) => a + b, 0), this.service.totalIntrovert.reduce((a, b) => a + b, 0), this.service.totalHeadstrong.reduce((a, b) => a + b, 0) ], label: 'Graduate Graph'},
       // {data: [10, 20, 30, 40, 50, 60, 70, 80], label: 'Tech-Company Graph'}
     ];
+    this.cultures = [this.service.totalDominance.reduce((a, b) => a + b, 0), this.service.totalPrecise.reduce((a, b) => a + b, 0), this.service.totalEarth.reduce((a, b) => a + b, 0), this.service.totalAnimated.reduce((a, b) => a + b, 0), this.service.totalConvincing.reduce((a, b) => a + b, 0), this.service.totalAccommodate.reduce((a, b) => a + b, 0), this.service.totalIntrovert.reduce((a, b) => a + b, 0), this.service.totalHeadstrong.reduce((a, b) => a + b, 0) ]
+    // for ( this.i = 0; this.i < this.demoradarChartData.length; this.i++) 
+		// {
+		// 	if (this.max < this.demoradarChartData[this.i]) 
+		// 	{
+		// 		this.max = this.demoradarChartData[this.i];
+		// 		this.index = this.i;
+		// 	}
+		// }
+
+    // this.topCulture = this.index;
+    this.topCulture = this.cultures.indexOf(Math.max(...this.cultures));
+    console.log(this.topCulture);
+    
     this.loading = false;
+   this.cultureText();
+  console.log(this.totalArray);
+  }
+  cultureText() {
     if (this.topCulture != 0) {
       document.getElementById('dominant').style.display = "none"; 
     }
@@ -54,8 +76,25 @@ export class RadarComponent implements OnInit {
      if (this.topCulture != 7) {
       document.getElementById('headstrong').style.display = "none"; 
     }
-  console.log(this.totalArray);
   }
+  public top() 
+	{
+
+	
+
+		for ( this.i = 0; this.i < this.demoradarChartData.length; this.i++) 
+		{
+			if (this.max < this.demoradarChartData[this.i]) 
+			{
+				this.max = this.demoradarChartData[this.i];
+				this.index = this.i;
+			}
+		}
+
+    this.topCulture = this.index;
+    console.log(this.topCulture);
+}
+
   
   // events
   public chartClicked(e:any):void {

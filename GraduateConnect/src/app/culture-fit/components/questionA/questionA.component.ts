@@ -26,14 +26,14 @@ export class QuestionAComponent implements OnInit {
   headstrong: number;
 
   questions = [
-    '1  ~  I Prefer To Be Assertive', //Dominance
-    '2  ~  I Prefer To Follow Regulations In My Workspace', //Precise
-    '3  ~  I Prefer To Join In With Others', //DownToEarth
-    '4  ~  I Prefer To Move At A Fast Pace', //Animated
-    '5  ~  I Prefer To Influence People', //Convincing
-    '6  ~  I Prefer To Accommodate Others Wishes', //Accommodate
-    '7  ~  I Prefer To Work Quietly On My Own', //Introvert
-    '8  ~  I Prefer To Work Independently' //Headstrong
+    'I Prefer To Be Assertive', //Dominance
+    'I Prefer To Follow Regulations In My Workspace', //Precise
+    'I Prefer To Join In With Others', //DownToEarth
+    'I Prefer To Move At A Fast Pace', //Animated
+    'I Prefer To Influence People', //Convincing
+    'I Prefer To Accommodate Others Wishes', //Accommodate
+    'I Prefer To Work Quietly On My Own', //Introvert
+    'I Prefer To Work Independently' //Headstrong
   ];
 
   constructor(public authService: AuthService, public router: Router, public service: MainContentService, public dialog: MatDialog,
@@ -61,21 +61,21 @@ export class QuestionAComponent implements OnInit {
    }
   onScoreTotal() {
     this.questions.reverse();
-    this.dominance = this.questions.indexOf('1  ~  I Prefer To Be Assertive');
+    this.dominance = this.questions.indexOf('I Prefer To Be Assertive');
     this.service.totalDominance.push(this.dominance + 1)
-    this.precise = this.questions.indexOf('2  ~  I Prefer To Follow Regulations In My Workspace');
+    this.precise = this.questions.indexOf('I Prefer To Follow Regulations In My Workspace');
     this.service.totalPrecise.push(this.precise + 1);
-    this.earth = this.questions.indexOf('3  ~  I Prefer To Join In With Others');
+    this.earth = this.questions.indexOf('I Prefer To Join In With Others');
     this.service.totalEarth.push(this.earth + 1);
-    this.animated = this.questions.indexOf('4  ~  I Prefer To Move At A Fast Pace');
+    this.animated = this.questions.indexOf('I Prefer To Move At A Fast Pace');
     this.service.totalAnimated.push(this.animated + 1)
-    this.convincing = this.questions.indexOf('5  ~  I Prefer To Influence People');
+    this.convincing = this.questions.indexOf('I Prefer To Influence People');
     this.service.totalConvincing.push(this.convincing + 1);
-    this.accommodate = this.questions.indexOf('6  ~  I Prefer To Accommodate Others Wishes');
+    this.accommodate = this.questions.indexOf('I Prefer To Accommodate Others Wishes');
     this.service.totalAccommodate.push(this.accommodate + 1);
-    this.introvert = this.questions.indexOf('7  ~  I Prefer To Work Quietly On My Own');
+    this.introvert = this.questions.indexOf('I Prefer To Work Quietly On My Own');
     this.service.totalIntrovert.push(this.introvert + 1);
-    this.headstrong = this.questions.indexOf('8  ~  I Prefer To Work Independently');
+    this.headstrong = this.questions.indexOf('I Prefer To Work Independently');
     this.service.totalHeadstrong.push(this.headstrong + 1);
     // console.log(this.service.totalAccommodate.pop());
     this.closeDialog();

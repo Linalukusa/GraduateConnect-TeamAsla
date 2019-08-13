@@ -1,13 +1,12 @@
 .example-list {
-    width: 500px;
-    max-width: 100%;
-    border: solid 5px #ccc;
-    min-height: 60px;
-    display: block;
-    background: aqua;
-    border-radius: 4px;
-    overflow: hidden;
-    text-align: center;
+  max-width: 100%;
+  border: solid 5px #ccc;
+  min-height: 60px;
+  display: block;
+  background: rgb(47, 48, 49);
+  border-radius: 4px;
+  overflow: hidden;
+  text-align: center;
   }
   
 .btn {

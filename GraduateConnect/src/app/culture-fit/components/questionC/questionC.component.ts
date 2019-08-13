@@ -28,14 +28,14 @@ export class QuestionCComponent implements OnInit {
   headstrong: number;
 
   questions = [
-    '1  ~  At work, if I am a leader, I expect others to follow what I say', //Dominance
-    '2  ~  At work people should follow carefully laid down procedures', //Precise
-    '3  ~  At work leaders should seek consensus before proceeding', //DownToEarth
-    '4  ~  At work there are too many rules and they get in the way of doing the job', //Animated
-    '5  ~  At work people should be persuaded to do things', //Convincing
-    '6  ~  At work people should accommodate and serve their leader', //Accommodate
-    '7  ~  At work once you know what is required, you should be left to get on with it', //Introvert
-    '8  ~  At work there is too much to do to wait for instructions' //Headstrong
+    'At work, if I am a leader, I expect others to follow what I say', //Dominance
+    'At work people should follow carefully laid down procedures', //Precise
+    'At work leaders should seek consensus before proceeding', //DownToEarth
+    'At work there are too many rules and they get in the way of doing the job', //Animated
+    'At work people should be persuaded to do things', //Convincing
+    'At work people should accommodate and serve their leader', //Accommodate
+    'At work once you know what is required, you should be left to get on with it', //Introvert
+    'At work there is too much to do to wait for instructions' //Headstrong
   ];
 
   constructor(
@@ -67,21 +67,21 @@ export class QuestionCComponent implements OnInit {
 
   onScoreTotal() {
     this.questions.reverse();
-    this.dominance = this.questions.indexOf('1  ~  At work, if I am a leader, I expect others to follow what I say');
+    this.dominance = this.questions.indexOf('At work, if I am a leader, I expect others to follow what I say');
     this.service.totalDominance.push(this.dominance + 1)
-    this.precise = this.questions.indexOf('2  ~  At work people should follow carefully laid down procedures');
+    this.precise = this.questions.indexOf('At work people should follow carefully laid down procedures');
     this.service.totalPrecise.push(this.precise + 1);
-    this.earth = this.questions.indexOf('3  ~  At work leaders should seek consensus before proceeding');
+    this.earth = this.questions.indexOf('At work leaders should seek consensus before proceeding');
     this.service.totalEarth.push(this.earth + 1);
-    this.animated = this.questions.indexOf('4  ~  At work there are too many rules and they get in the way of doing the job');
+    this.animated = this.questions.indexOf('At work there are too many rules and they get in the way of doing the job');
     this.service.totalAnimated.push(this.animated + 1)
-    this.convincing = this.questions.indexOf('5  ~  At work people should be persuaded to do things');
+    this.convincing = this.questions.indexOf('At work people should be persuaded to do things');
     this.service.totalConvincing.push(this.convincing + 1);
-    this.accommodate = this.questions.indexOf('6  ~  At work people should accommodate and serve their leader');
+    this.accommodate = this.questions.indexOf('At work people should accommodate and serve their leader');
     this.service.totalAccommodate.push(this.accommodate + 1);
-    this.introvert = this.questions.indexOf('7  ~  At work once you know what is required, you should be left to get on with it');
+    this.introvert = this.questions.indexOf('At work once you know what is required, you should be left to get on with it');
     this.service.totalIntrovert.push(this.introvert + 1);
-    this.headstrong = this.questions.indexOf('8  ~  At work there is too much to do to wait for instructions');
+    this.headstrong = this.questions.indexOf('At work there is too much to do to wait for instructions');
     this.service.totalHeadstrong.push(this.headstrong + 1);
     // console.log(this.service.totalAccommodate.pop());
     this.closeDialog();
