@@ -27,14 +27,14 @@ export class QuestionDComponent implements OnInit {
   headstrong: number;
 
   questions = [
-    '1  ~  I Prefer To Be Assertive', //Dominance
-    '2  ~  I Prefer To Follow Regulations In My Workspace', //Precise
-    '3  ~  I Prefer To Join In With Others', //DownToEarth
-    '4  ~  I Prefer To Move At A Fast Pace', //Animated
-    '5  ~  I Prefer To Influence People', //Convincing
-    '6  ~  I Prefer To Accommodate Others Wishes', //Accommodate
-    '7  ~  I Prefer To Work Quietly On My Own', //Introvert
-    '8  ~  I Prefer To Work Independently' //Headstrong
+    'At work people would best describe me as assertive', //Dominance
+    'At work people would best describe me as accurate', //Precise
+    'At work people would best describe me as thoughtful', //DownToEarth
+    'At work people would best describe me as energetic', //Animated
+    'At work people would best describe me as optimistic', //Convincing
+    'At work people would best describe me as obliging', //Accommodate
+    'At work people would best describe me as independant', //Introvert
+    'At work people would best describe me as go-getting' //Headstrong
   ];
 
   constructor(public authService: AuthService, public router: Router, public service: MainContentService, public dialog: MatDialog,
@@ -62,21 +62,21 @@ export class QuestionDComponent implements OnInit {
    }
   onScoreTotal() {
     this.questions.reverse();
-    this.dominance = this.questions.indexOf('1  ~  I Prefer To Be Assertive');
+    this.dominance = this.questions.indexOf('At work people would best describe me as assertive');
     this.service.totalDominance.push(this.dominance + 1)
-    this.precise = this.questions.indexOf('2  ~  I Prefer To Follow Regulations In My Workspace');
+    this.precise = this.questions.indexOf('At work people would best describe me as accurate');
     this.service.totalPrecise.push(this.precise + 1);
-    this.earth = this.questions.indexOf('3  ~  I Prefer To Join In With Others');
+    this.earth = this.questions.indexOf('At work people would best describe me as thoughtful');
     this.service.totalEarth.push(this.earth + 1);
-    this.animated = this.questions.indexOf('4  ~  I Prefer To Move At A Fast Pace');
+    this.animated = this.questions.indexOf('At work people would best describe me as energetic');
     this.service.totalAnimated.push(this.animated + 1)
-    this.convincing = this.questions.indexOf('5  ~  I Prefer To Influence People');
+    this.convincing = this.questions.indexOf('At work people would best describe me as optimistic');
     this.service.totalConvincing.push(this.convincing + 1);
-    this.accommodate = this.questions.indexOf('6  ~  I Prefer To Accommodate Others Wishes');
+    this.accommodate = this.questions.indexOf('At work people would best describe me as obliging');
     this.service.totalAccommodate.push(this.accommodate + 1);
-    this.introvert = this.questions.indexOf('7  ~  I Prefer To Work Quietly On My Own');
+    this.introvert = this.questions.indexOf('At work people would best describe me as independant');
     this.service.totalIntrovert.push(this.introvert + 1);
-    this.headstrong = this.questions.indexOf('8  ~  I Prefer To Work Independently');
+    this.headstrong = this.questions.indexOf('At work people would best describe me as go-getting');
     this.service.totalHeadstrong.push(this.headstrong + 1);
     // console.log(this.service.totalAccommodate.pop());
     this.closeDialog();

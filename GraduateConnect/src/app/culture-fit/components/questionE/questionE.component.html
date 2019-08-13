@@ -5,8 +5,9 @@
     <h2 class="text-center"> Question 5: </h2>
     <br>
 
-    <p> Please rank yourself accordingly using the below drag and drop interface. <br> Drag and Drop the options that you <strong>Strongly Agree</strong>
-        and associate yourself with to the <strong>TOP</strong> and the ones you do not <strong>Strongly Agree</strong> with to the <strong>BOTTOM</strong>.</p>
+   
+    <p> Please order the statements below from most relatable to least. <br> Drag and Drop the statements that you
+      associate most strongly with yourself to the <strong>TOP</strong> of the list.</p>
     <div class="question">
       <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
         <div class="example-box" color="accent" *ngFor="let question of questions" cdkDrag>{{question}}</div>
@@ -22,7 +23,7 @@
     </div>
   </div>
 </div>
-  <form [formGroup]="cultureForm" (ngSubmit)="submitCultureData()" display="none" novalidate>
+  <!-- <form [formGroup]="cultureForm" (ngSubmit)="submitCultureData()" display="none" novalidate>
     <div class="formGroup">
       <div class=form-group>
         <div >
@@ -66,10 +67,10 @@
     
         </div>
 
-    </div>
+    </div> -->
   
-  </div>
-            </form>
+  <!-- </div>
+            </form> -->
 
 <!--
 <div class="header">
