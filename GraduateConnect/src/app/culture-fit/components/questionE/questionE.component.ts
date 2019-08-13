@@ -63,41 +63,41 @@ export class QuestionEComponent implements OnInit {
   }
   culturForm() {
     this.cultureForm = this.fb.group({
-      Dominant:['',],
-      Precise:['',],
-      Earth:['',],
-      Animated:['',],
-      Convincing:['',],
-      Accommodate:['',],
-      Introvert:['',],
-      Headstrong:['',],
+      Dominant:[this.service.totalDominance.reduce((a, b) => a + b, 0),],
+      Precise:[this.service.totalPrecise.reduce((a, b) => a + b, 0),],
+      Earth:[this.service.totalEarth.reduce((a, b) => a + b, 0),],
+      Animated:[this.service.totalAnimated.reduce((a, b) => a + b, 0),],
+      Convincing:[this.service.totalConvincing.reduce((a, b) => a + b, 0),],
+      Accommodate:[this.service.totalAccommodate.reduce((a, b) => a + b, 0),],
+      Introvert:[this.service.totalIntrovert.reduce((a, b) => a + b, 0),],
+      Headstrong:[this.service.totalHeadstrong.reduce((a, b) => a + b, 0),],
 
  
     })  
   }
   get Dominant() {
-    return this.service.totalDominance.reduce((a, b) => a + b, 0);
+    return this.cultureForm.get ('dominant');
   }
   get Precise() {
-    return this.cultureForm.get("Precise");
+    return this.service.totalPrecise.reduce((a, b) => a + b, 0);
   }
   get Earth() {
-    return this.cultureForm.get("Earth");
+    return this.service.totalEarth.reduce((a, b) => a + b, 0);
   }
   get Animated() {
-    return this.cultureForm.get("Animated");
+    return this.service.totalAnimated.reduce((a, b) => a + b, 0);
   }
   get Convincing() {
-    return this.cultureForm.get("Convincing");
+    return this.service.totalConvincing.reduce((a, b) => a + b, 0);
   }
   get Accomodate() {
-    return this.cultureForm.get("Accomodatet");
+    return this.service.totalAccommodate.reduce((a, b) => a + b, 0);
   }
   get Introvert() {
-    return this.cultureForm.get("Introvert");
+    return this.service.totalIntrovert.reduce((a, b) => a + b, 0);
   }
   get Headstrong() {
-    return this.cultureForm.get("Headstrong");
+    return this.service.totalHeadstrong.reduce((a, b) => a + b, 0);
   }
 
   ResetForm() {
@@ -123,12 +123,27 @@ export class QuestionEComponent implements OnInit {
     this.service.totalIntrovert.push(this.introvert + 1);
     this.headstrong = this.questions.indexOf('8  ~  I can best be described as eager, outgoing and mobile');
     this.service.totalHeadstrong.push(this.headstrong + 1);
-    console.log(this.service.totalAccommodate.pop());
-    this.submitCultureData();
+    console.log(this.service.totalDominance.reduce((a, b) => a + b, 0));
+    console.log(this.service.totalPrecise.reduce((a, b) => a + b, 0));
+    console.log(this.service.totalAccommodate.reduce((a, b) => a + b, 0));
+   
+    // this.popCultureForm();
     alert("Your Results Have Been Captured!!!");
+   
     this.onSubmit();
     this.hide = true;
   }
+     
+popCultureForm(){
+  this.dominance = this.service.totalDominance.reduce((a, b) => a + b, 0);
+  this.precise = this.service.totalPrecise.reduce((a, b) => a + b, 0);
+  this.earth = this.service.totalEarth.reduce((a, b) => a + b, 0);
+  this.animated = this.service.totalAnimated.reduce((a, b) => a + b, 0);
+  this.convincing = this.service.totalConvincing.reduce((a, b) => a + b, 0);
+  this.accommodate = this.service.totalAccommodate.reduce((a, b) => a + b, 0);
+  this.introvert = this.service.totalIntrovert.reduce((a, b) => a + b, 0);
+  this.headstrong = this.service.totalHeadstrong.reduce((a, b) => a + b, 0);
+}
   submitCultureData() {
     this.crudApi.AddCulture(this.cultureForm.value); // Submit student data using CRUD API
     this.ResetForm();

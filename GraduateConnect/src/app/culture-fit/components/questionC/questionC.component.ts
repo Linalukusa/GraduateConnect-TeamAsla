@@ -83,7 +83,7 @@ export class QuestionCComponent implements OnInit {
     this.service.totalIntrovert.push(this.introvert + 1);
     this.headstrong = this.questions.indexOf('8  ~  At work there is too much to do to wait for instructions');
     this.service.totalHeadstrong.push(this.headstrong + 1);
-    console.log(this.service.totalAccommodate.pop());
+    // console.log(this.service.totalAccommodate.pop());
     this.closeDialog();
     this.openQuestionD();
   }

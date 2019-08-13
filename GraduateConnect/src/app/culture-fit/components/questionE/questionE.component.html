@@ -14,39 +14,63 @@
     </div>
   </div>
   <div mat-dialog-actions class="btn">
-    <div *ngIf="!hide">
-      <button mat-button color="accent" (click)="onScoreTotal()"> Submit </button>
+    <div>
+      <button mat-button color="accent"  (click)="onScoreTotal()"> Submit </button>
     </div>
     <div *ngIf="hide">  
-      <button mat-button color="accent" (click)="onSubmit()"> Show Results </button>
+      <button mat-button color="accent"  (ngSubmit)="submitCultureData()"> Show Results </button>
     </div>
   </div>
 </div>
-  <!-- <form [formGroup]="cultureForm" (ngSubmit)="submitCultureData()" display="none" novalidate>
+  <form [formGroup]="cultureForm" (ngSubmit)="submitCultureData()" display="none" novalidate>
     <div class="formGroup">
       <div class=form-group>
-      <input formControlName="dominance">
-      <div>Dominant
-      <input id="dominant" formControlName="Dominant" class="form-control" value="service.totalDominance.reduce((a, b) => a + b, 0)">
-      </div>
-      <lable>Precise</lable>
-      <input formControlName="Precise" class="form-control">
-      <lable>Earth</lable>
-      <input formControlName="Earth" class="form-control">
-      <lable>Animated</lable>
-      <input formControlName="Animated" class="form-control">
-      <lable>Convincing</lable>
-      <input formControlName="Convincing" class="form-control">
-      <lable>Accommodate</lable>
-      <input formControlName="Accommodate" class="form-control">
-      <lable>Introvert</lable>
-      <input formControlName="Introvert" class="form-control">
-      <lable>Headstrong</lable>
-      <input formControlName="Headstrong" class="form-control">
+        <div >
+          dominant
+          <input type="text" formControlName="dominant" class="form-control" required>
+    
+        </div>
+        <div >
+          precise
+          <input type="text" formControlName="Precise" class="form-control" required>
+    
+        </div>
+        <div >
+         earth
+          <input type="text" formControlName="Earth" class="form-control" required>
+    
+        </div>
+        <div >
+          animated
+          <input type="text" formControlName="Animated" class="form-control" required>
+    
+        </div>
+        <div >
+         convincing
+          <input type="text" formControlName="Convincing" class="form-control" required>
+    
+        </div>
+        <div >
+          accommodate
+          <input type="text" formControlName="Accommodate" class="form-control" required>
+    
+        </div>
+        <div >
+         introvert
+          <input type="text" formControlName="Introvert" class="form-control" required>
+    
+        </div>
+        <div >
+         headstrong
+          <input type="text" formControlName="Headstrong" class="form-control" required>
+    
+        </div>
 
     </div>
+  
+  </div>
             </form>
-</div> -->
+
 <!--
 <div class="header">
         <h1> Culture Fit Assessment </h1>

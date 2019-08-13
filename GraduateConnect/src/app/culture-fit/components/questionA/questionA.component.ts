@@ -77,7 +77,7 @@ export class QuestionAComponent implements OnInit {
     this.service.totalIntrovert.push(this.introvert + 1);
     this.headstrong = this.questions.indexOf('8  ~  I Prefer To Work Independently');
     this.service.totalHeadstrong.push(this.headstrong + 1);
-    console.log(this.service.totalAccommodate.pop());
+    // console.log(this.service.totalAccommodate.pop());
     this.closeDialog();
     this.openQuestionB();
   }

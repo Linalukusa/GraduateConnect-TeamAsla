@@ -81,7 +81,7 @@ export class CrudService {
     return this.studentRef;
   }
   GetCulture(id: string) {
-    this.cultureRef = this.db.object('culture-list/');
+    this.cultureRef = this.db.object('cultures-list/' + id);
     return this.cultureRef;
   }
 //Fetch Single Academic OBject
@@ -95,7 +95,7 @@ export class CrudService {
     return this.studentsRef;
   }  
   GetCulturesList() {
-    this.culturesRef = this.db.list('culture-list');
+    this.culturesRef = this.db.list('cultures-list');
     return this.culturesRef;
   }  
   //Fetch Academic List

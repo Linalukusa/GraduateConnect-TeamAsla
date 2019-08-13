@@ -79,6 +79,7 @@ import { CultureFitInfoComponent } from './culture-fit/culture-fit-info/culture-
 import { Hero } from './hero';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { CulturesListComponent } from './components/cultures-list/cultures-list.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -123,7 +124,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     RadarComponent,
     LangDialogComponent,
     QualDialogComponent,
-    CultureFitInfoComponent
+    CultureFitInfoComponent,
+    CulturesListComponent
     
   
     
