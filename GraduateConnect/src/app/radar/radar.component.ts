@@ -56,22 +56,22 @@ export class RadarComponent implements OnInit {
       document.getElementById('dominant').style.display = "none"; 
     }
      if (this.topCulture != 1) {
-      document.getElementById('convincing').style.display = "none"; 
+      document.getElementById('precise').style.display = "none"; 
     }
     if (this.topCulture != 2) {
       document.getElementById('earth').style.display = "none"; 
     }
      if (this.topCulture != 3) {
-      document.getElementById('precise').style.display = "none"; 
+      document.getElementById('animated').style.display = "none"; 
     }
      if (this.topCulture != 4) {
-      document.getElementById('accomodate').style.display = "none"; 
+      document.getElementById('convincing').style.display = "none"; 
     }
      if (this.topCulture != 5) {
-      document.getElementById('introvert').style.display = "none"; 
+      document.getElementById('accomodate').style.display = "none"; 
     }
      if (this.topCulture != 6) {
-      document.getElementById('animated').style.display = "none"; 
+      document.getElementById('introvert').style.display = "none"; 
     }
      if (this.topCulture != 7) {
       document.getElementById('headstrong').style.display = "none"; 
