@@ -1,11 +1,12 @@
 <div class="wrapper">
   <div class="example-container" >
+      <h3 *ngIf="authService.userData as user"  class="a" >  Welcome {{(user.displayName) ? user.displayName : 'User'}}</h3>
+ <br>
+        <h3   class="text-center">Thank you for registering with Graduate Connect!!</h3>
+        <hr>
 
-        <h2 class="text-center">Thank you for registering with Graduate Connect!!</h2>
-        <br>
-
-        <h3 class="text-center"> You three short steps away from connecting with potential employers. 
-           </h3>
+        <h4 class="text-center"> You three short steps away from connecting with potential employers. 
+           </h4>
            <figure>
               <img src="assets/images/progress.PNG" alt="" class=" img-responsive ">
             

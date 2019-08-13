@@ -1,5 +1,4 @@
 
- 
   <div class="wrapper">
       <app-sidebar></app-sidebar>
 
@@ -22,6 +21,13 @@
     <div >
       <div class="row">
           <div class="col">
+              <div >
+                Full Name
+                <input type="text" *ngIf="authService.userData as user" formControlName="firstName" value ="{{(user.displayName) ? user.displayName : 'User'}}" class="form-control" required>
+                
+              </div>
+            </div>
+          <div class="col">
               <div  class="form-group" >
            Gender:
               <select formControlName="gender"
@@ -34,6 +40,10 @@
                   </select> 
                   </div> 
           </div>
+       
+         
+        </div>  
+      <div class="row">
           <div class="col">
               <div class="form-group">
                  Title:
@@ -54,57 +64,42 @@
                   </div>
           </div>
           <div class="col">
-              <div  class="form-group">
-               Ethnicity:
-              <select formControlName="ethnicity"
-              class="form-control"
-              id="ethnicityFormControlSelect">
-              <option value="" disabled='disabled' style="color:rgb(199, 196, 196)" >Select Ethnicity</option>
-                <option>Asian</option>              
-                <option>Black</option>      
-                <option>Coloured</option>
-                <option>Indian</option>
-                <option>White</option>
-                <option>Rev</option>
-                <option>Other</option>
-               
+              <div class="form-group">
+                  Do you have a disability?
+                   <select formControlName="disability" 
+                  class="form-control"
+                  id="titleFormControlSelect">
+                  <option value="" disabled='disabled' style="color:rgb(199, 196, 196)" >Please Select</option>
+                <option>Yes</option>              
+                <option>No</option>      
+                
                   </select>
                   </div>
           </div>
-        </div>  
-      <div class="row">
-          <div class="col">
-        <div >
-          First name
-          <input type="text" formControlName="firstName" class="form-control" required>
-          <!-- Showing errors using getter method -->
-          <p *ngIf="firstName.touched && firstName.invalid" class="error"><sup>*</sup>Please enter atleast first name</p>
-          <p *ngIf="firstName.errors?.minlength" class="error"><sup>*</sup>Name shouldn't be less than 2 words</p>
-        </div>
-      </div>
-<div class="col">
-        <div class="col-md-12 mb-3">
-         Last name
-          <input type="text" formControlName="lastName" class="form-control">
-        </div>
-      </div>
+
       </div>
 
       <div class="col">
         
         <div class="row">
             <div class="col">
-                <div  class="form-group">
-                Preferred Name:
-                <input    formControlName="PreferredName"
-                placeholder="Preferred name"
-                name="PreferredName"
-                class="form-control"
-                id="PreferredName">
-                </div>
-                <!-- Showing errors using getter method -->
-          <p *ngIf="firstName.touched && firstName.invalid" class="error"><sup>*</sup>Please enter atleast first name</p>
-          <p *ngIf="firstName.errors?.minlength" class="error"><sup>*</sup>Name shouldn't be less than 2 words</p>
+              <div  class="form-group">
+                Ethnicity:
+               <select formControlName="ethnicity"
+               class="form-control"
+               id="ethnicityFormControlSelect">
+               <option value="" disabled='disabled' style="color:rgb(199, 196, 196)" >Select Ethnicity</option>
+                 <option>Asian</option>              
+                 <option>Black</option>      
+                 <option>Coloured</option>
+                 <option>Indian</option>
+                 <option>White</option>
+                 <option>Rev</option>
+                 <option>Other</option>
+                
+                   </select>
+                   </div>
+                
             </div>
             <div class="col">
               <div   class="form-group">
@@ -119,7 +114,7 @@
         <div class="row">
             <div class="col">
                 <div   class="form-group">
-              Citezinship:
+              Citizenship:
                 <select 
                 class="form-control" formControlName="citizenship"
                 id="SelectCitizenship" placeholder="Select Citizenship">
@@ -127,6 +122,7 @@
                   <option>SA citizen</option>              
                   <option>Not SA citizen with a work permit</option>    
                   <option>Not SA citizen and no work permit</option>   
+                  
                     </select>
                     </div>
              </div>
@@ -138,6 +134,9 @@
                     class="form-control"
                     id="salegalid">
                   </div>
+                  <!-- Showing errors using getter method -->
+          <p *ngIf="passport.touched && passport.invalid" class="error"><sup>*</sup>Please enter Your ID</p>
+          <p *ngIf="passport.errors?.minlength" class="error"><sup>*</sup>Citizenship shouldn't be less than 6 Digits</p>
             </div>
           
           </div>
@@ -145,18 +144,20 @@
             <div class="row">
            <div class="col">
         <div class="col-md-12 mb-3">
-          <label>Mobile number</label>
+          Mobile number
           <input type="text" formControlName="mobileNumber" class="form-control" required>
-          <!-- Showing errors using getter method -->
-          <p *ngIf="mobileNumber.touched && mobileNumber.invalid" class="error"><sup>*</sup>Please provide contact
-            number</p>
-          <p *ngIf="mobileNumber.errors?.pattern" class="error"><sup>*</sup>Use numbers only
-            number</p>
+         
         </div>
+         <!-- Showing errors using getter method -->
+        
+         <p *ngIf="mobileNumber.touched && mobileNumber.invalid" class="error"><sup>*</sup>Please provide contact
+          number</p>
+        <p *ngIf="mobileNumber.errors?.pattern" class="error"><sup>*</sup>Use numbers only
+          number</p>
       </div>
         <div class="col">
         <div class="col-md-12 mb-3">
-            <label>Email</label>
+            Email
             <input type="email" formControlName="email" class="form-control" required>
             <!-- Showing errors using getter method -->
             <p *ngIf="email.touched && email.invalid" class="error"><sup>*</sup>Please provide email</p>
@@ -169,46 +170,67 @@
       <div class="row">
           <div class="col">
               <div  class="form-group">
+                  Current Province:
+                  <select 
+                class="form-control" formControlName="currentprovince"
+                id="currentprovince" placeholder="Current Province">
+                <option value="" disabled='disabled' style="color:rgb(199, 196, 196)" >Indicate Your  Current Province</option>
+                  <option>Eastern Cape</option>   
+                  <option>Free State</option>  
+                  <option>Gauteng</option>  
+                  <option>KwaZulu-Natal</option>  
+                  <option>Limpopo</option>  
+                  <option>Mpumalanga</option>  
+                  <option>Northern Cape</option>  
+                  <option>North West </option> 
+                           
+                    
+                    </select>
+                </div>
+               
+          </div>
+          <div class="col">
+              <div  class="form-group">
                   Current City:
                   <input    formControlName="currentcity"
                   placeholder="Current City"
                   class="form-control"
                   id="currentcity">
                 </div>
-               
-          </div>
-          <div class="col">
-              <div  class="form-group">
-                  Current Province:
-                  <input    formControlName="currentprovince"
-                  placeholder="Current Province"
-                  class="form-control"
-                  id="currentprovince">
-                </div>
+                 <!-- Showing errors using getter method -->
+          <p *ngIf="currentcity.touched && currentcity.invalid" class="error"><sup>*</sup>Please enter Your Current City</p>
+          
           </div>
         </div>
-        <div class="dropzone dropzonecontent pre html"
-     dropzone
-     (hovered)="toggleHover($event)"
-     (dropped)="onDrop($event)"
-     [class.hovering]="isHovering">
-
-     <h3>Please Upload a copy of your ID</h3>
-     <p>Drag and Drop a File</p>
-     <div class="file">
-        <label class="file-label">
-        <input class="file-input" type="file" (change)="onDrop($event.target.files)">
-     <span class="file-cta">
-            <span class="file-icon">
-              <i class="fa fa-upload"></i>
-            </span>
-            <span class="file-label">
-              or choose a file…
-            </span>
-          </span>
-        </label>
-      </div>
-</div>
+        <div class="row">
+            <div class="col">
+              </div>
+              <div class="col-sm-8">
+                  <div class="dropzone dropzonecontent pre html"
+                  dropzone
+                  (hovered)="toggleHover($event)"
+                  (dropped)="onDrop($event)"
+                  [class.hovering]="isHovering">
+             
+                  
+                  Please Upload Your Transcript
+                  <div class="file">
+                     <label class="file-label">
+                     <input class="file-input" type="file" (change)="onDrop($event.target.files)">
+                  <span class="file-cta">
+                         <span class="file-icon">
+                           <i class="fa fa-upload"></i>
+                         </span>
+                        
+                       </span>
+                     </label>
+                   </div>
+             </div>
+             
+                </div>
+                <div class="col">
+                  </div>
+              </div>
 
 
 
