@@ -48,6 +48,9 @@
     z-index: 999;
     transition: left 0.3s ease;
   }
+  .pointer{
+    cursor: pointer;
+  }
   .fitting {
     width: 250px;
   }

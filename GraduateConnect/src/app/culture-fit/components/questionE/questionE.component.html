@@ -12,16 +12,14 @@
       <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
         <div class="example-box" color="accent" *ngFor="let question of questions" cdkDrag>{{question}}</div>
       </div>
+      <div>
+          <br>
+          <button type="submit" mat-dialog-close  ali="center" class="btn btn-success" (click)="onScoreTotal()" >Continue</button>
+        <br>
+          </div>
     </div>
   </div>
-  <div mat-dialog-actions class="btn">
-    <div>
-      <button mat-button color="accent"  (click)="onScoreTotal()"> Submit </button>
-    </div>
-    <div *ngIf="hide">  
-      <button mat-button color="accent"  (ngSubmit)="submitCultureData()"> Show Results </button>
-    </div>
-  </div>
+
 </div>
   <!-- <form [formGroup]="cultureForm" (ngSubmit)="submitCultureData()" display="none" novalidate>
     <div class="formGroup">

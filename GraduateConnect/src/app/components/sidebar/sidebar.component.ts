@@ -3,6 +3,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { SidebarService } from './sidebar.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { User } from 'src/app/shared/services/user';
+import { Router } from '@angular/router';
+import { MainContentService } from 'src/app/services/main-content.service';
 //import { MenusService } from './menus.service';
 
 @Component({
@@ -23,6 +25,7 @@ export class SidebarComponent implements OnInit {
   password: string = 'connect';
   crud: any;
   constructor(public sidebarservice: SidebarService,
+    public router: Router, public service: MainContentService,
     private authService: AuthService) {
     this.menus = sidebarservice.getMenuList();
    }
@@ -30,7 +33,9 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {  
     //this.user = this.crud.getUser();
   }
-
+toRadar(){
+  this.router.navigate(['radar']); 
+}
   getSideBarState() {
     return this.sidebarservice.getSidebarState();
   }
