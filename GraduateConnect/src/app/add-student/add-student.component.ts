@@ -47,15 +47,14 @@ export class AddStudentComponent implements OnInit {
       gender:['',],
       title: ['',],
       ethnicity:['',Validators.required,],
-      firstName: ['', [Validators.required, Validators.minLength(2)]],
       lastName: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
       PreferredName: ['', ],
       dob:['',Validators.required],
       citizenship:['',Validators.required,],
-      currentcity: ['',[Validators.required,Validators.minLength(2)]],
+      currentcity: ['',[Validators.required,]],
       mobileNumber: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
-      passport:['', [Validators.maxLength(3), Validators.required]],
+      passport:['', [Validators.minLength(6), Validators.required]],
       currentprovince: ['', [Validators.maxLength(32), Validators.required]],
     })  
   }

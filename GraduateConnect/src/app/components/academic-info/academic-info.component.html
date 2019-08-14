@@ -144,30 +144,38 @@
                                           >Add more Qualifications</button>
                                    </div>
                                     </div>
-                    
-                                  <div class="dropzone dropzonecontent pre html"
-                                  dropzone
-                                  (hovered)="toggleHover($event)"
-                                  (dropped)="onDrop($event)"
-                                  [class.hovering]="isHovering">
-                             
-                                  <h3>Please Upload Your Transcript</h3>
-                                  <p>Drag and Drop a File</p>
-                                  <div class="file">
-                                     <label class="file-label">
-                                     <input class="file-input" type="file" (change)="onDrop($event.target.files)">
-                                  <span class="file-cta">
-                                         <span class="file-icon">
-                                           <i class="fa fa-upload"></i>
-                                         </span>
-                                         <span class="file-label">
-                                           or choose a file…
-                                         </span>
-                                       </span>
-                                     </label>
-                                   </div>
-                             </div>
-                             
+
+
+                                    <div class="row">
+                                        <div class="col">
+                                          </div>
+                                          <div class="col-sm-8">
+                                              <div class="dropzone dropzonecontent pre html"
+                                              dropzone
+                                              (hovered)="toggleHover($event)"
+                                              (dropped)="onDrop($event)"
+                                              [class.hovering]="isHovering">
+                                         
+                                              
+                                              Please Upload Your Transcript
+                                              <div class="file">
+                                                 <label class="file-label">
+                                                 <input class="file-input" type="file" (change)="onDrop($event.target.files)">
+                                              <span class="file-cta">
+                                                     <span class="file-icon">
+                                                       <i class="fa fa-upload"></i>
+                                                     </span>
+                                                    
+                                                   </span>
+                                                 </label>
+                                               </div>
+                                         </div>
+                                         
+                                            </div>
+                                            <div class="col">
+                                              </div>
+                                          </div>
+                                 
                     
                                   
                     
@@ -273,7 +281,7 @@
                                          
                     
                                             
-                                            <div class="row">
+                                            <!-- <div class="row">
                                                 <div class="col">
                                                     <h3 class="text-center">Language(s)</h3>
                                                     </div>
@@ -292,10 +300,133 @@
                                                       <div class="col">
                                                         </div>
                                                       
+                                                  </div> -->
+
+                                                      
+                                            <div class="row">
+                                                <h3 class="text-center">Language(s)</h3>
+                                                   
+                                              </div>
+                                       
+                                        <hr>
+               
+               
+                                        <div class="row">
+                                              <div class="col">
+                                                  Preferred Language:
+                                                      <select formControlName="language" class="form-control"  data-required="true" autocomplete="off" id="lang_2_select"  >
+                                                              <option value="" disabled='disabled' style="color:#999;">Select language</option>
+                                                              <option value="77" >English</option>
+                                                              <option value="22006002">Afrikaans</option>
+                                                              <option value="22006003">IsiNdebele</option>
+                                                              <option value="22006004">IsiXhosa</option>
+                                                              <option value="22006005">IsiZulu</option>
+                                                              <option value="22006006">Sepedi</option>
+                                                              <option value="22006007">Sesotho</option>
+                                                              <option value="22006008">Setswana</option>
+                                                              <option value="22006009">SiSwati</option>
+                                                              <option value="22006010">Tshivenda</option>
+                                                              <option value="22006011">Xitsonga</option>
+                                                              <option value="78">German</option>
+                                                              <option value="79">French</option>
+                                                              <option value="80">Italian</option>
+                                                              <option value="81">Spanish</option>
+                                                              <option value="82">Dutch</option>
+                                                              <option value="273">Bulgarian</option>
+                                                              <option value="274">Chinese</option>
+                                                              <option value="275">Danish</option>
+                                                              <option value="276">Finnish</option>
+                                                              <option value="277">Greek</option>
+                                                              <option value="278">Hungarian</option>
+                                                              <option value="279">Hindi</option>
+                                                              <option value="280">Japanese</option>
+                                                              <option value="281">Croat</option>
+                                                              <option value="282">Norwegian</option>
+                                                              <option value="283">Polish</option>
+                                                              <option value="284">Portuguese</option>
+                                                              <option value="285">Russian</option>
+                                                              <option value="286">Serb</option>
+                                                              <option value="287">Thai</option>
+                                                              <option value="288">Czech</option>
+                                                              <option value="289">Turkish</option>
+                                                              <option value="290">Swedish</option>
+                                                              <option value="291">Arabic</option>
+                                                              <option value="292">Luxembourgish</option>
+                                                              <option value="294">Latvian</option>
+                                                              <option value="586">Romanian</option>
+                                                              <option value="590">Persian</option>
+                                                              <option value="750">Hebraic</option>
+                                                              <option value="751">Macedonian</option>
+                                                              <option value="990">Indonesian</option>
+                                                              <option value="1100">Lithuanian</option>
+                                                              <option value="1110">Vietnamese</option>
+                                                              <option value="1120">Slovak</option>
+                                                              <option value="1130">Korean</option>
+                                                              <option value="36007">Icelandic</option>
+                                                              <option value="36008">Albanian</option>
+                                                              <option value="100015">Armenian</option>
+                                                              <option value="200000">Estonian</option>
+                                                              <option value="200010">Amharic</option>
+                                                              <option value="200020">Greenlandic</option>
+                                                              <option value="200030">Catalan</option>
+                                                              <option value="200040">Byelorussian</option>
+                                                              <option value="200050">Bosnian</option>
+                                                              <option value="200060">Maltese</option>
+                                                              <option value="200070">Moldavian</option>
+                                                              <option value="200080">Slovenian</option>
+                                                              <option value="200090">Ukrainian</option>
+                                                              <option value="200100">Urdu</option>
+                                                              <option value="200110">Tamil</option>
+                                                              <option value="200120">Azeri</option>
+                                                              <option value="200130">Georgian</option>
+                                                              <option value="22006001">Faroese</option>
+                                                              <option>Other</option>
+                                                              </select>
+                                              </div>
+                                              <div class="col">
+                                                  Level of Speaking:
+                                                      <select formControlName="levelofspeaking"  data-required="true" autocomplete="off" id="lang_2_level" class="form-control">
+                                                              <option value="" disabled='disabled' style="color:rgb(199, 196, 196)">Level of knownledge</option>
+                                                              <option value="5">Mother tongue</option>
+                                                              <option value="4">Advanced</option>
+                                                              <option value="3">Good</option>
+                                                              <option value="2">Moderate</option>
+                                                              <option value="1">Basic</option>
+                                                              </select>
+                                              </div>
+                                            </div>
+                 
+                                            <div class="form-group">
+                 
+                                     
+                                              </div>
+                   
+                                              <div class="row" >
+                                                  <div class="col" class="form-group text-right" >
+                                                     
+                                                  </div>
+                                                  <div class="col">
+                                                     
+                                                   </div>
+                                                   <div class="col">
+                                                   <div class="addmore" class="form-group text-right" >
+                                                      <button
+                                                      class="btn btn-success"
+                                                     
+                                                      (click)="onSubmit()"
+                                                      >Add more Langauges</button>
+                                               </div>
+                                               </div>
+                                              </div>
+                                       
+                 
+                                              <div class="form-group">
+                 
+                                     
                                                   </div>
                                                   
-                                            <hr>
-                    Languages chosen:
+                                            <!-- <hr>
+                    Languages chosen: -->
                     
                                            
                                                
