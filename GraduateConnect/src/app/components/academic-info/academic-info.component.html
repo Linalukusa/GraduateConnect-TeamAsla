@@ -26,7 +26,7 @@
                                   <div class="row">
                                     <h3 class="text-center">Education</h3>
                                     <ol>
-                                      <button class="btn btn-success" (click)="openQualDialog()">Add A Qual</button>
+                                      <!-- <button class="btn btn-success" (click)="openQualDialog()">Add A Qual</button> -->
                                    <li *ngIf="mylang">
                   Qualifications: <i>{{myqual}}</i>
                                    </li>
@@ -474,17 +474,10 @@
                                                   
                                                           </div>
                                
-                                                          <div class="row">
-                                                              <div class="col">
-                                                                  Add more skills 
-                                                              </div>
-                                                              <div class="col">
-                                                                  add skill
-                                                               </div>
-                                                          </div>
+                                                          
                                                           <div class="form-group text-right">
                                                               <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">Reset</button>
-                                                              <button type="submit" class="btn btn-success" [disabled]="!addForm.valid">Add Student</button>
+                                                              <button type="submit" class="btn btn-success" (click)="next()" [disabled]="!addForm.valid">Submit Details</button>
                                                             </div>
                                                     
                                             </form>

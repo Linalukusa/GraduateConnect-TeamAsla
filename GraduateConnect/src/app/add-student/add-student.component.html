@@ -240,10 +240,14 @@
    
     
 
-      <div class="form-group text-right">
+      <!-- <div class="form-group text-right">
         <button type="button" class="btn btn-secondary gap-right" (click)="onReset()">Reset</button>
-        <button type="submit" class="btn btn-success" [disabled]="!studentForm.valid">Add Student</button>
-      </div>
+        <button type="submit" class="btn btn-success" [disabled]="!studentForm.valid" (click)="submitStudentData(); submit();">Add Student</button>
+      </div> -->
+      <div>
+          <button type="submit"  ali="center" class="btn btn-success" (click)="submit(); submitStudentData();" >Submit Details</button>
+          <!-- <button class="btn" (click)="closeDialogs(); onCultureFitButton()">Test</button> -->
+          </div>
 
     </div>
   </div>

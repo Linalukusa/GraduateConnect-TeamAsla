@@ -6,6 +6,8 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 import { MatDialog } from '@angular/material';
 import { LangDialogComponent } from 'src/app/lang-dialog/lang-dialog.component';
 import { QualDialogComponent } from 'src/app/qual-dialog/qual-dialog.component';
+import { Router } from '@angular/router';
+import { MainContentService } from 'src/app/services/main-content.service';
 
 @Component({
   selector: 'app-academic-info',
@@ -21,6 +23,7 @@ export class AcademicInfoComponent implements OnInit {
     public crudApi: CrudService,  // CRUD API services
     public fb: FormBuilder,       // Form Builder service for Reactive forms
     public dialog: MatDialog,
+    public router: Router, public service: MainContentService,
     public toastr: ToastrService,  // Toastr service for alert message
     private authService: AuthService
   ) { }
@@ -113,7 +116,10 @@ export class AcademicInfoComponent implements OnInit {
    toggleHover(event: boolean) {
      this.isHovering = event;
    }
- 
+ next(){
+  alert("Academic details submitted"); 
+  this.router.navigate(['culture-fit-info']);
+ }
    onDrop(files: FileList) {
      for (let i = 0; i < files.length; i++) {
        this.files.push(files.item(i));

@@ -5,6 +5,8 @@ import { ToastrService } from 'ngx-toastr'; // Alert message using NGX toastr
 import { AuthService } from '../shared/services/auth.service';
 import { DashboardComponent } from '../components/dashboard/dashboard.component';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { MainContentService } from '../services/main-content.service';
 
 
 @Component({
@@ -23,7 +25,8 @@ export class AddStudentComponent implements OnInit {
     public fb: FormBuilder,       // Form Builder service for Reactive forms
     public toastr: ToastrService,  // Toastr service for alert message
     private authService: AuthService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public router: Router, public service: MainContentService,
     // public dialogRef: MatDialogRef<DashboardComponent>
   ) { }
 
@@ -33,7 +36,7 @@ export class AddStudentComponent implements OnInit {
     this.studenForm();              // Call student form when component is ready
      this.dialog.open(DashboardComponent, {
        disableClose: true,
-       height: '515px',
+       height: '520px',
       width: '75%',
      })
    
@@ -47,9 +50,8 @@ export class AddStudentComponent implements OnInit {
       gender:['',],
       title: ['',],
       ethnicity:['',Validators.required,],
-      lastName: ['', [Validators.required, Validators.minLength(2)]],
+      firstName: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
-      PreferredName: ['', ],
       dob:['',Validators.required],
       citizenship:['',Validators.required,],
       currentcity: ['',[Validators.required,]],
@@ -73,16 +75,11 @@ export class AddStudentComponent implements OnInit {
     return this.studentForm.get('firstName');
   }
 
-  get lastName() {
-    return this.studentForm.get('lastName');
-  }  
 
   get email() {
     return this.studentForm.get('email');
   }
-  get PreferredName (){
-    return this.studentForm.get ('PreferredName')
-  }
+ 
   get dob() {
     return this.studentForm.get('dob');
   }
@@ -107,11 +104,15 @@ export class AddStudentComponent implements OnInit {
   ResetForm() {
     this.studentForm.reset();
   }  
- 
+ submit(){
+   alert("Personal Details Submitted");
+  this.router.navigate(['academic-info']);
+ }
   submitStudentData() {
     this.crudApi.AddStudent(this.studentForm.value); // Submit student data using CRUD API
     this.toastr.success(this.studentForm.controls['firstName'].value + ' successfully added!'); // Show success message when data is successfully submited
-    this.ResetForm();  // Reset form when clicked on reset button
+    this.ResetForm();
+    this.router.navigate(['academic-info']);  // Reset form when clicked on reset button
    };
    isHovering: boolean;
 
