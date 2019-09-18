@@ -31,7 +31,12 @@ export class AcademicInfoComponent implements OnInit {
  
   ngOnInit() {
     this.crudApi.GetAcademicList();  // Call GetStudentsList() before main form is being called
-    this.academicForm();              // Call student form when component is ready
+    this.academicForm();    
+    document.getElementById('qual2').style.display = "none";
+    document.getElementById('qual3').style.display = "none"; 
+    document.getElementById('course2').style.display = "none"; 
+    document.getElementById('course4').style.display = "none";   
+           // Call student form when component is ready
   }
 
   // Reactive student form
@@ -142,7 +147,19 @@ export class AcademicInfoComponent implements OnInit {
      
     });
   }
+addQual(){
+  if (document.getElementById('qual2').style.display != "none"){
+    document.getElementById('qual3').style.display = "inline";
+    document.getElementById('qualBtn').style.display = "none";
 
+  }
+  document.getElementById('qual2').style.display = "inline"; 
+  
+}
+addCourse(){
+  document.getElementById('course2').style.display = "block";
+  document.getElementById('course4').style.display = "block";
+}
   openQualDialog(): void {
     let dialogRef = this.dialog.open(QualDialogComponent, {
       width: '750px',
