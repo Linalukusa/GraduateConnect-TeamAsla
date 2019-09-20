@@ -22,7 +22,7 @@ export class AuthService {
 
   constructor(
     public afs: AngularFirestore,   // Inject Firestore service
-    public afAuth: AngularFireAuth, // Inject Firebase auth service
+    public afAuth:AngularFireAuth, // Inject Firebase auth service
     public router: Router,  
     public ngZone: NgZone, // NgZone service to remove outside scope warning
     public jwtHelperService: JwtHelperService
@@ -96,10 +96,10 @@ export class AuthService {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
-          if(email === "smlsip007@myuct.ac.za")
-          {
-            this.router.navigate(['admin']);
-          }
+          // if(email === "smlsip007@myuct.ac.za")
+          // {
+          //   this.router.navigate(['admin']);
+          // }
           if (this.afAuth.auth.currentUser.emailVerified)
           {
             this.router.navigate(['register-student']);
@@ -182,6 +182,9 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
+      isGIC: false,
+      isAIC: false,
+      isCAC: false,
       emailVerified: user.emailVerified,
       roles:{
         student: true,

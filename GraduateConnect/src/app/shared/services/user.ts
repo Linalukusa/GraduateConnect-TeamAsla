@@ -9,5 +9,8 @@ export interface User {
     displayName: string;
     photoURL: string;
     emailVerified: boolean;
+    isGIC: boolean;
+    isAIC: boolean;
+    isCAC: boolean;
     roles: Roles;
  }

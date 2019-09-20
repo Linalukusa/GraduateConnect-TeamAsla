@@ -7,6 +7,8 @@ import { DashboardComponent } from '../components/dashboard/dashboard.component'
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { MainContentService } from '../services/main-content.service';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 
 @Component({
@@ -27,6 +29,8 @@ export class AddStudentComponent implements OnInit {
     private authService: AuthService,
     public dialog: MatDialog,
     public router: Router, public service: MainContentService,
+    public afAuth:AngularFireAuth,
+    public afs: AngularFirestore,
     // public dialogRef: MatDialogRef<DashboardComponent>
   ) { }
 
@@ -43,7 +47,10 @@ export class AddStudentComponent implements OnInit {
   
   }
 
-
+  GeneralInfoDone()
+  {
+    
+  }
   // Reactive student form
   studenForm() {
     this.studentForm = this.fb.group({
