@@ -17,6 +17,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 }) 
 export class AuthService {
   user$: Observable<User>;
+  user: User;
   userData: any; // Save logged in user datavice) {}
 
   constructor(
@@ -25,6 +26,7 @@ export class AuthService {
     public router: Router,  
     public ngZone: NgZone, // NgZone service to remove outside scope warning
     public jwtHelperService: JwtHelperService
+    
   ) {    
     /* Saving user data in localstorage when 
     logged in and setting up null when logged out */
@@ -46,6 +48,25 @@ export class AuthService {
       } else {
         localStorage.setItem('user', null);
         JSON.parse(localStorage.getItem('user'));
+      }
+    })
+  }
+  collection()
+  {
+    this.afs.collection("users").get().toPromise()
+    .then(snapshot => {
+      console.log(snapshot.docs);
+    })
+  }
+  userStatus()
+  {
+    
+    this.afAuth.auth.onAuthStateChanged(user => {
+      if(user)
+        console.log("User Logged In!!!");
+      
+      else{
+        console.log("User Logged Out");
       }
     })
   }
@@ -75,13 +96,26 @@ export class AuthService {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['register-student']);
+          if(email === "smlsip007@myuct.ac.za")
+          {
+            this.router.navigate(['admin']);
+          }
+          if (this.afAuth.auth.currentUser.emailVerified)
+          {
+            this.router.navigate(['register-student']);
+          }
+          else{
+            alert("Please ensure your Email has been verified");
+          }
+          
+          
         });
         this.SetUserData(result.user);
       }).catch((error) => {
         window.alert(error.message)
       })
   }
+  
 
   // Sign up with email/password
   SignUp(email, password) {

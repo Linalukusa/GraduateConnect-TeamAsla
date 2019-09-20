@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../../shared/services/auth.service";
 import { User } from 'src/app/shared/services/user';
 import { log } from 'util';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -12,8 +13,12 @@ import { log } from 'util';
 export class SignInComponent implements OnInit {
   user: User;
   constructor(
-    public authService: AuthService
+    public authService: AuthService,
+    public router: Router
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.authService.userStatus();
+    this.authService.collection();
+   }
 }
