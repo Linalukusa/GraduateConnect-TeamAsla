@@ -96,18 +96,17 @@ export class AuthService {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
-          // if(email === "smlsip007@myuct.ac.za")
-          // {
-          //   this.router.navigate(['admin']);
-          // }
-          if (this.afAuth.auth.currentUser.emailVerified)
+          if(email === "smlsip007@myuct.ac.za")
+          {
+            this.router.navigate(['admin']);
+          }
+          else if (this.afAuth.auth.currentUser.emailVerified)
           {
             this.router.navigate(['register-student']);
           }
           else{
             alert("Please ensure your Email has been verified");
           }
-          
           
         });
         this.SetUserData(result.user);
@@ -182,9 +181,9 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      isGIC: false,
-      isAIC: false,
-      isCAC: false,
+      isGIC: user.isGIC,
+      isAIC: user.isAIC,
+      isCAC: user.isCAC,
       emailVerified: user.emailVerified,
       roles:{
         student: true,

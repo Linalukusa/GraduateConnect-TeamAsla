@@ -28,7 +28,8 @@ export class AddStudentComponent implements OnInit {
     public toastr: ToastrService,  // Toastr service for alert message
     private authService: AuthService,
     public dialog: MatDialog,
-    public router: Router, public service: MainContentService,
+    public router: Router,
+    public service: MainContentService,
     public afAuth:AngularFireAuth,
     public afs: AngularFirestore,
     // public dialogRef: MatDialogRef<DashboardComponent>
