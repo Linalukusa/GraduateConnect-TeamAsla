@@ -37,7 +37,6 @@ export class CrudService {
       mobileNumber: student.mobileNumber,
       passport: student.passport,
       currentprovince: student.currentprovince
-
      
     })
   }

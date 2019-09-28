@@ -14,5 +14,7 @@ export interface Student {
    email: string;
    passport: any;
    currentprovince:string;
-   
+   generalInfoComplete: boolean;
+   academicInfoComplete: boolean;
+   cultureTestComplete: boolean;
 }

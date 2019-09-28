@@ -17,8 +17,9 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 }) 
 export class AuthService {
   user$: Observable<User>;
-  user: User;
+  user: any;
   userData: any; // Save logged in user datavice) {}
+  
 
   constructor(
     public afs: AngularFirestore,   // Inject Firestore service
@@ -100,6 +101,7 @@ export class AuthService {
           {
             this.router.navigate(['admin']);
           }
+          
           else if (this.afAuth.auth.currentUser.emailVerified)
           {
             this.router.navigate(['register-student']);
@@ -113,6 +115,12 @@ export class AuthService {
       }).catch((error) => {
         window.alert(error.message)
       })
+  }
+  checkGeneralInfo()
+  {
+    this.user.isGIC = true;
+    this.afAuth.auth.updateCurrentUser(this.user)
+    console.log();
   }
   
 
@@ -174,24 +182,28 @@ export class AuthService {
   /* Setting up user data when sign in with username/password, 
   sign up with username/password and sign in with social auth  
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
+ 
   SetUserData(user) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
     const userData: User = {
       uid: user.uid,
       email: user.email,
+      CheckGeneral: user.CheckGeneral,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      isGIC: user.isGIC,
-      isAIC: user.isAIC,
-      isCAC: user.isCAC,
       emailVerified: user.emailVerified,
       roles:{
         student: true,
         admin: false,
       }
     }
+    
     return userRef.set(userData, {
       merge: true
+    }).then(user => {
+      console.log('here',userRef);
+      this.user = user;
+      return user;
     })
   }
 

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { MainContentService } from '../services/main-content.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { User } from '../shared/services/user';
 
 
 @Component({
@@ -19,8 +20,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
 
 export class AddStudentComponent implements OnInit {
   public studentForm: FormGroup;  // Define FormGroup to student's form
- 
-  
  
   constructor(
     public crudApi: CrudService,  // CRUD API services
@@ -35,23 +34,18 @@ export class AddStudentComponent implements OnInit {
     // public dialogRef: MatDialogRef<DashboardComponent>
   ) { }
 
- 
   ngOnInit() {
     this.crudApi.GetStudentsList();  // Call GetStudentsList() before main form is being called
     this.studenForm();              // Call student form when component is ready
-     this.dialog.open(DashboardComponent, {
-       disableClose: true,
-       height: '520px',
+    this.dialog.open(DashboardComponent, {
+      disableClose: true,
+      height: '520px',
       width: '75%',
-     })
-   
-  
+    })
   }
+  //Checking if the General Information step has been completed
 
-  GeneralInfoDone()
-  {
-    
-  }
+
   // Reactive student form
   studenForm() {
     this.studentForm = this.fb.group({
@@ -66,6 +60,7 @@ export class AddStudentComponent implements OnInit {
       mobileNumber: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
       passport:['', [Validators.minLength(6), Validators.required]],
       currentprovince: ['', [Validators.maxLength(32), Validators.required]],
+      
     })  
   }
 
@@ -82,7 +77,6 @@ export class AddStudentComponent implements OnInit {
   get firstName() {
     return this.studentForm.get('firstName');
   }
-
 
   get email() {
     return this.studentForm.get('email');
@@ -113,6 +107,7 @@ export class AddStudentComponent implements OnInit {
     this.studentForm.reset();
   }  
  submit(){
+   this.authService.checkGeneralInfo();
    alert("Personal Details Submitted");
   this.router.navigate(['academic-info']);
  }
