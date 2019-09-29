@@ -10,6 +10,8 @@ import { MainContentService } from '../services/main-content.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { User } from '../shared/services/user';
+import { Student } from '../shared/student';
+import { StudentsListComponent } from '../students-list/students-list.component';
 
 
 @Component({
@@ -20,6 +22,7 @@ import { User } from '../shared/services/user';
 
 export class AddStudentComponent implements OnInit {
   public studentForm: FormGroup;  // Define FormGroup to student's form
+  student: Student;
  
   constructor(
     public crudApi: CrudService,  // CRUD API services
@@ -36,21 +39,31 @@ export class AddStudentComponent implements OnInit {
 
   ngOnInit() {
     this.crudApi.GetStudentsList();  // Call GetStudentsList() before main form is being called
-    this.studenForm();              // Call student form when component is ready
+    this.studenForm();// Call student form when component is ready
+
+    if(this.authService.userData.generalInfoComplete === true)
+    {
+      console.log("You have completed this step before");
+    }
     this.dialog.open(DashboardComponent, {
       disableClose: true,
       height: '520px',
       width: '75%',
-    })
+      })
+    
   }
   //Checking if the General Information step has been completed
-
-
+  isGeneralInfoComplete()
+  {
+    this.student.generalInfoComplete = true;
+    this.crudApi.UpdateStudent(this.student);
+  }
   // Reactive student form
   studenForm() {
     this.studentForm = this.fb.group({
       gender:['',],
       title: ['',],
+      disability: ['',],
       ethnicity:['',Validators.required,],
       firstName: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
@@ -77,7 +90,9 @@ export class AddStudentComponent implements OnInit {
   get firstName() {
     return this.studentForm.get('firstName');
   }
-
+  get disability() {
+    return this.studentForm.get('disability');
+  }
   get email() {
     return this.studentForm.get('email');
   }

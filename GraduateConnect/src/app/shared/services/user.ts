@@ -6,7 +6,6 @@
 export interface User {
     uid: string;
     email: string;
-    CheckGeneral: boolean;
     displayName: string;
     photoURL: string;
     emailVerified: boolean;
