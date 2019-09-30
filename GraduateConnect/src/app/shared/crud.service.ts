@@ -153,10 +153,6 @@ export class CrudService {
       totalArray = val['results'];
     })
 
-    {
-      
-    }
-
     return totalArray;
   }
 
