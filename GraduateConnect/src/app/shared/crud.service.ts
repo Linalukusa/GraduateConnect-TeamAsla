@@ -36,9 +36,8 @@ export class CrudService {
       email: student.email,
       mobileNumber: student.mobileNumber,
       passport: student.passport,
-      currentprovince: student.currentprovince
-
-     
+      currentprovince: student.currentprovince,
+      generalInfoComplete: student.generalInfoComplete
     })
   }
   AddCulture(answer: Answer) {
@@ -119,7 +118,10 @@ export class CrudService {
       email: student.email,
       mobileNumber: student.mobileNumber,
       passport: student.passport,
-      currentprovince: student.currentprovince
+      currentprovince: student.currentprovince,
+      generalInfoComplete: student.generalInfoComplete,
+      academicInfoComplete: student.academicInfoComplete,
+      cultureTestComplete: student.cultureTestComplete
 
     })
   }  
@@ -150,10 +152,6 @@ export class CrudService {
     obj.valueChanges().subscribe((val) => {
       totalArray = val['results'];
     })
-
-    {
-      
-    }
 
     return totalArray;
   }

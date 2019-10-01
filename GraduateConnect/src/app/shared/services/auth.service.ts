@@ -18,14 +18,17 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 }) 
 export class AuthService {
   user$: Observable<User>;
+  user: any;
   userData: any; // Save logged in user datavice) {}
+  
 
   constructor(
     public afs: AngularFirestore,   // Inject Firestore service
-    public afAuth: AngularFireAuth, // Inject Firebase auth service
+    public afAuth:AngularFireAuth, // Inject Firebase auth service
     public router: Router,  
     public ngZone: NgZone, // NgZone service to remove outside scope warning
     public jwtHelperService: JwtHelperService
+    
   ) {    
     /* Saving user data in localstorage when 
     logged in and setting up null when logged out */
@@ -48,6 +51,25 @@ export class AuthService {
       } else {
         localStorage.setItem('user', null);
         JSON.parse(localStorage.getItem('user'));
+      }
+    })
+  }
+  collection()
+  {
+    this.afs.collection("users").get().toPromise()
+    .then(snapshot => {
+      console.log(snapshot.docs);
+    })
+  }
+  userStatus()
+  {
+    
+    this.afAuth.auth.onAuthStateChanged(user => {
+      if(user)
+        console.log("User Logged In!!!");
+      
+      else{
+        console.log("User Logged Out");
       }
     })
   }
@@ -78,12 +100,32 @@ export class AuthService {
       .then((result) => {
         this.ngZone.run(() => {
           this.router.navigate(['register-student']);
+          // if(email === "smlsip007@myuct.ac.za")
+          // {
+          //   this.router.navigate(['admin']);
+          // }
+          
+          // if (this.afAuth.auth.currentUser.emailVerified)
+          // {
+          //   this.router.navigate(['register-student']);
+          // }
+          // else{
+          //   alert("Please ensure your Email has been verified");
+          // }
+          
         });
         this.SetUserData(result.user);
       }).catch((error) => {
         window.alert(error.message)
       })
   }
+  checkGeneralInfo()
+  {
+    this.user.isGIC = true;
+    this.afAuth.auth.updateCurrentUser(this.user)
+    console.log();
+  }
+  
 
   // Sign up with email/password
   SignUp(email, password) {
@@ -143,6 +185,7 @@ export class AuthService {
   /* Setting up user data when sign in with username/password, 
   sign up with username/password and sign in with social auth  
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
+ 
   SetUserData(user) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
     const userData: User = {
@@ -156,8 +199,13 @@ export class AuthService {
         admin: false,
       }
     }
+    
     return userRef.set(userData, {
       merge: true
+    }).then(user => {
+      console.log('here',userRef);
+      this.user = user;
+      return user;
     })
   }
 

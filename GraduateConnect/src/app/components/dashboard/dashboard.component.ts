@@ -32,8 +32,6 @@ export class DashboardComponent  {
   closeDialogs()
   {
     this.dialogRef.close();
-    console.log("Lebron james!");
-    
   }
 
  
