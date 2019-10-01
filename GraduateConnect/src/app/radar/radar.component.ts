@@ -12,27 +12,90 @@ import { CrudService } from '../shared/crud.service';
 })
 export class RadarComponent implements OnInit {
 
-  totalArray = [];
+  totalArray = this.service.totalArray;
+  topCulture:number;
   loading = false;
+  obj: Answer;
+  demoradarChartData = [];
+  cultures = [];
+  max = this.demoradarChartData[0];
+  index:number;
+  i:number;
+  radarChartType:string = 'radar';
+  demoradarChartLabels = ['Dominant', 'Precise', 'Down to Earth','Animated', 'Convincing', 'Accommodating', 'Introverted', 'Headstrong'   ];
 
   constructor(public authService: AuthService, public router: Router, public service: MainContentService, public crud: CrudService) { }
 
   ngOnInit() {
     this.loading = true;
-    this.totalArray = this.crud.getTotalArray('id');
+    //  this.totalArray = this.crud.getTotalArray('id');
     this.demoradarChartData = [
-      {data: this.totalArray , label: 'Graduate Graph'},
-      {data: [10, 20, 30, 40, 50, 60, 70, 80], label: 'Tech-Company Graph'}
+       {data: [this.service.totalDominance.reduce((a, b) => a + b, 0), this.service.totalPrecise.reduce((a, b) => a + b, 0), this.service.totalEarth.reduce((a, b) => a + b, 0), this.service.totalAnimated.reduce((a, b) => a + b, 0), this.service.totalConvincing.reduce((a, b) => a + b, 0), this.service.totalAccommodate.reduce((a, b) => a + b, 0), this.service.totalIntrovert.reduce((a, b) => a + b, 0), this.service.totalHeadstrong.reduce((a, b) => a + b, 0) ], label: 'Graduate Graph'},
+      // {data: [10, 20, 30, 40, 50, 60, 70, 80], label: 'Tech-Company Graph'}
     ];
-    this.loading = false;
-  }
+    this.cultures = [this.service.totalDominance.reduce((a, b) => a + b, 0), this.service.totalPrecise.reduce((a, b) => a + b, 0), this.service.totalEarth.reduce((a, b) => a + b, 0), this.service.totalAnimated.reduce((a, b) => a + b, 0), this.service.totalConvincing.reduce((a, b) => a + b, 0), this.service.totalAccommodate.reduce((a, b) => a + b, 0), this.service.totalIntrovert.reduce((a, b) => a + b, 0), this.service.totalHeadstrong.reduce((a, b) => a + b, 0) ]
+    // for ( this.i = 0; this.i < this.demoradarChartData.length; this.i++) 
+		// {
+		// 	if (this.max < this.demoradarChartData[this.i]) 
+		// 	{
+		// 		this.max = this.demoradarChartData[this.i];
+		// 		this.index = this.i;
+		// 	}
+		// }
 
-  obj: Answer;
-   demoradarChartLabels = ['Dominant', 'Convincing', 'Down to Earth', 'Introverted', 'Headstrong', 'Animated', 'Precise', 'Accommodating'];
- 
-   demoradarChartData = [];
-   radarChartType:string = 'radar';
- 
+    // this.topCulture = this.index;
+    this.topCulture = this.cultures.indexOf(Math.max(...this.cultures));
+    console.log(this.topCulture);
+    
+    this.loading = false;
+   this.cultureText();
+  console.log(this.totalArray);
+  }
+  cultureText() {
+    if (this.topCulture != 0) {
+      document.getElementById('dominant').style.display = "none"; 
+    }
+     if (this.topCulture != 1) {
+      document.getElementById('precise').style.display = "none"; 
+    }
+    if (this.topCulture != 2) {
+      document.getElementById('earth').style.display = "none"; 
+    }
+     if (this.topCulture != 3) {
+      document.getElementById('animated').style.display = "none"; 
+    }
+     if (this.topCulture != 4) {
+      document.getElementById('convincing').style.display = "none"; 
+    }
+     if (this.topCulture != 5) {
+      document.getElementById('accomodate').style.display = "none"; 
+    }
+     if (this.topCulture != 6) {
+      document.getElementById('introvert').style.display = "none"; 
+    }
+     if (this.topCulture != 7) {
+      document.getElementById('headstrong').style.display = "none"; 
+    }
+  }
+  public top() 
+	{
+
+	
+
+		for ( this.i = 0; this.i < this.demoradarChartData.length; this.i++) 
+		{
+			if (this.max < this.demoradarChartData[this.i]) 
+			{
+				this.max = this.demoradarChartData[this.i];
+				this.index = this.i;
+			}
+		}
+
+    this.topCulture = this.index;
+    console.log(this.topCulture);
+}
+
+  
   // events
   public chartClicked(e:any):void {
     console.log(e);

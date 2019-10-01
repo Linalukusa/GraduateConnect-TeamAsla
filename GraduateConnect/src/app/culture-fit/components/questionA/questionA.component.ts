@@ -5,7 +5,7 @@ import { MainContentService} from 'src/app/services/main-content.service';
 import { Answer } from '../../Models/Answer';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { QuestionBComponent } from '../questionB/questionB.component';
-
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -14,16 +14,39 @@ import { QuestionBComponent } from '../questionB/questionB.component';
   styleUrls: ['./questionA.component.css']
 })
 export class QuestionAComponent implements OnInit {
-  
-
 
   obj: Answer;
-  sum: number = 0;
+  dominance: number;
+  precise: number;
+  earth: number;
+  animated: number;
+  convincing: number;
+  accommodate: number;
+  introvert: number;
+  headstrong: number;
+
+  questions = [
+    'I Prefer To Be Assertive', //Dominance
+    'I Prefer To Follow Regulations In My Workspace', //Precise
+    'I Prefer To Join In With Others', //DownToEarth
+    'I Prefer To Move At A Fast Pace', //Animated
+    'I Prefer To Influence People', //Convincing
+    'I Prefer To Accommodate Others Wishes', //Accommodate
+    'I Prefer To Work Quietly On My Own', //Introvert
+    'I Prefer To Work Independently' //Headstrong
+  ];
 
   constructor(public authService: AuthService, public router: Router, public service: MainContentService, public dialog: MatDialog,
     public dialogRef: MatDialogRef<QuestionAComponent>) {
-    this.obj = new Answer();
-   }
+    this.obj = new Answer()}
+
+    drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.questions, event.previousIndex, event.currentIndex);
+    console.log(this.questions);
+    }
+    
+  ngOnInit() {  
+  }
    closeDialog(): void
    {
     this.dialogRef.close();
@@ -31,34 +54,32 @@ export class QuestionAComponent implements OnInit {
    openQuestionB()
    {
      this.dialog.open(QuestionBComponent, {
+      disableClose: true,
       height: '1000px',
-      width: '70%',
+      width: '50%',
      })
    }
-
-  ngOnInit() {
-    
-  }
   onScoreTotal() {
-    this.service.totalDominance.push(this.obj.Dominance);
-    this.service.totalConvincing.push(this.obj.Convincing);
-    this.service.totalEarth.push(this.obj.Earth);
-    this.service.totalPrecise.push(this.obj.Precise);
-    this.service.totalAccommodate.push(this.obj.Accommodate);
-    this.service.totalIntrovert.push(this.obj.Introvert);
-    this.service.totalAnimated.push(this.obj.Animated);
-    this.service.totalHeadstrong.push(this.obj.Headstrong);
-    this.sum = this.service.totalDominance.pop() + this.service.totalConvincing.pop() +
-    this.service.totalEarth.pop() + this.service.totalPrecise.pop() + this.service.totalAccommodate.pop() +
-    this.service.totalIntrovert.pop() + this.service.totalAnimated.pop() + this.service.totalHeadstrong.pop()
-    if(!(this.sum === 36))
-    {
-      alert("Each Question Must Have A Unique Value!!!");
-    }
-    else{
-      this.closeDialog();
-      this.openQuestionB();
-    }
+    this.questions.reverse();
+    this.dominance = this.questions.indexOf('I Prefer To Be Assertive');
+    this.service.totalDominance.push(this.dominance + 1)
+    this.precise = this.questions.indexOf('I Prefer To Follow Regulations In My Workspace');
+    this.service.totalPrecise.push(this.precise + 1);
+    this.earth = this.questions.indexOf('I Prefer To Join In With Others');
+    this.service.totalEarth.push(this.earth + 1);
+    this.animated = this.questions.indexOf('I Prefer To Move At A Fast Pace');
+    this.service.totalAnimated.push(this.animated + 1)
+    this.convincing = this.questions.indexOf('I Prefer To Influence People');
+    this.service.totalConvincing.push(this.convincing + 1);
+    this.accommodate = this.questions.indexOf('I Prefer To Accommodate Others Wishes');
+    this.service.totalAccommodate.push(this.accommodate + 1);
+    this.introvert = this.questions.indexOf('I Prefer To Work Quietly On My Own');
+    this.service.totalIntrovert.push(this.introvert + 1);
+    this.headstrong = this.questions.indexOf('I Prefer To Work Independently');
+    this.service.totalHeadstrong.push(this.headstrong + 1);
+    // console.log(this.service.totalAccommodate.pop());
+    this.closeDialog();
+    this.openQuestionB();
   }
 }
 

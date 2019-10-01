@@ -1,5 +1,4 @@
-
-            <div class="wrapper">
+           <div class="wrapper">
                 <app-sidebar></app-sidebar>
 
 
@@ -12,7 +11,7 @@
                           <div class="example-container" >
                               <div  >
                                 <div>
-                              <h2 class="text-center">Academic and Skill Inofrmation</h2>
+                              <h2 class="text-center">Academic Information</h2>
                               </div>
                               <hr>
                           
@@ -24,9 +23,9 @@
 
                                            
                                   <div class="row">
-                                    <h3 class="text-center">Education</h3>
+                                    <h3 class="text-center">Qualification</h3>
                                     <ol>
-                                      <button class="btn btn-success" (click)="openQualDialog()">Add A Qual</button>
+                                      <!-- <button class="btn btn-success" (click)="openQualDialog()">Add A Qual</button> -->
                                    <li *ngIf="mylang">
                   Qualifications: <i>{{myqual}}</i>
                                    </li>
@@ -54,15 +53,15 @@
                                                     Tertiary Institution Completed At:
                                                     <select class="form-control" formControlName="institution">
                                                             <option value="" disabled='disabled' style="color:rgb(199, 196, 196)" >Select Tertiary Institution</option>
-                                                            <option>University of Cape Town (UCT)</option>
+                                                            <option>University of Cape Town</option>
                                                             
-                                                            <option>Univeristy of Western Cape (UWC) </option>
+                                                            <option>Univeristy of Western Cape </option>
                                                             
-                                                            <option>3</option>
+                                                            <option>Univeristy of Stellenbosch</option>
                                                             
-                                                            <option>4</option>
+                                                            <option>University of KwaZulu Natal</option>
                                                             
-                                                            <option>5</option>
+                                                            <option>The University of Wits</option>
                                                             
                                                             </select>
                                             </div>
@@ -93,7 +92,7 @@
                                             
                                           </div>  
                                       </div>
-                                      <div class="form-group">
+                                      <div class="form-group" >
                     
                                         
                                         </div>
@@ -103,15 +102,15 @@
                                                   Specialisation:
                                                   <select formControlName="specialisation" class="form-control" >
                                                         <option value="" disabled='disabled' style="color:rgb(199, 196, 196)" >Select Specialisation</option>
-                                                        <option>IS</option>
+                                                        <option>Information Systems</option>
                                                         
-                                                        <option>Comp Sci </option>
+                                                        <option>Computer Science </option>
                                                         
-                                                        <option>IS & Comp Sci</option>
+                                                        <option>Information Systems & Computer Science</option>
                                                         
-                                                        <option>4</option>
+                                                        <option>Computer Enginnering</option>
                                                         
-                                                        <option>5</option>
+                                                        <option>Staticstics and Computer Science</option>
                                                         
                                                         </select>
                                                 
@@ -121,77 +120,35 @@
                                                     <select formControlName="program" class="form-control" >
                                     
                                                             <option value=""  style="color:rgb(199, 196, 196)" >Select Program</option>
-                                                          <option>Bcom</option>
+                                                          <option>Bachelor of Commerce</option>
                                                           
-                                                          <option>Bus Sci</option>
+                                                          <option> Bachelor of Business Science</option>
                                                           
-                                                          <option>BSc</option>
+                                                          <option>Bachelor of Science</option>
                                                           
-                                                          <option>4</option>
+                                                          <option>Bachalor of Enginnering</option>
                                                           
                                                           </select>
                                                   
-                                                </div>    
+                                                </div>   
+                                              </div> 
                                   
-                                  </div>
-                                  <hr>
-                                  <div class="col">
-                                      <div class="addmore" class="form-group text-right" >
-                                          <button
-                                          class="btn btn-success"
-                                         
-                                          (click)="onSubmit()"
-                                          >Add more Qualifications</button>
-                                   </div>
-                                    </div>
-                    
-                                  <div class="dropzone dropzonecontent pre html"
-                                  dropzone
-                                  (hovered)="toggleHover($event)"
-                                  (dropped)="onDrop($event)"
-                                  [class.hovering]="isHovering">
-                             
-                                  <h3>Please Upload Your Transcript</h3>
-                                  <p>Drag and Drop a File</p>
-                                  <div class="file">
-                                     <label class="file-label">
-                                     <input class="file-input" type="file" (change)="onDrop($event.target.files)">
-                                  <span class="file-cta">
-                                         <span class="file-icon">
-                                           <i class="fa fa-upload"></i>
-                                         </span>
-                                         <span class="file-label">
-                                           or choose a file…
-                                         </span>
-                                       </span>
-                                     </label>
-                                   </div>
-                             </div>
-                             
-                    
                                   
-                    
-                                  <div class="row">
-                                        <div class="col">
-                                            
-                                        </div>
-                                        
-                                          <div class="col">
-                                            
-                                            </div>
-                                        
-                                         </div>
-                    
-                                      <!-- <uploader>
-                                      </uploader> -->
-                                        
-                                      <div class="form-group">
-                    
-                                        
-                                          </div>
-                                          
-                                         
-                                         
+                                 
+                                  
+                                  <hr> 
+                            
+                                   
+
+                                 
+<div *ngFor="let course of resultCollection">
+    <input type="text" [(ngModel)]="course.coursecode"> 
+    <input type="text" [(ngModel)]="course.CourseDesc"> 
+  <input type="text" [(ngModel)]="course.nqfcredit"> 
+  <input type="text" [(ngModel)]="course.resultperc"> 
+</div>
+
+                                   
                                           <hr>
                                            <div class="form-group">
                     
@@ -200,6 +157,8 @@
                                                     <div class="col">
                                                        
                                                            <h3 class="text-center">Academic Results</h3>
+                                                           <h4 class="text-center"> Enter your academic results for all your ICTS related courses <br>from your most recently completed academic year.</h4>
+
                                                     </div>
                                                     
                                                       </div>                          
@@ -247,31 +206,95 @@
                                                                                     id="courseresult">
                                                                                   </div>
                                                                           </div>
-                                                                  </div>
+                                                                 
                                                                   <div class="row">
                                                     <div class="col">
                                                         
                                                     </div>
                                                     
-                                                     </div>
-                    
+                                                     </div> 
+                    </div>
                                                      
                                             <hr>
+                                          
+                                            <!-- </div> -->
+
+                                              <!-- <div class="row">
+                                                  <div class="col">
+                                                      
+                                                  </div>
+                                                  
+                                                   </div> -->
+                                              <hr>
                                          
                                             <div class="col">
                                                 <div class="addmore" class="form-group text-right" >
                                                   <button
                                                   class="btn btn-success"
                                                  
-                                                  (click)="onSubmit()"
+                                                  (click)="addCourse()"
                                                   >Add more Courses</button>
                                                   </div>
               
                                            </div>  
                                          
-                    
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                          </div>
+                          <div class="col-sm-8">
+                              <div class="dropzone dropzonecontent pre html"
+                              dropzone
+                              (hovered)="toggleHover($event)"
+                              (dropped)="onDrop($event)"
+                              [class.hovering]="isHovering">
+                         
+                              
+                              Please Upload Your Transcript
+                              <div class="file">
+                                 <label class="file-label">
+                                 <input class="file-input" type="file" (change)="onDrop($event.target.files)">
+                              <span class="file-cta">
+                                     <span class="file-icon">
+                                       <i class="fa fa-upload"></i>
+                                     </span>
+                                    
+                                   </span>
+                                 </label>
+                               </div>
+                         </div>
+                         
+                            </div>
+                            <div class="col">
+                              </div>
+                          </div>
+                 
+    
+                  
+    
+                  <div class="row">
+                        <div class="col">
+                            
+                        </div>
+                        
+                          <div class="col">
+                            
+                            </div>
+                        
+                         </div>
+    
+                      <!-- <uploader>
+                      </uploader> -->
+                        
+                      <div class="form-group">
+    
+                        
+                          </div>
+                          
+                         
+                         
                                             
-                                            <div class="row">
+                                            <!-- <div class="row">
                                                 <div class="col">
                                                     <h3 class="text-center">Language(s)</h3>
                                                     </div>
@@ -290,15 +313,28 @@
                                                       <div class="col">
                                                         </div>
                                                       
+                                                  </div> -->
+
+                                                      
+                                            <!-- <div class="row">
+                                                <h3 class="text-center">Language(s)</h3>
+                                                   
+                                              </div> -->
+                                       
+                                      
+                 
+                                              <div class="form-group">
+                 
+                                     
                                                   </div>
                                                   
-                                            <hr>
-                    Languages chosen:
+                                            <!-- <hr>
+                    Languages chosen: -->
                     
                                            
                                                
                                             
-                      
+<!--                       
                                                   <div class="form-group">
                       
                                           
@@ -335,23 +371,16 @@
                                                                           </select>
                                                           </div>
                                                         </div>
-                              
+                               -->
                                                         <div class="form-group">
                               
                                                   
                                                           </div>
                                
-                                                          <div class="row">
-                                                              <div class="col">
-                                                                  Add more skills 
-                                                              </div>
-                                                              <div class="col">
-                                                                  add skill
-                                                               </div>
-                                                          </div>
+                                                          
                                                           <div class="form-group text-right">
                                                               <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">Reset</button>
-                                                              <button type="submit" class="btn btn-success" [disabled]="!addForm.valid">Add Student</button>
+                                                              <button type="submit" class="btn btn-success" (click)="next()" [disabled]="!addForm.valid">Submit Details</button>
                                                             </div>
                                                     
                                             </form>

@@ -1,5 +1,26 @@
-
-<div class="header">
+<div class="wrapper">
+    <div class="example-container" >
+      <h2 class="text-center">Culture Fit Assessment</h2>
+      <br>
+      <h2 class="text-center"> Question 3: </h2>
+      <br>
+  
+      <p> Please order the statements below from most relatable to least. <br> Drag and Drop the statements that you
+        associate most strongly with yourself to the <strong>TOP</strong> of the list.</p>
+      <div class="question">
+        <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+          <div class="example-box" color="accent" *ngFor="let question of questions" cdkDrag>{{question}}</div>
+        </div>
+        <div>
+            <br>
+            <button type="submit" mat-dialog-close  ali="center" class="btn btn-success" (click)="onScoreTotal()" >Continue</button>
+          <br>
+            </div>
+      </div>
+    </div>
+   
+  </div>
+<!-- <div class="header">
         <h1> Culture Fit Assessment </h1>
         <h2> Question 3: </h2>
         <p> Please rank each statement from <strong> 1 (Strongly Disagree) </strong> to <strong> 8 (Strongly Agree) </strong> <br> Each statement must have its own unique number: </p>
@@ -148,9 +169,4 @@
             [(ngModel)]="obj.Headstrong">
           </mat-slider>
         </div>
-       <button mat-button color="accent" (click)="onScoreTotal()"> Next </button> 
-        
-      
-      
-      
-      
+       <button mat-button color="accent" (click)="onScoreTotal()"> Next </button>   -->

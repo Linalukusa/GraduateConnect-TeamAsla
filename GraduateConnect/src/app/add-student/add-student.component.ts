@@ -3,6 +3,15 @@ import { CrudService } from '../shared/crud.service';    // CRUD services API
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'; // Reactive form services
 import { ToastrService } from 'ngx-toastr'; // Alert message using NGX toastr
 import { AuthService } from '../shared/services/auth.service';
+import { DashboardComponent } from '../components/dashboard/dashboard.component';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { MainContentService } from '../services/main-content.service';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { User } from '../shared/services/user';
+import { Student } from '../shared/student';
+import { StudentsListComponent } from '../students-list/students-list.component';
 
 
 @Component({
@@ -13,36 +22,58 @@ import { AuthService } from '../shared/services/auth.service';
 
 export class AddStudentComponent implements OnInit {
   public studentForm: FormGroup;  // Define FormGroup to student's form
+  student: Student;
  
   constructor(
     public crudApi: CrudService,  // CRUD API services
     public fb: FormBuilder,       // Form Builder service for Reactive forms
     public toastr: ToastrService,  // Toastr service for alert message
-    private authService: AuthService
+    private authService: AuthService,
+    public dialog: MatDialog,
+    public router: Router,
+    public service: MainContentService,
+    public afAuth:AngularFireAuth,
+    public afs: AngularFirestore,
+    // public dialogRef: MatDialogRef<DashboardComponent>
   ) { }
 
- 
   ngOnInit() {
     this.crudApi.GetStudentsList();  // Call GetStudentsList() before main form is being called
-    this.studenForm();              // Call student form when component is ready
-  }
+    this.studenForm();// Call student form when component is ready
 
+    if(this.authService.userData.generalInfoComplete === true)
+    {
+      console.log("You have completed this step before");
+    }
+    this.dialog.open(DashboardComponent, {
+      disableClose: true,
+      height: '550px',
+      width: '75%',
+      })
+    
+  }
+  //Checking if the General Information step has been completed
+  isGeneralInfoComplete()
+  {
+    this.student.generalInfoComplete = true;
+    this.crudApi.UpdateStudent(this.student);
+  }
   // Reactive student form
   studenForm() {
     this.studentForm = this.fb.group({
       gender:['',],
       title: ['',],
+      disability: ['',],
       ethnicity:['',Validators.required,],
       firstName: ['', [Validators.required, Validators.minLength(2)]],
-      lastName: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
-      PreferredName: ['', ],
       dob:['',Validators.required],
       citizenship:['',Validators.required,],
-      currentcity: ['',[Validators.required,Validators.minLength(2)]],
+      currentcity: ['',[Validators.required,]],
       mobileNumber: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
-      passport:['', [Validators.maxLength(3), Validators.required]],
+      passport:['', [Validators.minLength(6), Validators.required]],
       currentprovince: ['', [Validators.maxLength(32), Validators.required]],
+      
     })  
   }
 
@@ -59,17 +90,13 @@ export class AddStudentComponent implements OnInit {
   get firstName() {
     return this.studentForm.get('firstName');
   }
-
-  get lastName() {
-    return this.studentForm.get('lastName');
-  }  
-
+  get disability() {
+    return this.studentForm.get('disability');
+  }
   get email() {
     return this.studentForm.get('email');
   }
-  get PreferredName (){
-    return this.studentForm.get ('PreferredName')
-  }
+ 
   get dob() {
     return this.studentForm.get('dob');
   }
@@ -94,11 +121,16 @@ export class AddStudentComponent implements OnInit {
   ResetForm() {
     this.studentForm.reset();
   }  
- 
+ submit(){
+   this.authService.checkGeneralInfo();
+   alert("Personal Details Submitted");
+  this.router.navigate(['academic-info']);
+ }
   submitStudentData() {
     this.crudApi.AddStudent(this.studentForm.value); // Submit student data using CRUD API
     this.toastr.success(this.studentForm.controls['firstName'].value + ' successfully added!'); // Show success message when data is successfully submited
-    this.ResetForm();  // Reset form when clicked on reset button
+    this.ResetForm();
+    this.router.navigate(['academic-info']);  // Reset form when clicked on reset button
    };
    isHovering: boolean;
 

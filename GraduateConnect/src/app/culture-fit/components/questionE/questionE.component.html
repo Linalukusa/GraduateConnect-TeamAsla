@@ -1,4 +1,76 @@
+<div class="wrapper">
+  <div class="example-container" >
+    <h2 class="text-center">Culture Fit Assessment</h2>
+    <br>
+    <h2 class="text-center"> Question 5: </h2>
+    <br>
 
+   
+    <p> Please order the statements below from most relatable to least. <br> Drag and Drop the statements that you
+      associate most strongly with yourself to the <strong>TOP</strong> of the list.</p>
+    <div class="question">
+      <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" color="accent" *ngFor="let question of questions" cdkDrag>{{question}}</div>
+      </div>
+      <div>
+          <br>
+          <button type="submit" mat-dialog-close  ali="center" class="btn btn-success" (click)="onScoreTotal()" >Continue</button>
+        <br>
+          </div>
+    </div>
+  </div>
+
+</div>
+  <!-- <form [formGroup]="cultureForm" (ngSubmit)="submitCultureData()" display="none" novalidate>
+    <div class="formGroup">
+      <div class=form-group>
+        <div >
+          dominant
+          <input type="text" formControlName="dominant" class="form-control" required>
+    
+        </div>
+        <div >
+          precise
+          <input type="text" formControlName="Precise" class="form-control" required>
+    
+        </div>
+        <div >
+         earth
+          <input type="text" formControlName="Earth" class="form-control" required>
+    
+        </div>
+        <div >
+          animated
+          <input type="text" formControlName="Animated" class="form-control" required>
+    
+        </div>
+        <div >
+         convincing
+          <input type="text" formControlName="Convincing" class="form-control" required>
+    
+        </div>
+        <div >
+          accommodate
+          <input type="text" formControlName="Accommodate" class="form-control" required>
+    
+        </div>
+        <div >
+         introvert
+          <input type="text" formControlName="Introvert" class="form-control" required>
+    
+        </div>
+        <div >
+         headstrong
+          <input type="text" formControlName="Headstrong" class="form-control" required>
+    
+        </div>
+
+    </div> -->
+  
+  <!-- </div>
+            </form> -->
+
+<!--
 <div class="header">
         <h1> Culture Fit Assessment </h1>
         <h2> Question 5: </h2>
@@ -149,7 +221,7 @@
             [(ngModel)]="obj.Animated">
           </mat-slider>
         </div>
-        <!-- this is to test if the methods are working -->
+        
         <div *ngIf="!hide">
           <button mat-button color="accent" (click)="onScoreTotal()"> Submit </button>
         </div>
@@ -157,10 +229,8 @@
           <button mat-button color="accent" (click)="closeDialog(); onSubmit();"> Show Results </button>
         </div>
         
-        <!-- <label >
-          <input mat-button type="value" placeholder="value" [(ngModel)]="headstrong">
-        </label> -->
+       
       
       
       
-      
+       -->

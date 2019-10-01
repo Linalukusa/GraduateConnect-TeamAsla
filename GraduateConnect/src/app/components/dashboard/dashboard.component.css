@@ -13,7 +13,8 @@
     padding-top: 20px;
     transition: padding-left 0.3s ease;
   }
-  @media screen and (min-width: 768px) {
+ 
+  @media screen and (min-width: 800px) {
     .page-wrapper .page-content {
       padding-left: 300px;
     }
@@ -68,3 +69,4 @@
 .imgClass{
   size: 1px;
 }
+.a{ color: black; font-family: "Great Vibes", cursive; font-size: 35px; line-height: 20px; font-weight: normal;   text-align: center; text-shadow: 0 1px 1px #fff; }

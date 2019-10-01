@@ -7,6 +7,7 @@ import { MainContentService } from 'src/app/services/main-content.service';
 import { Answer } from '../../Models/Answer';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { QuestionDComponent } from '../questionD/questionD.component';
+import { moveItemInArray, CdkDragDrop } from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -17,7 +18,25 @@ import { QuestionDComponent } from '../questionD/questionD.component';
 export class QuestionCComponent implements OnInit {
 
   obj: Answer;
-  sum: number = 0;
+  dominance: number;
+  precise: number;
+  earth: number;
+  animated: number;
+  convincing: number;
+  accommodate: number;
+  introvert: number;
+  headstrong: number;
+
+  questions = [
+    'At work, if I am a leader, I expect others to follow what I say', //Dominance
+    'At work people should follow carefully laid down procedures', //Precise
+    'At work leaders should seek consensus before proceeding', //DownToEarth
+    'At work there are too many rules and they get in the way of doing the job', //Animated
+    'At work people should be persuaded to do things', //Convincing
+    'At work people should accommodate and serve their leader', //Accommodate
+    'At work once you know what is required, you should be left to get on with it', //Introvert
+    'At work there is too much to do to wait for instructions' //Headstrong
+  ];
 
   constructor(
     public authService: AuthService,
@@ -25,6 +44,11 @@ export class QuestionCComponent implements OnInit {
     public service: MainContentService,
     public dialog: MatDialog,
     public dialogRef: MatDialogRef<QuestionCComponent>) { this.obj = new Answer()}
+    
+    drop(event: CdkDragDrop<string[]>) {
+      moveItemInArray(this.questions, event.previousIndex, event.currentIndex);
+      console.log(this.questions);
+    }
 
   ngOnInit() {
   }
@@ -33,32 +57,34 @@ export class QuestionCComponent implements OnInit {
     this.dialogRef.close();
   }
   openQuestionD()
-   {
+  {
      this.dialog.open(QuestionDComponent, {
+      disableClose: true,
       height: '1000px',
-      width: '70%',
+      width: '50%',
      })
-   }
+  }
 
   onScoreTotal() {
-    this.service.totalDominance.push(this.obj.Dominance);
-    this.service.totalConvincing.push(this.obj.Convincing);
-    this.service.totalEarth.push(this.obj.Earth);
-    this.service.totalPrecise.push(this.obj.Precise);
-    this.service.totalAccommodate.push(this.obj.Accommodate);
-    this.service.totalIntrovert.push(this.obj.Introvert);
-    this.service.totalAnimated.push(this.obj.Animated);
-    this.service.totalHeadstrong.push(this.obj.Headstrong);
-    this.sum = this.service.totalDominance.pop() + this.service.totalConvincing.pop() +
-    this.service.totalEarth.pop() + this.service.totalPrecise.pop() + this.service.totalAccommodate.pop() +
-    this.service.totalIntrovert.pop() + this.service.totalAnimated.pop() + this.service.totalHeadstrong.pop()
-    if(!(this.sum === 36))
-    {
-      alert("Each Question Must Have A Unique Value!!!");
-    }
-    else{
-      this.closeDialog();
-      this.openQuestionD();
-    }
+    this.questions.reverse();
+    this.dominance = this.questions.indexOf('At work, if I am a leader, I expect others to follow what I say');
+    this.service.totalDominance.push(this.dominance + 1)
+    this.precise = this.questions.indexOf('At work people should follow carefully laid down procedures');
+    this.service.totalPrecise.push(this.precise + 1);
+    this.earth = this.questions.indexOf('At work leaders should seek consensus before proceeding');
+    this.service.totalEarth.push(this.earth + 1);
+    this.animated = this.questions.indexOf('At work there are too many rules and they get in the way of doing the job');
+    this.service.totalAnimated.push(this.animated + 1)
+    this.convincing = this.questions.indexOf('At work people should be persuaded to do things');
+    this.service.totalConvincing.push(this.convincing + 1);
+    this.accommodate = this.questions.indexOf('At work people should accommodate and serve their leader');
+    this.service.totalAccommodate.push(this.accommodate + 1);
+    this.introvert = this.questions.indexOf('At work once you know what is required, you should be left to get on with it');
+    this.service.totalIntrovert.push(this.introvert + 1);
+    this.headstrong = this.questions.indexOf('At work there is too much to do to wait for instructions');
+    this.service.totalHeadstrong.push(this.headstrong + 1);
+    // console.log(this.service.totalAccommodate.pop());
+    this.closeDialog();
+    this.openQuestionD();
   }
 }

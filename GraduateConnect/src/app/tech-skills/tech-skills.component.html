@@ -1,0 +1,272 @@
+
+  <div class="wrapper">
+    <app-sidebar></app-sidebar>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+     
+    </div>
+    <div class="col-lg">
+       
+<div class="example-container" >
+  <div  >
+    <div>
+        <br>
+  <h2 class="text-center">Technical Capabilities</h2>
+  <br>
+  <h4 class="text-center">Please check the appropriate boxes. Only check a box
+    if you have had experience using the software.
+  </h4>
+  <br>
+  </div>
+  <hr>
+  
+<!-- Student form -->
+<form [formGroup]="skillForm" class="row"  (ngSubmit)="submitSkillData()" novalidate >
+  <div class="col-sm">
+      <mat-checkbox class="example-margin" [(ngModel)]="angular">Angular</mat-checkbox>
+      <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="swagger">Swagger</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="elastic">Elastic Search</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="sql">SQL Database</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="json">JSON</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="jsp">JSP</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="node">Node</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="react">React</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="reactNative">React Native</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="reactJS">ReactJS</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="spring">Spring</mat-checkbox>
+      
+  </div>
+ 
+  <div class="col-sm">
+      <mat-checkbox class="example-margin" [(ngModel)]="cPlus">C++</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="ssis">SSIS</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="ssrs">SSRS</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="aws">AWS</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="gCloud">Google Cloud</mat-checkbox>
+      <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="springBoot">Spring Boot</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="vueJS">VueJS</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="camel">Camel</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="rabbitMQ">RabbitMQ</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="android">Android</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="ionic">Ionic</mat-checkbox>
+    </div>
+  <div class="col-sm">
+      <mat-checkbox class="example-margin" [(ngModel)]="cSharp">C#</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="azure">Azure</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="ciTools">CI/CD Tools</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="docker">Docker</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="git">GIT</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="ios">iOS</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="xamarin">Xamarin</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="c">C</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="java">Java</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="javaScript">JavaScript</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="jsf">JSF</mat-checkbox>  
+    </div>
+  <div class="col-sm">
+      <mat-checkbox class="example-margin" [(ngModel)]="typescript">Typescript</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="heroku">Heroku</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="kubernetes">Kubernetes</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="maven">Maven</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="openShift">OpenShift</mat-checkbox>
+      <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="att">Automated Testing Tools</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="istqb">ISTQB Certified</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="postman">Postman</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="selenium">Selenium</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="unitTests">Unit tests</mat-checkbox>
+          <br>
+          <mat-checkbox class="example-margin" [(ngModel)]="html">HTML5</mat-checkbox>
+    </div>
+  <div class="col-sm">
+      <mat-checkbox class="example-margin" [(ngModel)]="css">CSS</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="angularTwo">Angular2+</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="angularJS">AngularJS</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="aspNet">ASP.NET</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="aspNetCore">ASP.NET Core</mat-checkbox>
+ <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="aspNetMVC">ASP.NET MVC</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="aspNetAPI">ASP.NET Web API</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="entityFramework">Entity Framework</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="jBoss">JBoss</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="jquery">jQuery</mat-checkbox>
+      <br>
+      <mat-checkbox class="example-margin" [(ngModel)]="fireBase">FireBase</mat-checkbox>
+    </div> 
+  </form>
+  </div>
+
+  <hr>
+  <br> <br>         
+  <div>
+      <h2 class="text-center">Speaking Languages</h2>
+      <br>
+      <h4 class="text-center">Please select the languages which you are competant in speaking.
+      </h4>
+      <br>
+      </div>
+  <div class="row">
+        <div class="col">
+            Preferred Language:
+                <select formControlName="language" class="form-control"  data-required="true" autocomplete="off" id="lang_2_select"  >
+                        <option value="" disabled='disabled' style="color:#999;">Select language</option>
+                        <option value="77" >English</option>
+                        <option value="22006002">Afrikaans</option>
+                        <option value="22006003">IsiNdebele</option>
+                        <option value="22006004">IsiXhosa</option>
+                        <option value="22006005">IsiZulu</option>
+                        <option value="22006006">Sepedi</option>
+                        <option value="22006007">Sesotho</option>
+                        <option value="22006008">Setswana</option>
+                        <option value="22006009">SiSwati</option>
+                        <option value="22006010">Tshivenda</option>
+                        <option value="22006011">Xitsonga</option>
+                        <option value="78">German</option>
+                        <option value="79">French</option>
+                        <option value="80">Italian</option>
+                        <option value="81">Spanish</option>
+                        <option value="82">Dutch</option>
+                        <option value="273">Bulgarian</option>
+                        <option value="274">Chinese</option>
+                        <option value="275">Danish</option>
+                        <option value="276">Finnish</option>
+                        <option value="277">Greek</option>
+                        <option value="278">Hungarian</option>
+                        <option value="279">Hindi</option>
+                        <option value="280">Japanese</option>
+                        <option value="281">Croat</option>
+                        <option value="282">Norwegian</option>
+                        <option value="283">Polish</option>
+                        <option value="284">Portuguese</option>
+                        <option value="285">Russian</option>
+                        <option value="286">Serb</option>
+                        <option value="287">Thai</option>
+                        <option value="288">Czech</option>
+                        <option value="289">Turkish</option>
+                        <option value="290">Swedish</option>
+                        <option value="291">Arabic</option>
+                        <option value="292">Luxembourgish</option>
+                        <option value="294">Latvian</option>
+                        <option value="586">Romanian</option>
+                        <option value="590">Persian</option>
+                        <option value="750">Hebraic</option>
+                        <option value="751">Macedonian</option>
+                        <option value="990">Indonesian</option>
+                        <option value="1100">Lithuanian</option>
+                        <option value="1110">Vietnamese</option>
+                        <option value="1120">Slovak</option>
+                        <option value="1130">Korean</option>
+                        <option value="36007">Icelandic</option>
+                        <option value="36008">Albanian</option>
+                        <option value="100015">Armenian</option>
+                        <option value="200000">Estonian</option>
+                        <option value="200010">Amharic</option>
+                        <option value="200020">Greenlandic</option>
+                        <option value="200030">Catalan</option>
+                        <option value="200040">Byelorussian</option>
+                        <option value="200050">Bosnian</option>
+                        <option value="200060">Maltese</option>
+                        <option value="200070">Moldavian</option>
+                        <option value="200080">Slovenian</option>
+                        <option value="200090">Ukrainian</option>
+                        <option value="200100">Urdu</option>
+                        <option value="200110">Tamil</option>
+                        <option value="200120">Azeri</option>
+                        <option value="200130">Georgian</option>
+                        <option value="22006001">Faroese</option>
+                        <option>Other</option>
+                        </select>
+        </div>
+        <div class="col">
+            Level of Speaking:
+                <select formControlName="levelofspeaking"  data-required="true" autocomplete="off" id="lang_2_level" class="form-control">
+                        <option value="" disabled='disabled' style="color:rgb(199, 196, 196)">Level of knownledge</option>
+                        <option value="5">Mother tongue</option>
+                        <option value="4">Advanced</option>
+                        <option value="3">Good</option>
+                        <option value="2">Moderate</option>
+                        <option value="1">Basic</option>
+                        </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+
+
+        </div>
+
+        <div class="row" >
+            <div class="col" class="form-group text-right" >
+               
+            </div>
+            <div class="col">
+               
+             </div>
+             <div class="col">
+             <div class="addmore" class="form-group text-right" >
+                <button
+                class="btn btn-success"
+               
+                (click)="onSubmit()"
+                >Add more Langauges</button>
+         </div>
+         </div>
+        </div>
+        <div class="form-group text-right">
+            <!-- <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">Reset</button> -->
+            <button type="submit" class="btn btn-success" (click)="next()" [disabled]="!addForm.valid">Continue</button>
+          </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  

@@ -6,6 +6,8 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 import { MatDialog } from '@angular/material';
 import { LangDialogComponent } from 'src/app/lang-dialog/lang-dialog.component';
 import { QualDialogComponent } from 'src/app/qual-dialog/qual-dialog.component';
+import { Router } from '@angular/router';
+import { MainContentService } from 'src/app/services/main-content.service';
 
 @Component({
   selector: 'app-academic-info',
@@ -16,19 +18,36 @@ export class AcademicInfoComponent implements OnInit {
   public addForm: FormGroup;  // Define FormGroup to student's form
   mylang: string;
     myqual : string;
+  resultCollection: Array<Result>;
+
+  
  
   constructor(
     public crudApi: CrudService,  // CRUD API services
     public fb: FormBuilder,       // Form Builder service for Reactive forms
     public dialog: MatDialog,
+    public router: Router, public service: MainContentService,
     public toastr: ToastrService,  // Toastr service for alert message
     private authService: AuthService
   ) { }
 
  
   ngOnInit() {
+    this.resultCollection = [
+      {
+        CourseCode: '',
+        CourseDesc: '',
+        NQFCredit: '',
+        resultPerc: ''
+      }
+    ]
     this.crudApi.GetAcademicList();  // Call GetStudentsList() before main form is being called
-    this.academicForm();              // Call student form when component is ready
+    this.academicForm();    
+    document.getElementById('qual2').style.display = "none";
+    document.getElementById('qual3').style.display = "none"; 
+    document.getElementById('course2').style.display = "none"; 
+    document.getElementById('course4').style.display = "none";   
+           // Call student form when component is ready
   }
 
   // Reactive student form
@@ -113,7 +132,10 @@ export class AcademicInfoComponent implements OnInit {
    toggleHover(event: boolean) {
      this.isHovering = event;
    }
- 
+ next(){
+  alert("Academic details submitted"); 
+  this.router.navigate(['technical-skills']);
+ }
    onDrop(files: FileList) {
      for (let i = 0; i < files.length; i++) {
        this.files.push(files.item(i));
@@ -136,7 +158,25 @@ export class AcademicInfoComponent implements OnInit {
      
     });
   }
+addQual(){
+  if (document.getElementById('qual2').style.display != "none"){
+    document.getElementById('qual3').style.display = "inline";
+    document.getElementById('qualBtn').style.display = "none";
 
+  }
+  document.getElementById('qual2').style.display = "inline"; 
+  
+}
+addCourse(){
+  this.resultCollection.push({
+    CourseCode: '',
+    CourseDesc: '',
+    NQFCredit: '',
+    resultPerc: ''
+  });
+  document.getElementById('course2').style.display = "block";
+  document.getElementById('course4').style.display = "block";
+}
   openQualDialog(): void {
     let dialogRef = this.dialog.open(QualDialogComponent, {
       width: '750px',
@@ -157,3 +197,9 @@ export class AcademicInfoComponent implements OnInit {
 
 
 
+export interface Result {
+  CourseDesc: string;
+  CourseCode: string;
+  NQFCredit: string;
+  resultPerc: string;
+}

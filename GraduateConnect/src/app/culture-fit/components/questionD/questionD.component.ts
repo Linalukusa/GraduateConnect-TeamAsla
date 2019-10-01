@@ -1,63 +1,88 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
-import { MainContentService } from 'src/app/services/main-content.service';
+import { MainContentService} from 'src/app/services/main-content.service';
 import { Answer } from '../../Models/Answer';
-import { MatDialog, MatDialogRef } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { QuestionBComponent } from '../questionB/questionB.component';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import { QuestionEComponent } from '../questionE/questionE.component';
 
 
 @Component({
-  selector: 'app-question-d',
+  selector: 'app-questionD',
   templateUrl: './questionD.component.html',
   styleUrls: ['./questionD.component.css']
 })
 export class QuestionDComponent implements OnInit {
 
   obj: Answer;
-  sum: number = 0;
+  dominance: number;
+  precise: number;
+  earth: number;
+  animated: number;
+  convincing: number;
+  accommodate: number;
+  introvert: number;
+  headstrong: number;
 
-  constructor(
-    public authService: AuthService,
-    public router: Router,
-    public service: MainContentService,
-    public dialog: MatDialog,
-    public dialogRef: MatDialogRef<QuestionDComponent>) { this.obj = new Answer()}
+  questions = [
+    'At work people would best describe me as assertive', //Dominance
+    'At work people would best describe me as accurate', //Precise
+    'At work people would best describe me as thoughtful', //DownToEarth
+    'At work people would best describe me as energetic', //Animated
+    'At work people would best describe me as optimistic', //Convincing
+    'At work people would best describe me as obliging', //Accommodate
+    'At work people would best describe me as independant', //Introvert
+    'At work people would best describe me as go-getting' //Headstrong
+  ];
 
-  ngOnInit() {
+  constructor(public authService: AuthService, public router: Router, public service: MainContentService, public dialog: MatDialog,
+    public dialogRef: MatDialogRef<QuestionDComponent>) {
+    this.obj = new Answer()}
+
+    drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.questions, event.previousIndex, event.currentIndex);
+    console.log(this.questions);
+    }
+    
+  ngOnInit() {  
   }
-  closeDialog(): void
-  {
+   closeDialog(): void
+   {
     this.dialogRef.close();
-  }
-  openQuestionE()
+   }
+   openQuestionB()
    {
      this.dialog.open(QuestionEComponent, {
+      disableClose: true,
       height: '1000px',
-      width: '70%',
+      width: '50%',
      })
    }
-
   onScoreTotal() {
-    this.service.totalDominance.push(this.obj.Dominance);
-    this.service.totalConvincing.push(this.obj.Convincing);
-    this.service.totalEarth.push(this.obj.Earth);
-    this.service.totalPrecise.push(this.obj.Precise);
-    this.service.totalAccommodate.push(this.obj.Accommodate);
-    this.service.totalIntrovert.push(this.obj.Introvert);
-    this.service.totalAnimated.push(this.obj.Animated);
-    this.service.totalHeadstrong.push(this.obj.Headstrong);
-    this.sum = this.service.totalDominance.pop() + this.service.totalConvincing.pop() +
-    this.service.totalEarth.pop() + this.service.totalPrecise.pop() + this.service.totalAccommodate.pop() +
-    this.service.totalIntrovert.pop() + this.service.totalAnimated.pop() + this.service.totalHeadstrong.pop()
-    if(!(this.sum === 36))
-    {
-      alert("Each Question Must Have A Unique Value!!!");
-    }
-    else{
-      this.closeDialog();
-      this.openQuestionE();
-    }
+    this.questions.reverse();
+    this.dominance = this.questions.indexOf('At work people would best describe me as assertive');
+    this.service.totalDominance.push(this.dominance + 1)
+    this.precise = this.questions.indexOf('At work people would best describe me as accurate');
+    this.service.totalPrecise.push(this.precise + 1);
+    this.earth = this.questions.indexOf('At work people would best describe me as thoughtful');
+    this.service.totalEarth.push(this.earth + 1);
+    this.animated = this.questions.indexOf('At work people would best describe me as energetic');
+    this.service.totalAnimated.push(this.animated + 1)
+    this.convincing = this.questions.indexOf('At work people would best describe me as optimistic');
+    this.service.totalConvincing.push(this.convincing + 1);
+    this.accommodate = this.questions.indexOf('At work people would best describe me as obliging');
+    this.service.totalAccommodate.push(this.accommodate + 1);
+    this.introvert = this.questions.indexOf('At work people would best describe me as independant');
+    this.service.totalIntrovert.push(this.introvert + 1);
+    this.headstrong = this.questions.indexOf('At work people would best describe me as go-getting');
+    this.service.totalHeadstrong.push(this.headstrong + 1);
+    // console.log(this.service.totalAccommodate.pop());
+    this.closeDialog();
+    this.openQuestionB();
   }
-
 }
+
+
+

@@ -3,7 +3,11 @@ body
 {
     font-family: 'Lato', 'sans-serif';
     }
+    .row{
+        padding-right: 0%;
+    }
 .profile 
+
 {
     min-height: 355px;
     
@@ -49,6 +53,10 @@ figcaption.ratings a:hover
 {
     margin-bottom:0;
     }
+.well{
+    padding-left: 260px;
+    padding-right: 0%;
+}
 span.tags 
 {
     background: #1abc9c;

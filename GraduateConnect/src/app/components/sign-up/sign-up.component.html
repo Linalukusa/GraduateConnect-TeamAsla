@@ -81,26 +81,29 @@
                       </div>
                       <div class="formGroup">
                       <input type="password" class="formControl" placeholder="Confirm Password" #userPwd required>
-                      </div>
+                <br>
+                <input type="checkbox" name="terms"  id="terms" [(ngModel)]="hasAccepted">  I agree to the <u class="terms" (click)="onTerms()">Privacy Policy</u> 
+                    </div>
+
                       <div class="formGroup">
-                      <input type="button" class="btn btn-primary btn-pill" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)" >
+                      <input type="button" [disabled]="!hasAccepted" class="btn btn-primary btn-pill" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)" >
                       </div>
                       <div class="formGroup">
                       <span class="or"><span class="orInner">Or</span></span>
                       </div>
                       <!-- Continue with Google -->
                       <div class="formGroup">
-                        <button type="button" class="btn btn-primary btn-pill" (click)="authService.GoogleAuth()">
+                        <button type="button" [disabled]="!hasAccepted" class="btn btn-primary btn-pill" (click)="authService.GoogleAuth()">
                         <i class="fab fa-google-plus-g"></i>
                         Continue with Google
                         </button>
                         </div>
                       <!-- Continue with Facebook -->
                       <div class="formGroup">
-                        <button type="button" class="btn btn-primary btn-pill" (click)="authService.FacebookAuth()">
+                        <!-- <button type="button" class="btn btn-primary btn-pill" (click)="authService.FacebookAuth()">
                         <i class="fab fa-facebook"></i>
                         Continue with Facebook
-                        </button>
+                        </button> -->
                         </div>
                         <div class="redirectToLogin">
                           <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>

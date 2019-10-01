@@ -37,6 +37,7 @@
       opacity: 0;
     }
   }
+  
   .sidebar {
     width: 260px;
     height: 100%;
@@ -46,6 +47,9 @@
     left: 0px;
     z-index: 999;
     transition: left 0.3s ease;
+  }
+  .pointer{
+    cursor: pointer;
   }
   .fitting {
     width: 250px;
@@ -70,6 +74,9 @@
     font-weight: bold;
     flex-grow: 1;
     text-decoration: none;
+  }
+  .logout{
+    color: #1d1d1d
   }
   .sidebar .sidebar-content .sidebar-header #close-sidebar {
     cursor: pointer;

@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Student } from '../shared/student';  // Student data type interface class
+import { Student } from '../shared/student';
+ // Student data type interface class
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';  // Firebase modules for Database, Data list and Single object
 import { stringify } from '@angular/core/src/util';
 import { Academic } from '../shared/academic';
+import { Answer } from '../culture-fit/Models/Answer';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +15,8 @@ export class CrudService {
   studentRef: AngularFireObject<any>;   // Reference to Student object, its an Observable too
   academicsRef:AngularFireList<any>;
   academicRef:AngularFireObject<any>;
+  cultureRef: AngularFireObject<any>;
+  culturesRef: AngularFireList<any>;
   
   // Inject AngularFireDatabase Dependency in Constructor
   constructor(private db: AngularFireDatabase) { }
@@ -32,7 +36,21 @@ export class CrudService {
       email: student.email,
       mobileNumber: student.mobileNumber,
       passport: student.passport,
-      currentprovince: student.currentprovince
+      currentprovince: student.currentprovince,
+      generalInfoComplete: student.generalInfoComplete
+    })
+  }
+  AddCulture(answer: Answer) {
+    this.culturesRef.push({
+      dominant: answer.Dominance,
+      precise: answer.Precise,
+      earth: answer.Earth,
+      animated: answer.Animated,
+      convincing: answer.Convincing,
+      accomodate: answer.Accommodate,
+      introvert: answer.Introvert,
+      headstrong: answer.Headstrong,
+     
 
      
     })
@@ -61,6 +79,10 @@ export class CrudService {
     this.studentRef = this.db.object('students-list/' + id);
     return this.studentRef;
   }
+  GetCulture(id: string) {
+    this.cultureRef = this.db.object('cultures-list/' + id);
+    return this.cultureRef;
+  }
 //Fetch Single Academic OBject
   GetAcademic(id: string){
   this.academicRef=this.db.object('academic-list/' + id);
@@ -70,6 +92,10 @@ export class CrudService {
   GetStudentsList() {
     this.studentsRef = this.db.list('students-list');
     return this.studentsRef;
+  }  
+  GetCulturesList() {
+    this.culturesRef = this.db.list('cultures-list');
+    return this.culturesRef;
   }  
   //Fetch Academic List
   GetAcademicList(){
@@ -92,7 +118,10 @@ export class CrudService {
       email: student.email,
       mobileNumber: student.mobileNumber,
       passport: student.passport,
-      currentprovince: student.currentprovince
+      currentprovince: student.currentprovince,
+      generalInfoComplete: student.generalInfoComplete,
+      academicInfoComplete: student.academicInfoComplete,
+      cultureTestComplete: student.cultureTestComplete
 
     })
   }  
@@ -123,10 +152,6 @@ export class CrudService {
     obj.valueChanges().subscribe((val) => {
       totalArray = val['results'];
     })
-
-    {
-      
-    }
 
     return totalArray;
   }
