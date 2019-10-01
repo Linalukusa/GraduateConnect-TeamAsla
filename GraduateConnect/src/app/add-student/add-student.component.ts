@@ -36,7 +36,7 @@ export class AddStudentComponent implements OnInit {
     this.studenForm();              // Call student form when component is ready
      this.dialog.open(DashboardComponent, {
        disableClose: true,
-       height: '520px',
+       height: '550px',
       width: '75%',
      })
    

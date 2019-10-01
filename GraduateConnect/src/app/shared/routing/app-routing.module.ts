@@ -31,6 +31,9 @@ import { RadarComponent } from 'src/app/radar/radar.component';
 import { getCanActivateChild } from '@angular/router/src/utils/preactivation';
 import { CultureFitInfoComponent } from 'src/app/culture-fit/culture-fit-info/culture-fit-info.component';
 import { QuestionCComponent } from 'src/app/culture-fit/components/questionC/questionC.component';
+import { TechSkillsComponent } from 'src/app/tech-skills/tech-skills.component';
+import { TermsAndConditionsComponent } from 'src/app/terms-and-conditions/terms-and-conditions.component';
+
 
 // Include route guard in routes array
 const routes: Routes = [
@@ -46,12 +49,14 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: '', redirectTo: '/register-student', pathMatch: 'full' },
   { path: 'register-student', component: AddStudentComponent },
+  {path: 'technical-skills', component: TechSkillsComponent},
   { path: 'radar', component: RadarComponent},
   { path: 'view-students', component: StudentsListComponent },
   { path: 'edit-student/:id', component: EditStudentComponent },
   { path: 'logout', component: LogoutComponent},
   { path: 'manageprofile', component: ManageprofileComponent},
   { path: 'culture-fit-info', component: CultureFitInfoComponent},
+  {path: 'terms-and-conditions', component: TermsAndConditionsComponent},
   { path: 'culture-fit-root', component: CultureFitRootComponent, canActivate: [SecureInnerPagesGuard],
     children: [
       { path: '', redirectTo: 'questionA', pathMatch: 'full'},

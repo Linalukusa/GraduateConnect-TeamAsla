@@ -12,6 +12,7 @@ import { of } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 
+
 @Injectable({
   providedIn: 'root'
 }) 
@@ -38,6 +39,7 @@ export class AuthService {
           }
         }))
    }
+   
     this.afAuth.authState.subscribe(user => {
       if (user) {
         this.userData = user;

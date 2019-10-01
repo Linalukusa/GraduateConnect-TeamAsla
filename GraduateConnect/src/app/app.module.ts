@@ -80,6 +80,8 @@ import { Hero } from './hero';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { CulturesListComponent } from './components/cultures-list/cultures-list.component';
+import { TechSkillsComponent } from './tech-skills/tech-skills.component';
+import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -93,6 +95,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SignInComponent,
     SignUpComponent,
     AdminComponent,
+    TermsAndConditionsComponent,
     LogoutComponent,
     DashboardComponent,
     ForgotPasswordComponent,
@@ -110,7 +113,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     QuestionCComponent,
     Hero,
     QuestionDComponent,
-    
+    TechSkillsComponent,
     QuestionEComponent,
     AdminComponent,
     AdminSidenavComponent,

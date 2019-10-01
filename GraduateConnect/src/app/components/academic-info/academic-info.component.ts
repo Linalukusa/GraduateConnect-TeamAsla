@@ -18,6 +18,9 @@ export class AcademicInfoComponent implements OnInit {
   public addForm: FormGroup;  // Define FormGroup to student's form
   mylang: string;
     myqual : string;
+  resultCollection: Array<Result>;
+
+  
  
   constructor(
     public crudApi: CrudService,  // CRUD API services
@@ -30,6 +33,14 @@ export class AcademicInfoComponent implements OnInit {
 
  
   ngOnInit() {
+    this.resultCollection = [
+      {
+        CourseCode: '',
+        CourseDesc: '',
+        NQFCredit: '',
+        resultPerc: ''
+      }
+    ]
     this.crudApi.GetAcademicList();  // Call GetStudentsList() before main form is being called
     this.academicForm();    
     document.getElementById('qual2').style.display = "none";
@@ -123,7 +134,7 @@ export class AcademicInfoComponent implements OnInit {
    }
  next(){
   alert("Academic details submitted"); 
-  this.router.navigate(['culture-fit-info']);
+  this.router.navigate(['technical-skills']);
  }
    onDrop(files: FileList) {
      for (let i = 0; i < files.length; i++) {
@@ -157,6 +168,12 @@ addQual(){
   
 }
 addCourse(){
+  this.resultCollection.push({
+    CourseCode: '',
+    CourseDesc: '',
+    NQFCredit: '',
+    resultPerc: ''
+  });
   document.getElementById('course2').style.display = "block";
   document.getElementById('course4').style.display = "block";
 }
@@ -180,3 +197,9 @@ addCourse(){
 
 
 
+export interface Result {
+  CourseDesc: string;
+  CourseCode: string;
+  NQFCredit: string;
+  resultPerc: string;
+}
