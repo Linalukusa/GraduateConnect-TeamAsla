@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QualDialogComponent } from './qual-dialog.component';
+import { BasicInformationComponent } from './basic-information.component';
 
-describe('QualDialogComponent', () => {
-  let component: QualDialogComponent;
-  let fixture: ComponentFixture<QualDialogComponent>;
+describe('BasicInformationComponent', () => {
+  let component: BasicInformationComponent;
+  let fixture: ComponentFixture<BasicInformationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QualDialogComponent ]
+      declarations: [ BasicInformationComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(QualDialogComponent);
+    fixture = TestBed.createComponent(BasicInformationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

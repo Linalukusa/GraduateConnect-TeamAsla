@@ -1,20 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { AcademicResultsComponent } from './academic-results.component';
 
-import { LangDialogComponent } from './lang-dialog.component';
 
-describe('LangDialogComponent', () => {
-  let component: LangDialogComponent;
-  let fixture: ComponentFixture<LangDialogComponent>;
+
+describe('AcademicResultsComponent', () => {
+  let component: AcademicResultsComponent;
+  let fixture: ComponentFixture<AcademicResultsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LangDialogComponent ]
+      declarations: [ AcademicResultsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LangDialogComponent);
+    fixture = TestBed.createComponent(AcademicResultsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -23,3 +24,7 @@ describe('LangDialogComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+
+
+

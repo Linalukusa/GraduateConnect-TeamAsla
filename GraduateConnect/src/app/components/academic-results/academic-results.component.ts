@@ -4,17 +4,15 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { ToastrService } from 'ngx-toastr'; // Alert message using NGX toastr
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { MatDialog } from '@angular/material';
-import { LangDialogComponent } from 'src/app/lang-dialog/lang-dialog.component';
-import { QualDialogComponent } from 'src/app/qual-dialog/qual-dialog.component';
 import { Router } from '@angular/router';
 import { MainContentService } from 'src/app/services/main-content.service';
 
 @Component({
-  selector: 'app-academic-info',
-  templateUrl: './academic-info.component.html',
-  styleUrls: ['./academic-info.component.css']
+  selector: 'app-academic-results',
+  templateUrl: './academic-results.component.html',
+  styleUrls: ['./academic-results.component.css']
 })
-export class AcademicInfoComponent implements OnInit {
+export class AcademicResultsComponent implements OnInit {
   public addForm: FormGroup;  // Define FormGroup to student's form
   mylang: string;
     myqual : string;
@@ -121,7 +119,7 @@ export class AcademicInfoComponent implements OnInit {
   }  
  
   submitAcademicData() {
-    this.crudApi.AcademicInfo(this.addForm.value); // Submit student data using CRUD API
+    this.crudApi.AcademicResults(this.addForm.value); // Submit student data using CRUD API
     
     this.ResetForm();  // Reset form when clicked on reset button
    };
@@ -144,20 +142,20 @@ export class AcademicInfoComponent implements OnInit {
 
    
 
-   openDialog(): void {
-    let dialogRef = this.dialog.open(LangDialogComponent, {
-      width: '750px',
-     data: { mylang: this.mylang}
-    });
+  //  openDialog(): void {
+  //   let dialogRef = this.dialog.open(LangDialogComponent, {
+  //     width: '750px',
+  //    data: { mylang: this.mylang}
+  //   });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      //this.language = result;
-      this.mylang = result;
-      console.log(result);
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
+  //     //this.language = result;
+  //     this.mylang = result;
+  //     console.log(result);
      
-    });
-  }
+  //   });
+  // }
 addQual(){
   if (document.getElementById('qual2').style.display != "none"){
     document.getElementById('qual3').style.display = "inline";
@@ -177,20 +175,20 @@ addCourse(){
   document.getElementById('course2').style.display = "block";
   document.getElementById('course4').style.display = "block";
 }
-  openQualDialog(): void {
-    let dialogRef = this.dialog.open(QualDialogComponent, {
-      width: '750px',
-     data: { myqual: this.myqual}
-    });
+  // openQualDialog(): void {
+  //   let dialogRef = this.dialog.open(QualDialogComponent, {
+  //     width: '750px',
+  //    data: { myqual: this.myqual}
+  //   });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
       
-      this.myqual = result;
-      console.log(result);
+  //     this.myqual = result;
+  //     console.log(result);
      
-    });
-  }
+  //   });
+  // }
 
 }
 

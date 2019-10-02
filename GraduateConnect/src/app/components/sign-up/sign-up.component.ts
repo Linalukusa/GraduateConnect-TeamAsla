@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../../shared/services/auth.service";
 import { Router } from '@angular/router';
 import { MainContentService} from 'src/app/services/main-content.service';
-import { DashboardComponent } from '../dashboard/dashboard.component';
+import { WelcomeModalComponent } from '../welcome-modal/welcome-modal.component';
 import { MatDialog } from '@angular/material';
 import { TermsAndConditionsComponent } from 'src/app/terms-and-conditions/terms-and-conditions.component';
 

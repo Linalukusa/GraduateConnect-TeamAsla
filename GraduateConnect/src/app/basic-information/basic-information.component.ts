@@ -3,7 +3,7 @@ import { CrudService } from '../shared/crud.service';    // CRUD services API
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'; // Reactive form services
 import { ToastrService } from 'ngx-toastr'; // Alert message using NGX toastr
 import { AuthService } from '../shared/services/auth.service';
-import { DashboardComponent } from '../components/dashboard/dashboard.component';
+import { WelcomeModalComponent } from '../components/welcome-modal/welcome-modal.component';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { MainContentService } from '../services/main-content.service';
@@ -15,12 +15,12 @@ import { StudentsListComponent } from '../students-list/students-list.component'
 
 
 @Component({
-  selector: 'app-add-student',
-  templateUrl: './add-student.component.html',
-  styleUrls: ['./add-student.component.css']
+  selector: 'app-basic-information',
+  templateUrl: './basic-information.component.html',
+  styleUrls: ['./basic-information.component.css']
 })
 
-export class AddStudentComponent implements OnInit {
+export class BasicInformationComponent implements OnInit {
   public studentForm: FormGroup;  // Define FormGroup to student's form
   student: Student;
  
@@ -34,7 +34,7 @@ export class AddStudentComponent implements OnInit {
     public service: MainContentService,
     public afAuth:AngularFireAuth,
     public afs: AngularFirestore,
-    // public dialogRef: MatDialogRef<DashboardComponent>
+    // public dialogRef: MatDialogRef<WelcomeModalComponent>
   ) { }
 
   ngOnInit() {
@@ -45,7 +45,7 @@ export class AddStudentComponent implements OnInit {
     {
       console.log("You have completed this step before");
     }
-    this.dialog.open(DashboardComponent, {
+    this.dialog.open(WelcomeModalComponent, {
       disableClose: true,
       height: '550px',
       width: '75%',
@@ -122,15 +122,17 @@ export class AddStudentComponent implements OnInit {
     this.studentForm.reset();
   }  
  submit(){
+  this.student.generalInfoComplete = true;
+  this.crudApi.UpdateStudent(this.student);
    this.authService.checkGeneralInfo();
    alert("Personal Details Submitted");
-  this.router.navigate(['academic-info']);
+  this.router.navigate(['academic-results']);
  }
   submitStudentData() {
-    this.crudApi.AddStudent(this.studentForm.value); // Submit student data using CRUD API
+    this.crudApi.BasicInformation(this.studentForm.value); // Submit student data using CRUD API
     this.toastr.success(this.studentForm.controls['firstName'].value + ' successfully added!'); // Show success message when data is successfully submited
     this.ResetForm();
-    this.router.navigate(['academic-info']);  // Reset form when clicked on reset button
+    this.router.navigate(['academic-results']);  // Reset form when clicked on reset button
    };
    isHovering: boolean;
 

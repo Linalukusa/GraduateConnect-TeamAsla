@@ -7,11 +7,11 @@ import { MatDialogRef, MatDialog } from '@angular/material';
 
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-welcome-modal',
+  templateUrl: './welcome-modal.component.html',
+  styleUrls: ['./welcome-modal.component.css']
 })
-export class DashboardComponent  {
+export class WelcomeModalComponent  {
   
 
   constructor
@@ -19,7 +19,7 @@ export class DashboardComponent  {
     public router: Router,
     public ngZone: NgZone,
     public sidebarservice: SidebarService,
-    public dialogRef: MatDialogRef<DashboardComponent>,
+    public dialogRef: MatDialogRef<WelcomeModalComponent>,
     public dialog: MatDialog
    ) { }
 

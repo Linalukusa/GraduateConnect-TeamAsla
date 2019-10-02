@@ -22,14 +22,14 @@ export class CrudService {
   constructor(private db: AngularFireDatabase) { }
 
   // Create Student
-  AddStudent(student: Student) {
+  BasicInformation(student: Student) {
     this.studentsRef.push({
       gender: student.gender,
       title: student.title,
       ethnicity: student.ethnicity,
       firstName: student.firstName,
-      lastName: student.lastName,
-      PreferredName: student.PreferredName,
+      // lastName: student.lastName,
+      // PreferredName: student.PreferredName,
       dob: student.dob,
       citizenship: student.citizenship,
       currentcity: student.currentcity,
@@ -56,7 +56,7 @@ export class CrudService {
     })
   }
   //Create Academic
-  AcademicInfo(academic: Academic){
+  AcademicResults(academic: Academic){
     this.academicsRef.push({ 
     year: academic.year,
     institution:academic.institution,
@@ -110,8 +110,8 @@ export class CrudService {
       title: student.title,
       ethnicity: student.ethnicity,
       firstName: student.firstName,
-      lastName: student.lastName,
-      PreferredName: student.PreferredName,
+      // lastName: student.lastName,
+      // PreferredName: student.PreferredName,
       dob: student.dob,
       citizenship: student.citizenship,
       currentcity: student.currentcity,
@@ -120,7 +120,7 @@ export class CrudService {
       passport: student.passport,
       currentprovince: student.currentprovince,
       generalInfoComplete: student.generalInfoComplete,
-      academicInfoComplete: student.academicInfoComplete,
+      AcademicResultsComplete: student.AcademicResultsComplete,
       cultureTestComplete: student.cultureTestComplete
 
     })

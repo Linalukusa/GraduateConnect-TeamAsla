@@ -5,8 +5,8 @@ export interface Student {
    title: string;
    ethnicity: string;
    firstName: string;
-   lastName: string;
-   PreferredName: string;
+   // lastName: string;
+   // PreferredName: string;
    dob: string;
    citizenship: string;
    currentcity:string;
@@ -15,6 +15,6 @@ export interface Student {
    passport: any;
    currentprovince:string;
    generalInfoComplete: boolean;
-   academicInfoComplete: boolean;
+   AcademicResultsComplete: boolean;
    cultureTestComplete: boolean;
 }

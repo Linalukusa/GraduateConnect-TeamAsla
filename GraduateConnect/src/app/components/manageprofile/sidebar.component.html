@@ -2,7 +2,7 @@
   <div class="sidebar-content">
     <perfect-scrollbar>
       <div class="sidebar-header">
-        <a routerLink="/dashboard">GRADUATE CONNECT</a>
+        <a routerLink="/welcome-modal">GRADUATE CONNECT</a>
       </div>
 
       <div class="sidebar-profile" *ngIf="authService.userData as user">
@@ -49,7 +49,7 @@
                     
                   </li>
                   <li >
-                    <a routerLink="/academic-info"  >
+                    <a routerLink="/academic-results"  >
                       <i class="fa fa-shopping-cart"></i>
                       <span>Academic Information</span>
                     </a>
@@ -85,7 +85,7 @@
             <span class="badge-sonar"></span>
           </a>
           <ul class="dropdown-menu">
-          <li>  <a class="dropdown-item" routerLink='/dashboard'>My profile</a></li>
+          <li>  <a class="dropdown-item" routerLink='/welcome-modal'>My profile</a></li>
            <li> <a class="dropdown-item" href="#">Help</a></li>
            <li> <a class="dropdown-item" href="#">Setting</a></li>
           </ul>

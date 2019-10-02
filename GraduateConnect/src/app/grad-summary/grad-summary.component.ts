@@ -6,11 +6,11 @@ import { Answer } from '../culture-fit/Models/Answer';
 import { CrudService } from '../shared/crud.service';
 
 @Component({
-  selector: 'app-radar',
-  templateUrl: './radar.component.html',
-  styleUrls: ['./radar.component.css']
+  selector: 'app-grad-summary',
+  templateUrl: './grad-summary.component.html',
+  styleUrls: ['./grad-summary.component.css']
 })
-export class RadarComponent implements OnInit {
+export class GradSummaryComponent implements OnInit {
 
   totalArray = this.service.totalArray;
   topCulture:number;

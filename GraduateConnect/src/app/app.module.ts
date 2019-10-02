@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LogoutComponent } from './components/LogoutComponent';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { WelcomeModalComponent } from './components/welcome-modal/welcome-modal.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
@@ -40,16 +40,16 @@ import { ToastrModule } from 'ngx-toastr';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-import { GeneralInformationComponent } from './components/general-information/general-information.component';
+// import { GeneralInformationComponent } from './components/general-information/general-information.component';
 // NGX Pagination
 import { NgxPaginationModule } from 'ngx-pagination';
-import { AddStudentComponent } from './add-student/add-student.component';
+import { BasicInformationComponent } from './basic-information/basic-information.component';
 import { StudentsListComponent } from './students-list/students-list.component';
 
 import { CultureFitRootComponent } from './culture-fit/culture-fit-root.component';
 import { QuestionAComponent } from './culture-fit/components/questionA/questionA.component';
-import { SidenavComponent } from './culture-fit/components/sidenav/sidenav.component';
-import { ToolbarComponent } from './culture-fit/components/toolbar/toolbar.component';
+// import { SidenavComponent } from './culture-fit/components/sidenav/sidenav.component';
+// import { ToolbarComponent } from './culture-fit/components/toolbar/toolbar.component';
 import { QuestionBComponent } from './culture-fit/components/questionB/questionB.component';
 import { QuestionCComponent } from './culture-fit/components/questionC/questionC.component';
 import { QuestionDComponent } from './culture-fit/components/questionD/questionD.component';
@@ -61,19 +61,19 @@ import { AdminToolbarComponent } from './components/admin/adminToolbar/adminTool
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {FormsModule} from '@angular/forms';
-import { AcademicInfoComponent } from './components/academic-info/academic-info.component';
+import { AcademicResultsComponent } from './components/academic-results/academic-results.component';
 import { ManageprofileComponent } from './components/manageprofile/manageprofile.component';
 import { UploaderComponent } from './components/uploader/uploader.component';
 import { DropzoneDirective } from './dropzone.directive';
 import { UploadTaskComponent } from './components/upload-task/upload-task.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { MatButtonModule, MatCheckboxModule, MatDialog , MatDialogModule} from '@angular/material';
-import { RadarComponent } from './radar/radar.component';
+import { GradSummaryComponent } from './grad-summary/grad-summary.component';
 import { ChartsModule } from 'ng2-charts';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 // import { ConfirmEqualValidatorDirective } from './shared/confirm-equal-validator.directive';
-import { LangDialogComponent } from './lang-dialog/lang-dialog.component';
-import { QualDialogComponent } from './qual-dialog/qual-dialog.component';
+// import { LangDialogComponent } from './lang-dialog/lang-dialog.component';
+// import { QualDialogComponent } from './qual-dialog/qual-dialog.component';
 import { JwtModule } from "@auth0/angular-jwt";
 import { CultureFitInfoComponent } from './culture-fit/culture-fit-info/culture-fit-info.component';
 import { Hero } from './hero';
@@ -97,18 +97,18 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AdminComponent,
     TermsAndConditionsComponent,
     LogoutComponent,
-    DashboardComponent,
+    WelcomeModalComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
     SidebarComponent,
-    GeneralInformationComponent,
-    AddStudentComponent,
+    // GeneralInformationComponent,
+    BasicInformationComponent,
     StudentsListComponent,
     EditStudentComponent,
     CultureFitRootComponent,
     QuestionAComponent,
-    SidenavComponent,
-    ToolbarComponent,
+    // SidenavComponent,
+    // ToolbarComponent,
     QuestionBComponent,
     QuestionCComponent,
     Hero,
@@ -118,15 +118,15 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AdminComponent,
     AdminSidenavComponent,
     AdminToolbarComponent,
-    AcademicInfoComponent,
+    AcademicResultsComponent,
     ManageprofileComponent,
     DropzoneDirective,
     UploadTaskComponent,
-    RadarComponent,
+    GradSummaryComponent,
     //ConfirmEqualValidatorDirective,
-    RadarComponent,
-    LangDialogComponent,
-    QualDialogComponent,
+    GradSummaryComponent,
+    // LangDialogComponent,
+    // QualDialogComponent,
     CultureFitInfoComponent,
     CulturesListComponent
     
@@ -168,8 +168,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   ],
 
   entryComponents: [
-    LangDialogComponent,
-QualDialogComponent, QuestionAComponent, QuestionCComponent, DashboardComponent ],
+   QuestionAComponent, QuestionCComponent, WelcomeModalComponent ],
     
 
   providers: [ AuthService,

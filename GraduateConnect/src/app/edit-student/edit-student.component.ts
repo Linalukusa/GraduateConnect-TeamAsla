@@ -4,7 +4,7 @@ import { CrudService } from '../shared/crud.service';
 import { ActivatedRoute, Router } from "@angular/router"; // ActivatedRoue is used to get the current associated components information.
 import { Location } from '@angular/common';  // Location service is used to go back to previous component
 import { ToastrService } from 'ngx-toastr';
-import { DashboardComponent } from '../components/dashboard/dashboard.component';
+import { WelcomeModalComponent } from '../components/welcome-modal/welcome-modal.component';
 import { MatDialog } from '@angular/material';
 
 @Component({
@@ -31,7 +31,7 @@ export class EditStudentComponent implements OnInit {
     const id = this.actRoute.snapshot.paramMap.get('id');  // Getting current component's id or information using ActivatedRoute service
     this.crudApi.GetStudent(id).valueChanges().subscribe(data => {
       
-    this.dialog.open(DashboardComponent, {
+    this.dialog.open(WelcomeModalComponent, {
           disableClose: true,
           height: '1000px',
           width: '70%',
@@ -57,16 +57,16 @@ export class EditStudentComponent implements OnInit {
     return this.editForm.get('firstName');
   }
 
-  get lastName() {
-    return this.editForm.get('lastName');
-  }  
+  // get lastName() {
+  //   return this.editForm.get('lastName');
+  // }  
 
   get email() {
     return this.editForm.get('email');
   }
-  get PreferredName (){
-    return this.editForm.get ('PreferredName')
-  }
+  // get PreferredName (){
+  //   return this.editForm.get ('PreferredName')
+  // }
   get dob() {
     return this.editForm.get('dob');
   }
@@ -96,7 +96,7 @@ export class EditStudentComponent implements OnInit {
       firstName: ['', [Validators.required, Validators.minLength(2)]],
       lastName: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
-      PreferredName: ['', ],
+      // PreferredName: ['', ],
       dob:['',Validators.required],
       citizenship:['',Validators.required,],
       currentcity: ['',[Validators.required,Validators.minLength(2)]],
