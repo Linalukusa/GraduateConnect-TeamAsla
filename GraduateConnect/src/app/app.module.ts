@@ -82,6 +82,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { CulturesListComponent } from './components/cultures-list/cultures-list.component';
 import { TechSkillsComponent } from './tech-skills/tech-skills.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import { SidenavComponent } from './culture-fit/components/sidenav/sidenav.component';
+import { ToolbarComponent } from './culture-fit/components/toolbar/toolbar.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -107,8 +109,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     EditStudentComponent,
     CultureFitRootComponent,
     QuestionAComponent,
-    // SidenavComponent,
-    // ToolbarComponent,
+    SidenavComponent,
+    ToolbarComponent,
     QuestionBComponent,
     QuestionCComponent,
     Hero,
