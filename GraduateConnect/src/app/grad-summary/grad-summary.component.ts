@@ -24,13 +24,25 @@ export class GradSummaryComponent implements OnInit {
   radarChartType:string = 'radar';
   demoradarChartLabels = ['Dominant', 'Precise', 'Down to Earth','Animated', 'Convincing', 'Accommodating', 'Introverted', 'Headstrong'   ];
 
+  
   constructor(public authService: AuthService, public router: Router, public service: MainContentService, public crud: CrudService) { }
-
+ 
   ngOnInit() {
     this.loading = true;
     //  this.totalArray = this.crud.getTotalArray('id');
     this.demoradarChartData = [
-       {data: [this.service.totalDominance.reduce((a, b) => a + b, 0), this.service.totalPrecise.reduce((a, b) => a + b, 0), this.service.totalEarth.reduce((a, b) => a + b, 0), this.service.totalAnimated.reduce((a, b) => a + b, 0), this.service.totalConvincing.reduce((a, b) => a + b, 0), this.service.totalAccommodate.reduce((a, b) => a + b, 0), this.service.totalIntrovert.reduce((a, b) => a + b, 0), this.service.totalHeadstrong.reduce((a, b) => a + b, 0) ], label: 'Graduate Graph'},
+       {data: [this.service.totalDominance.reduce((a, b) => a + b, 0), this.service.totalPrecise.reduce((a, b) => a + b, 0), this.service.totalEarth.reduce((a, b) => a + b, 0), this.service.totalAnimated.reduce((a, b) => a + b, 0), this.service.totalConvincing.reduce((a, b) => a + b, 0), this.service.totalAccommodate.reduce((a, b) => a + b, 0), this.service.totalIntrovert.reduce((a, b) => a + b, 0), this.service.totalHeadstrong.reduce((a, b) => a + b, 0) ],
+         label: 'Company Culture Breakdown',
+         options:{
+         tooltips: {
+          callbacks: {
+             label: function(tooltipItem, data) {
+              var label = data.datasets[tooltipItem.datasetIndex].label || '';
+                //return text to render for an individual item in the tooltip
+                return 'This is a custom tooltip';
+             }
+          }
+       }}}
       // {data: [10, 20, 30, 40, 50, 60, 70, 80], label: 'Tech-Company Graph'}
     ];
     this.cultures = [this.service.totalDominance.reduce((a, b) => a + b, 0), this.service.totalPrecise.reduce((a, b) => a + b, 0), this.service.totalEarth.reduce((a, b) => a + b, 0), this.service.totalAnimated.reduce((a, b) => a + b, 0), this.service.totalConvincing.reduce((a, b) => a + b, 0), this.service.totalAccommodate.reduce((a, b) => a + b, 0), this.service.totalIntrovert.reduce((a, b) => a + b, 0), this.service.totalHeadstrong.reduce((a, b) => a + b, 0) ]
