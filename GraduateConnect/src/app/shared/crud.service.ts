@@ -5,6 +5,7 @@ import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angula
 import { stringify } from '@angular/core/src/util';
 import { Academic } from '../shared/academic';
 import { Answer } from '../culture-fit/Models/Answer';
+import { Technical } from '../technical';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,8 @@ export class CrudService {
   academicRef:AngularFireObject<any>;
   cultureRef: AngularFireObject<any>;
   culturesRef: AngularFireList<any>;
-  
+  technicalsRef:AngularFireList<any>;
+  technicalRef:AngularFireObject<any>;
   // Inject AngularFireDatabase Dependency in Constructor
   constructor(private db: AngularFireDatabase) { }
 
@@ -73,6 +75,18 @@ export class CrudService {
     levelofknowledge: academic.levelofknowledge,
     })
   }
+  //create Technical
+  AddTechnical(technical:Technical){
+    this.technicalsRef.push({
+      angular:technical.angular,
+      c:technical.c,
+      cPlus:technical.cPlus,
+      cSharp:technical.cSharp,
+      java:technical.java,
+      javascript:technical.javascript,
+
+    })
+  }
 
   // Fetch Single Student Object
   GetStudent(id: string) {
@@ -88,6 +102,11 @@ export class CrudService {
   this.academicRef=this.db.object('academic-list/' + id);
   return this.academicRef;
   }
+  // //Fetch Technical
+GetTechnical(id: string){
+  this.technicalRef=this.db.object('technical-list/' );
+  return this.technicalRef;
+  }
   // Fetch Students List
   GetStudentsList() {
     this.studentsRef = this.db.list('students-list');
@@ -102,6 +121,11 @@ export class CrudService {
     this.academicsRef=this.db.list('academic=-list/');
     return this.academicsRef;
     }
+     //Fetch Technical Capabilities 
+  GetTechnicalList() {
+    this.technicalsRef = this.db.list('technical-list');
+    return this.technicalRef;
+  } 
 
   // Update Student Object
   UpdateStudent(student: Student) {

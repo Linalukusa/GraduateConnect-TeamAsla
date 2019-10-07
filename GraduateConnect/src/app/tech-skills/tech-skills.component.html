@@ -22,124 +22,124 @@
   </div>
   <hr>
   
-<!-- Student form -->
-<form [formGroup]="skillForm" class="row"  (ngSubmit)="submitSkillData()" novalidate >
-  <div class="col-sm">
-      <mat-checkbox class="example-margin" [(ngModel)]="angular">Angular</mat-checkbox>
+<!-- Technical form -->
+<form [formGroup]="skillForm"   (ngSubmit)="submitSkillData()" class="row"  >
+  <div>
+      <mat-checkbox class="example-margin"  id="angularFormControlSelect" FormControlName="angular">Angular</mat-checkbox>
       <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="swagger">Swagger</mat-checkbox>
+          <mat-checkbox  on class="example-margin"  id="swaggerFormControlSelect" FormControlName="swagger">Swagger</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="elastic">Elastic Search</mat-checkbox>
+          <mat-checkbox class="example-margin" FormControlName="elastic">Elastic Search</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="sql">SQL Database</mat-checkbox>
+          <mat-checkbox class="example-margin" FormControlName="sql">SQL Database</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="json">JSON</mat-checkbox>
+          <mat-checkbox class="example-margin" FormControlName="json">JSON</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="jsp">JSP</mat-checkbox>
+          <mat-checkbox class="example-margin" FormControlName="jsp">JSP</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="node">Node</mat-checkbox>
+          <mat-checkbox class="example-margin" FormControlName="node">Node</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="react">React</mat-checkbox>
+          <mat-checkbox class="example-margin"  FormControlName="react">React</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="reactNative">React Native</mat-checkbox>
+          <mat-checkbox class="example-margin"  FormControlName="reactNative">React Native</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="reactJS">ReactJS</mat-checkbox>
+          <mat-checkbox class="example-margin"  FormControlName="reactJS">ReactJS</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="spring">Spring</mat-checkbox>
+          <mat-checkbox class="example-margin"  FormControlName="spring">Spring</mat-checkbox>
       
   </div>
  
   <div class="col-sm">
-      <mat-checkbox class="example-margin" [(ngModel)]="cPlus">C++</mat-checkbox>
+      <mat-checkbox class="example-margin"  id="cPlusFormControlSelect" FormControlName="cPlus">C++</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="ssis">SSIS</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="ssis">SSIS</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="ssrs">SSRS</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="ssrs">SSRS</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="aws">AWS</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="aws">AWS</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="gCloud">Google Cloud</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="gCloud">Google Cloud</mat-checkbox>
       <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="springBoot">Spring Boot</mat-checkbox>
+          <mat-checkbox class="example-margin"  FormControlName="springBoot">Spring Boot</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="vueJS">VueJS</mat-checkbox>
+          <mat-checkbox class="example-margin"  FormControlName="vueJS">VueJS</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="camel">Camel</mat-checkbox>
+          <mat-checkbox class="example-margin"  FormControlName="camel">Camel</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="rabbitMQ">RabbitMQ</mat-checkbox>
+          <mat-checkbox class="example-margin"  FormControlName="rabbitMQ">RabbitMQ</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="android">Android</mat-checkbox>
+          <mat-checkbox class="example-margin"  FormControlName="android">Android</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="ionic">Ionic</mat-checkbox>
+          <mat-checkbox class="example-margin"  FormControlName="ionic">Ionic</mat-checkbox>
     </div>
   <div class="col-sm">
-      <mat-checkbox class="example-margin" [(ngModel)]="cSharp">C#</mat-checkbox>
+      <mat-checkbox class="example-margin"  id="cSharpFormControlSelect" FormControlName="cSharp">C#</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="azure">Azure</mat-checkbox>
+      <mat-checkbox class="example-margin" FormControlName="azure">Azure</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="ciTools">CI/CD Tools</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="ciTools">CI/CD Tools</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="docker">Docker</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="docker">Docker</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="git">GIT</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="git">GIT</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="ios">iOS</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="ios">iOS</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="xamarin">Xamarin</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="xamarin">Xamarin</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="c">C</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="c">C</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="java">Java</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="java">Java</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="javaScript">JavaScript</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="javaScript">JavaScript</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="jsf">JSF</mat-checkbox>  
+      <mat-checkbox class="example-margin"  FormControlName="jsf">JSF</mat-checkbox>  
     </div>
   <div class="col-sm">
-      <mat-checkbox class="example-margin" [(ngModel)]="typescript">Typescript</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="typescript">Typescript</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="heroku">Heroku</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="heroku">Heroku</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="kubernetes">Kubernetes</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="kubernetes">Kubernetes</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="maven">Maven</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="maven">Maven</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="openShift">OpenShift</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="openShift">OpenShift</mat-checkbox>
       <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="att">Automated Testing Tools</mat-checkbox>
+          <mat-checkbox class="example-margin" FormControlName="att">Automated Testing Tools</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="istqb">ISTQB Certified</mat-checkbox>
+          <mat-checkbox class="example-margin" FormControlName="istqb">ISTQB Certified</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="postman">Postman</mat-checkbox>
+          <mat-checkbox class="example-margin" FormControlName="postman">Postman</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="selenium">Selenium</mat-checkbox>
+          <mat-checkbox class="example-margin" FormControlName="selenium">Selenium</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="unitTests">Unit tests</mat-checkbox>
+          <mat-checkbox class="example-margin" FormControlName="unitTests">Unit tests</mat-checkbox>
           <br>
-          <mat-checkbox class="example-margin" [(ngModel)]="html">HTML5</mat-checkbox>
+          <mat-checkbox class="example-margin"  FormControlName="html">HTML5</mat-checkbox>
     </div>
   <div class="col-sm">
-      <mat-checkbox class="example-margin" [(ngModel)]="css">CSS</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="css">CSS</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="angularTwo">Angular2+</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="angularTwo">Angular2+</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="angularJS">AngularJS</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="angularJS">AngularJS</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="aspNet">ASP.NET</mat-checkbox>
+      <mat-checkbox class="example-margin"  FormControlName="aspNet">ASP.NET</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="aspNetCore">ASP.NET Core</mat-checkbox>
+      <mat-checkbox class="example-margin" FormControlName="aspNetCore">ASP.NET Core</mat-checkbox>
  <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="aspNetMVC">ASP.NET MVC</mat-checkbox>
+      <mat-checkbox class="example-margin" FormControlName="aspNetMVC">ASP.NET MVC</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="aspNetAPI">ASP.NET Web API</mat-checkbox>
+      <mat-checkbox class="example-margin" FormControlName="aspNetAPI">ASP.NET Web API</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="entityFramework">Entity Framework</mat-checkbox>
+      <mat-checkbox class="example-margin" FormControlName="entityFramework">Entity Framework</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="jBoss">JBoss</mat-checkbox>
+      <mat-checkbox class="example-margin"FormControlName="jBoss">JBoss</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="jquery">jQuery</mat-checkbox>
+      <mat-checkbox class="example-margin" FormControlName="jquery">jQuery</mat-checkbox>
       <br>
-      <mat-checkbox class="example-margin" [(ngModel)]="fireBase">FireBase</mat-checkbox>
+      <mat-checkbox class="example-margin" FormControlName="fireBase">FireBase</mat-checkbox>
     </div> 
   </form>
   </div>
@@ -262,7 +262,7 @@
         </div>
         <div class="form-group text-right">
             <!-- <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">Reset</button> -->
-            <button type="submit" class="btn btn-success" (click)="next()" [disabled]="!addForm.valid">Continue</button>
+            <button type="submit" class="btn btn-success" (click)="next()" >Continue</button>
           </div>
   </div>
   </div>
