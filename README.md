@@ -14,6 +14,6 @@ npm install
 
 cd GraduateConnect
 
-ng serve (to run the project)
+ng serve (to run the project on localhost:4200)
 
 
